@@ -1,0 +1,5 @@
+env/
+Dep-Generator/__pycache__
+Dep-Generator/Dataset
+Dep-Generator/Output
+Dep-Generator/cc.*
