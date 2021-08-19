@@ -175,8 +175,8 @@ def build_recommend_balanced(df, save_location, random_state = 1):
     no = df_no[['recommend_to_a_friend', 'review_text']].sample(n=lowest_number, random_state = RANDOM_STATE).to_dict('records')
     yes = df_yes[['recommend_to_a_friend', 'review_text']].sample(n=lowest_number, random_state = RANDOM_STATE).to_dict('records')
 
-    build_file("0", no, save_location, "\n>>> Processing Recommend - No")
-    build_file("1", yes, save_location, "\n>>> Processing Recommend - Yes")
+    build_file("0", no, save_location, "\n>>> Processing Recommend Balanced - No")
+    build_file("1", yes, save_location, "\n>>> Processing Recommend Balanced - Yes")
 
 
 def build_gender(df, save_location):
