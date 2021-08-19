@@ -23,7 +23,7 @@ B2W_SAVE_LOCATION ={
     "Recommend": "/mnt/d/Documentos/Doutorado/TextRepresentation/Datasets/B2W-PT/Raw/B2W-Recommend",
     "Recommend Balanced": "/mnt/d/Documentos/Doutorado/TextRepresentation/Datasets/B2W-PT/Raw/B2W-Recommend-Balanced",
     "Gender": "/mnt/d/Documentos/Doutorado/TextRepresentation/Datasets/B2W-PT/Raw/B2W-Gender",
-    "Gender-Balanced": "/mnt/d/Documentos/Doutorado/TextRepresentation/Datasets/B2W-PT/Raw/B2W-Gender-Balanced"
+    "Gender Balanced": "/mnt/d/Documentos/Doutorado/TextRepresentation/Datasets/B2W-PT/Raw/B2W-Gender-Balanced"
 }
 
 def build_file(groupClass, entries, save_location, message=""):
