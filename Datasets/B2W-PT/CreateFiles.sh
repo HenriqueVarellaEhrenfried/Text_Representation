@@ -1,0 +1,8 @@
+mkdir "/mnt/d/Documentos/Doutorado/TextRepresentation/Datasets/B2W-PT/Raw/B2W-Polarity"
+mkdir "/mnt/d/Documentos/Doutorado/TextRepresentation/Datasets/B2W-PT/Raw/B2W-Polarity-Balanced"
+mkdir "/mnt/d/Documentos/Doutorado/TextRepresentation/Datasets/B2W-PT/Raw/B2W-Rating"
+mkdir "/mnt/d/Documentos/Doutorado/TextRepresentation/Datasets/B2W-PT/Raw/B2W-Rating-Balanced"
+mkdir "/mnt/d/Documentos/Doutorado/TextRepresentation/Datasets/B2W-PT/Raw/B2W-Recommend"
+mkdir "/mnt/d/Documentos/Doutorado/TextRepresentation/Datasets/B2W-PT/Raw/B2W-Recommend-Balanced"
+mkdir "/mnt/d/Documentos/Doutorado/TextRepresentation/Datasets/B2W-PT/Raw/B2W-Gender"
+mkdir "/mnt/d/Documentos/Doutorado/TextRepresentation/Datasets/B2W-PT/Raw/B2W-Gender-Balanced"
