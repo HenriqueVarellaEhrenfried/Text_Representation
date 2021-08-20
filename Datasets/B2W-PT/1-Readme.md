@@ -40,7 +40,7 @@ Therefore, the number of reviews by class is shown in the following table:
 |----------|-------|
 | **TOTAL**|132373 |
 
-**A thousand reviews** are removed from the total dataset randomly to compose a **test dataset**. Therfore, the total number of reviews for **train** is 131373.
+The test dataset is composes of 500 documents from each class.
 
 ### B2W-Polarity-Balanced
 
@@ -75,7 +75,7 @@ In this dataset, classes Negative and Positive are reduced to be contain the sam
 | **TOTAL**| 48945 |
 
 
-**A thousand reviews** are removed from the total dataset randomly to compose a **test dataset**. Therfore, the total number of reviews for **train** is 47945.
+The test dataset is composes of 500 documents from each class.
 
 ### B2W-Rating
 
@@ -91,7 +91,7 @@ In this dataset the rating of the reviews are the classes. The Rating 1 is the l
 | --------  | ------- |
 | **TOTAL** | 132373  |
 
-**A thousand reviews** are removed from the total dataset randomly to compose a **test dataset**. Therfore, the total number of reviews for **train** is 131373.
+The test dataset is composes of 500 documents from each class.
 
 ### B2W-Rating-Balanced
 
@@ -107,7 +107,7 @@ In this dataset the rating of the reviews are the classes. The Rating 1 is the l
 | --------  | ------- |
 | **TOTAL** | 41945   |
 
-**A thousand reviews** are removed from the total dataset randomly to compose a **test dataset**. Therfore, the total number of reviews for **train** is 40945.
+The test dataset is composes of 500 documents from each class.
 
 ### B2W-Recommend
 
@@ -128,7 +128,7 @@ Therefore, the final dataset has the following shape:
 |-----------------------|-------|
 | **TOTAL**             | 132355|
 
-**A thousand reviews** are removed from the total dataset randomly to compose a **test dataset**. Therfore, the total number of reviews for **train** is 131355.
+The test dataset is composes of 500 documents from each class.
 
 
 ### B2W-Recommend-Balanced
@@ -150,7 +150,7 @@ Additionaly, the classes were balanced to contain the same number of reviews. Th
 |-----------------------|-------|
 | **TOTAL**             | 71974 |
 
-**A thousand reviews** are removed from the total dataset randomly to compose a **test dataset**. Therfore, the total number of reviews for **train** is 131355.
+The test dataset is composes of 500 documents from each class.
 
 
 ### B2W-Gender
@@ -173,7 +173,7 @@ Therefore, the final dataset has the following shape:
 | --------  | ------- |
 | **TOTAL** | 128237  |
 
-**A thousand reviews** are removed from the total dataset randomly to compose a **test dataset**. Therfore, the total number of reviews for **train** is 127237.
+The test dataset is composes of 500 documents from each class.
 
 
 ### B2W-Gender-Balanced
@@ -196,19 +196,19 @@ Additionaly, the classes were balanced to contain the same number of reviews. Th
 | --------  | ------- |
 | **TOTAL** | 124142  |
 
-**A thousand reviews** are removed from the total dataset randomly to compose a **test dataset**. Therfore, the total number of reviews for **train** is 123142.
+The test dataset is composes of 500 documents from each class.
 
 ## Objectives
 
 The following table specifies all datasets objectives and sizes
 
-| Dataset                | Objective                                                   | Balanced | Dataset size | Train dataset size | Test dataset size |
-| ---------------------- | ----------------------------------------------------------- | -------- | ------------ | ------------------ | ----------------- |
-| B2W-Polarity           | Classify polarity of the review                             | NO       | 132373       | 131373             | 1000              |
-| B2W-Polarity-Balanced  | Classify polarity of the review                             | YES      | 48945        | 47945              | 1000              |
-| B2W-Rating             | Classify rating of the review                               | NO       | 132373       | 131373             | 1000              |
-| B2W-Rating-Balanced    | Classify rating of the review                               | YES      | 41945        | 40945              | 1000              |
-| B2W-Recommend          | Predict if a product is recommended or not                  | NO       | 132355       | 131355             | 1000              |
-| B2W-Recommend-Balanced | Predict if a product is recommended or not                  | YES      | 71974        | 70974              | 1000              |
-| B2W-Gender             | Identify if the text was written by a male or female person | NO       | 128237       | 127237             | 1000              |
-| B2W-Gender-Balanced    | Identify if the text was written by a male or female person | YES      | 124142       | 123142             | 1000              |
+| Dataset                | Objective                                                   | Balanced | Dataset size | Number of classes | Train dataset size | Test dataset size |
+| ---------------------- | ----------------------------------------------------------- | -------- | ------------ | ----------------- | ------------------ | ----------------- |
+| B2W-Polarity           | Classify polarity of the review                             | NO       | 132373       | 3                 | 132223             | 1500              |
+| B2W-Polarity-Balanced  | Classify polarity of the review                             | YES      | 48945        | 3                 | 47445              | 1500              |
+| B2W-Rating             | Classify rating of the review                               | NO       | 132373       | 5                 | 129873             | 2500              |
+| B2W-Rating-Balanced    | Classify rating of the review                               | YES      | 41945        | 5                 | 39445              | 2500              |
+| B2W-Recommend          | Predict if a product is recommended or not                  | NO       | 132355       | 2                 | 131355             | 1000              |
+| B2W-Recommend-Balanced | Predict if a product is recommended or not                  | YES      | 71974        | 2                 | 70974              | 1000              |
+| B2W-Gender             | Identify if the text was written by a male or female person | NO       | 128237       | 2                 | 127237             | 1000              |
+| B2W-Gender-Balanced    | Identify if the text was written by a male or female person | YES      | 124142       | 2                 | 123142             | 1000              |
