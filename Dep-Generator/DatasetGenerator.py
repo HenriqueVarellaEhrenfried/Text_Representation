@@ -19,6 +19,7 @@ class DatasetGenerator():
         self.cores = int(options.cores)
         self.dimension = int(options.dimension)
         self.language = options.language
+        self.graph_mode = options.graph_mode
 
         # States
         self.all_graphs = None
@@ -96,6 +97,58 @@ class DatasetGenerator():
 
         return sentences
 
+    def list_neighbors(self, sentence,current_token, num_tokens, neighbors):
+        if current_token+1 != num_tokens:
+            linear_neighbor = sentence[current_token+1]
+        else:
+            return list(neighbors)
+        return list(set(list(neighbors) + [linear_neighbor]))
+
+    def handle_neighbors_tree_and_order(self, sentence):
+        # This Funciont parses the text using the sPacy and build the neighbors from it. Additionaly, it 
+        # inserts reading notation (not multigraph) - This means that if there is an edge to a node that
+        # occurs natually from the parsing, a new edge will not be added.
+        token_number = 0
+        num_tokens = len(sentence)
+        result = []
+        
+        for token in sentence:            
+            token_children = self.list_neighbors(sentence, token_number, num_tokens, token.children)           
+            number_neighbors = len(list(token_children))
+            i = 0
+            NEIGHBORS = ""           
+            for child in token_children:
+                if i + 1 == number_neighbors:
+                    NEIGHBORS = NEIGHBORS + str(child.i)
+                else:
+                    NEIGHBORS = NEIGHBORS + str(child.i) + " "
+                i += 1
+            token_number +=1
+            result.append(NEIGHBORS)
+        return result
+
+    def handle_neighbors_tree_only(self, sentence):
+        # This Funciont parses the text using the sPacy and build the neighbors from it
+        token_number = 0
+        num_tokens = len(sentence)
+        result = []
+
+        for token in sentence:            
+            token_children = list(token.children)
+            number_neighbors = len(list(token_children))
+            i = 0
+            NEIGHBORS = ""           
+            for child in token_children:
+                if i + 1 == number_neighbors:
+                    NEIGHBORS = NEIGHBORS + str(child.i)
+                else:
+                    NEIGHBORS = NEIGHBORS + str(child.i) + " "
+                i += 1
+            token_number +=1
+            result.append(NEIGHBORS)
+        return result
+
+
     def build_nodes(self, sentences):
         # This method must generate the following line:
         # [t (tag)] [m (number of neighbors)] [EACH_NEIGHBOR_NUMBER] [d (node features)]
@@ -103,29 +156,28 @@ class DatasetGenerator():
         sentence_parsed = []
         root_children = []
         for sentence in sentences:
+            if self.graph_mode == "tree_only":
+                parcial_neighbor = self.handle_neighbors_tree_only(sentence)
+            elif self.graph_mode == "tree_and_order":
+                parcial_neighbor = self.handle_neighbors_tree_and_order(sentence)
+            i = 0
             for token in sentence:
                 number_neighbors = len(list(token.children))
-                i = 0
 
                 if token.dep_ == "ROOT":
                     # Save the root children to create the root node at the end of the process
                     root_children.append(token.i)
 
                 TAG = "0"
-                NUMBER_NEIGHBORS = str(number_neighbors )
-                NEIGHBORS = ""
+                NEIGHBORS = parcial_neighbor[i]
+                NUMBER_NEIGHBORS = str(len(NEIGHBORS.split(" "))) if NEIGHBORS != '' else '0'
                 NODE_FEATURES = ' '.join(str(d) for d in self.get_vector(token.text))
-                                
-                for child in token.children:
-                    if i + 1 == number_neighbors:
-                        NEIGHBORS = NEIGHBORS + str(child.i)
-                    else:
-                        NEIGHBORS = NEIGHBORS + str(child.i) + " "
-                    i += 1
-                if i > 0:
+
+                if NEIGHBORS != "":
                     sentence_parsed.append(TAG + " " + NUMBER_NEIGHBORS + " " + NEIGHBORS + " " + NODE_FEATURES)
                 else:
                     sentence_parsed.append(TAG + " " + NUMBER_NEIGHBORS + " " + NODE_FEATURES)
+                i += 1
         
         # Create the ROOT node
         TAG = "0"
