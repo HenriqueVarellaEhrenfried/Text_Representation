@@ -22,6 +22,13 @@ def list_neighbors(sentence,current_token, num_tokens, neighbors):
        return list(neighbors)
     return list(set(list(neighbors) + [linear_neighbor]))
 
+def list_neighbors_multi_graph(sentence,current_token, num_tokens, neighbors):
+    if current_token+1 != num_tokens:
+        linear_neighbor = sentence[current_token+1]
+    else:
+       return list(neighbors)
+    return list(list(neighbors) + [linear_neighbor])
+
 def handle_neighbors_tree_and_order(sentence):
     print("Sentence:: ", sentence)
     token_number = 0
@@ -68,19 +75,47 @@ def handle_neighbors_tree_only(sentence):
         result.append(NEIGHBORS)
     return result
 
+def handle_neighbors_tree_and_order_multi_graph(sentence):
+    print("Sentence:: ", sentence)
+    token_number = 0
+    num_tokens = len(sentence)
+    result = []
+    for token in sentence:            
+        print("Token ", token_number, ">> ", token)
+        token_children = list_neighbors_multi_graph(sentence, token_number, num_tokens, token.children)           
+        print("\tTOKEN CHILDREN >>", token_children)
+        number_neighbors = len(list(token_children))
+        i = 0
+        NEIGHBORS = ""           
+        for child in token_children:
+            if i + 1 == number_neighbors:
+                NEIGHBORS = NEIGHBORS + str(child.i)
+            else:
+                NEIGHBORS = NEIGHBORS + str(child.i) + " "
+            i += 1
+        token_number +=1
+        print(NEIGHBORS)
+        result.append(NEIGHBORS)
+    return result
+
+
 def build_nodes( sentences):
     # This method must generate the following line:
     # [t (tag)] [m (number of neighbors)] [EACH_NEIGHBOR_NUMBER] [d (node features)]
     ROOT_NAME = "@#|ROOT|#@"
     sentence_parsed = []
     root_children = []
-    graph_mode = "tree_only"
+    # graph_mode = "tree_only"
     # graph_mode = "tree_and_order"
+    graph_mode = "tree_and_order_multi_graph"
+    
     for sentence in sentences:
         if graph_mode == "tree_only":
             parcial_neighbor = handle_neighbors_tree_only(sentence)
         elif graph_mode == "tree_and_order":
             parcial_neighbor = handle_neighbors_tree_and_order(sentence)
+        elif graph_mode == "tree_and_order_multi_graph":
+            parcial_neighbor = handle_neighbors_tree_and_order_multi_graph(sentence)
        
         i = 0
         print("parcial_neighbor", parcial_neighbor)

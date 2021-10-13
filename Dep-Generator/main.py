@@ -10,7 +10,7 @@ from DatasetGenerator import DatasetGenerator
 
 SET_OPTIONS = ['Both', 'Test', 'Train']
 LANGUAGES = ['en', 'pt']
-GRAPH_MODE = ['tree_only', 'tree_and_order']
+GRAPH_MODE = ['tree_only', 'tree_and_order', 'tree_and_order_multi_graph']
 
 parser = OptionParser()
 parser.add_option("-i", "--input_path", dest="input_path", help="Set input path")

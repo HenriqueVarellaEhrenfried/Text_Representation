@@ -62,10 +62,12 @@ class DatasetGenerator():
         return now.strftime("[%d/%m/%Y %H:%M:%S] ")
 
     def read_files(self):
+        print(">> Reading files from:", self.input)
         return glob.glob(self.input + "*.txt")
 
     def get_ranges(self, array, number):
         ranges = []
+        print(">> There are", len(array), "itens to process")
         for _ in range(0, number):
             step = len(array)/number
             if ranges:
@@ -103,6 +105,33 @@ class DatasetGenerator():
         else:
             return list(neighbors)
         return list(set(list(neighbors) + [linear_neighbor]))
+
+    def list_neighbors_multi_graph(self, sentence,current_token, num_tokens, neighbors):
+        if current_token+1 != num_tokens:
+            linear_neighbor = sentence[current_token+1]
+        else:
+            return list(neighbors)
+        return list(list(neighbors) + [linear_neighbor])
+
+    def handle_neighbors_tree_and_order_multi_graph(self, sentence):
+        token_number = 0
+        num_tokens = len(sentence)
+        result = []
+        for token in sentence:            
+            token_children = self.list_neighbors_multi_graph(sentence, token_number, num_tokens, token.children)           
+            number_neighbors = len(list(token_children))
+            i = 0
+            NEIGHBORS = ""           
+            for child in token_children:
+                if i + 1 == number_neighbors:
+                    NEIGHBORS = NEIGHBORS + str(child.i)
+                else:
+                    NEIGHBORS = NEIGHBORS + str(child.i) + " "
+                i += 1
+            token_number +=1
+            result.append(NEIGHBORS)
+        return result
+
 
     def handle_neighbors_tree_and_order(self, sentence):
         # This Funciont parses the text using the sPacy and build the neighbors from it. Additionaly, it 
@@ -160,6 +189,8 @@ class DatasetGenerator():
                 parcial_neighbor = self.handle_neighbors_tree_only(sentence)
             elif self.graph_mode == "tree_and_order":
                 parcial_neighbor = self.handle_neighbors_tree_and_order(sentence)
+            elif self.graph_mode == "tree_and_order_multi_graph":
+                parcial_neighbor = self.handle_neighbors_tree_and_order_multi_graph(sentence)
             i = 0
             for token in sentence:
                 number_neighbors = len(list(token.children))
