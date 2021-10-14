@@ -5,3 +5,4 @@ Dep-Generator/Output
 Dep-Generator/cc.*
 Datasets/B2W-PT/Raw
 Raw-Classified/
+Datasets/MR/U2GNN-*/Train_MR.txt
