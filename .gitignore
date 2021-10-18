@@ -1,4 +1,5 @@
 env/
+env-linux/
 Dep-Generator/__pycache__
 Dep-Generator/Dataset
 Dep-Generator/Output
@@ -6,3 +7,4 @@ Dep-Generator/cc.*
 Datasets/B2W-PT/Raw
 Raw-Classified/
 Datasets/MR/U2GNN-*/Train_MR.txt
+Datasets/B2W-PT/B2W_*/
