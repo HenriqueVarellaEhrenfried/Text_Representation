@@ -11,6 +11,7 @@ from DatasetGenerator import DatasetGenerator
 SET_OPTIONS = ['Both', 'Test', 'Train']
 LANGUAGES = ['en', 'pt']
 GRAPH_MODE = ['tree_only', 'tree_and_order', 'tree_and_order_multi_graph']
+TAG_MODE = ['none', 'dep', 'pos', 'dep-pos']
 
 parser = OptionParser()
 parser.add_option("-i", "--input_path", dest="input_path", help="Set input path")
@@ -20,7 +21,8 @@ parser.add_option("-s", "--set", dest="set", help="Select between 'Test' and 'Tr
 parser.add_option("-d", "--dimension", dest="dimension", default='300', help="Select the dimension of the embeddings (DEFAULT: 300)")
 parser.add_option("-c", "--cores", dest="cores",  default='1', help="Number of CPU cores to use")
 parser.add_option("-l", "--language", dest="language", default="en", help="Language to load auxiliary models")
-parser.add_option("-g", "--graph_mode", dest="graph_mode", default="tree_only", help="De")
+parser.add_option("-g", "--graph_mode", dest="graph_mode", default="tree_only", help="Type of graph to build")
+parser.add_option("-t", "--tag_mode", dest="tag_mode", default="none", help="Type of tag for nodes")
 
 (options, args) = parser.parse_args()
 
@@ -34,6 +36,9 @@ if not(options.language in LANGUAGES):
     exit(1)
 if not(options.graph_mode in GRAPH_MODE):
     print("Unknown graph mode (parameter of: -g / --graph_mode): Select on of the following graph modes", GRAPH_MODE)
+    exit(1)
+if not(options.tag_mode in TAG_MODE):
+    print("Unknown tag mode (parameter of: -t / --tag_mode): Select on of the following tag modes", TAG_MODE)
     exit(1)
 
 if options.language == "en":

@@ -20,6 +20,11 @@ class DatasetGenerator():
         self.dimension = int(options.dimension)
         self.language = options.language
         self.graph_mode = options.graph_mode
+        self.tag_mode = options.tag_mode
+
+        # TAG SECTION
+        self.pos_types = list(nlp.get_pipe("tagger").labels)
+        self.dep_types = list(nlp.get_pipe("parser").labels)       
 
         # States
         self.all_graphs = None
@@ -177,6 +182,20 @@ class DatasetGenerator():
             result.append(NEIGHBORS)
         return result
 
+    def POS_as_tag(self, token):
+        index = self.pos_types.index(token.tag_) if token.tag_ in self.pos_types else 99
+        return index
+
+    def DEP_as_tag(self, token):
+        index = self.dep_types.index(token.dep_) if token.dep_ in self.dep_types else 99
+        return index
+
+    def composition_as_tag(self, token):
+        dep = self.dep_types.index(token.dep_) if token.dep_ in self.dep_types else 99
+        pos = self.pos_types.index(token.tag_) if token.tag_ in self.pos_types else 99
+        
+        composition = (dep * 100) + pos
+        return composition
 
     def build_nodes(self, sentences):
         # This method must generate the following line:
@@ -199,7 +218,15 @@ class DatasetGenerator():
                     # Save the root children to create the root node at the end of the process
                     root_children.append(token.i)
 
-                TAG = "0"
+                if self.tag_mode == "none":
+                    TAG = "0"
+                elif self.tag_mode == "dep":
+                    TAG = str(self.DEP_as_tag(token))
+                elif self.tag_mode == "pos":
+                    TAG = str(self.POS_as_tag(token))
+                elif self.tag_mode == "dep-pos":
+                    TAG = str(self.composition_as_tag(token))
+
                 NEIGHBORS = parcial_neighbor[i]
                 NUMBER_NEIGHBORS = str(len(NEIGHBORS.split(" "))) if NEIGHBORS != '' else '0'
                 NODE_FEATURES = ' '.join(str(d) for d in self.get_vector(token.text))

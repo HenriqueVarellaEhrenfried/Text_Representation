@@ -98,6 +98,70 @@ def handle_neighbors_tree_and_order_multi_graph(sentence):
         result.append(NEIGHBORS)
     return result
 
+def token_information(token):
+    # Text: The original word text.
+    # Lemma: The base form of the word.
+    # POS: The simple UPOS part-of-speech tag.
+    # Tag: The detailed part-of-speech tag.
+    # Dep: Syntactic dependency, i.e. the relation between tokens.
+    # Shape: The word shape – capitalization, punctuation, digits.
+    # is alpha: Is the token an alpha character?
+    # is stop: Is the token part of a stop list, i.e. the most common words of the language?
+
+    # https://universaldependencies.org/docs/u/pos/
+    ## UNIVERSAL POS TAGGING
+
+    # ADJ: adjective
+    # ADP: adposition
+    # ADV: adverb
+    # AUX: auxiliary verb
+    # CONJ: coordinating conjunction
+    # DET: determiner
+    # INTJ: interjection
+    # NOUN: noun
+    # NUM: numeral
+    # PART: particle
+    # PRON: pronoun
+    # PROPN: proper noun
+    # PUNCT: punctuation
+    # SCONJ: subordinating conjunction
+    # SYM: symbol
+    # VERB: verb
+    # X: other
+
+    print("Token Text:", token.text)
+    print("Token POS: ", token.pos_)
+    print("Token Tag: ", token.tag_) # Quero esse primeiro (diz o tipo de palavra que é)
+    print("Token Tag #:", POS_as_tag(token))
+    print("Token Dep: ", token.dep_)
+    print("Token Tag #:", DEP_as_tag(token))
+    print("###")
+    print("Token Composition:", composition_as_tag(token))
+
+    print("----------------------------")
+
+def explain(nlp):
+    tags = nlp.get_pipe("tagger").labels
+    deps = nlp.get_pipe("parser").labels
+    print(list(tags))
+    print(list(deps))
+
+def POS_as_tag(token):
+    pos_types = list(nlp.get_pipe("tagger").labels)
+    return pos_types.index(token.tag_)
+
+def DEP_as_tag(token):
+    dep_types = list(nlp.get_pipe("parser").labels)
+    return dep_types.index(token.dep_)
+
+def composition_as_tag(token):
+    pos_types = list(nlp.get_pipe("tagger").labels)
+    dep_types = list(nlp.get_pipe("parser").labels)
+    dep = dep_types.index(token.dep_)
+    pos = pos_types.index(token.tag_)
+    
+    composition = (dep * 100) + pos
+    return composition
 
 def build_nodes( sentences):
     # This method must generate the following line:
@@ -120,6 +184,7 @@ def build_nodes( sentences):
         i = 0
         print("parcial_neighbor", parcial_neighbor)
         for token in sentence:
+            token_information(token)
             number_neighbors = len(list(token.children))
             
             if token.dep_ == "ROOT":
@@ -148,6 +213,9 @@ nlp = spacy.load(SPACY_MODEL)
 file_content = "I would like to present now"
 
 doc = nlp(file_content)
+
+explain(nlp)
+
 
 sentences = separe_sentences(doc)  
 print("========================================")
