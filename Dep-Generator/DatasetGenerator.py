@@ -23,7 +23,12 @@ class DatasetGenerator():
         self.tag_mode = options.tag_mode
 
         # TAG SECTION
-        self.pos_types = list(nlp.get_pipe("tagger").labels)
+        #  PT MODEL = No component 'tagger' found in pipeline. Available names: ['tok2vec', 'morphologizer', 'parser', 'senter', 'attribute_ruler', 'lemmatizer', 'ner']
+        if options.language == "en":
+            self.pos_types = list(nlp.get_pipe("tagger").labels)
+        elif options.language == "pt":
+            self.pos_types = ['ADP', 'VERB', 'AUX', 'DET', 'X', 'INTJ', 'NUM', 'SCONJ', 'PROPN', 'CCONJ', 'NOUN', 'ADJ', 'SYM', 'PUNCT', 'PRON', 'PART', 'ADV']
+            
         self.dep_types = list(nlp.get_pipe("parser").labels)       
 
         # States
