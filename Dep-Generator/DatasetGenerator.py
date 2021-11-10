@@ -209,6 +209,13 @@ class DatasetGenerator():
         composition = (pos * 100) + dep
         return composition
 
+    def sqrt_of_product_node_tag(self, token):
+        dep = self.dep_types.index(token.dep_) if token.dep_ in self.dep_types else 99
+        pos = self.pos_types.index(token.tag_) if token.tag_ in self.pos_types else 99
+        
+        composition = (dep*pos)**1/2
+        return composition
+
     def build_nodes(self, sentences):
         # This method must generate the following line:
         # [t (tag)] [m (number of neighbors)] [EACH_NEIGHBOR_NUMBER] [d (node features)]
@@ -240,6 +247,8 @@ class DatasetGenerator():
                     TAG = str(self.composition_as_tag(token))
                 elif self.tag_mode == "pos-dep":
                     TAG = str(self.composition_as_tag_inverted(token))
+                elif self.tag_mode == "sqrt_product":
+                    TAG = str(self.sqrt_of_product_node_tag(token))
 
                 NEIGHBORS = parcial_neighbor[i]
                 NUMBER_NEIGHBORS = str(len(NEIGHBORS.split(" "))) if NEIGHBORS != '' else '0'

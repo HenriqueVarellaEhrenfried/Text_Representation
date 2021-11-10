@@ -11,7 +11,7 @@ from DatasetGenerator import DatasetGenerator
 SET_OPTIONS = ['Both', 'Test', 'Train']
 LANGUAGES = ['en', 'pt']
 GRAPH_MODE = ['tree_only', 'tree_and_order', 'tree_and_order_multi_graph']
-TAG_MODE = ['none', 'dep', 'pos', 'dep-pos', 'pos-dep']
+TAG_MODE = ['none', 'dep', 'pos', 'dep-pos', 'pos-dep', 'sqrt_product']
 
 parser = OptionParser()
 parser.add_option("-i", "--input_path", dest="input_path", help="Set input path")
