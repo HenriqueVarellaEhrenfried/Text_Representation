@@ -1,0 +1,7 @@
+https://github.com/tblock/10kGNAD
+
+https://ofai.github.io/million-post-corpus/
+
+Categorias:
+
+{'Web', 'Wirtschaft', 'International', 'Panorama', 'Kultur', 'Wissenschaft', 'Etat', 'Sport', 'Inland'}
