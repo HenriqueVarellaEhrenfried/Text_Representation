@@ -9,7 +9,7 @@ from DatasetGenerator import DatasetGenerator
 
 
 SET_OPTIONS = ['Both', 'Test', 'Train']
-LANGUAGES = ['en', 'pt']
+LANGUAGES = ['en', 'pt', 'de']
 GRAPH_MODE = ['tree_only', 'tree_and_order', 'tree_and_order_multi_graph']
 TAG_MODE = ['none', 'dep', 'pos', 'dep-pos', 'pos-dep', 'sqrt_product']
 
@@ -45,6 +45,8 @@ if options.language == "en":
     SPACY_MODEL = "en_core_web_lg"
 elif options.language == "pt":
     SPACY_MODEL = "pt_core_news_lg"
+elif options.language == "de":
+    SPACY_MODEL = "de_core_news_lg"
 
 # Load Spacy model - It will be used for word vectors
 print("Importing spacy model")
