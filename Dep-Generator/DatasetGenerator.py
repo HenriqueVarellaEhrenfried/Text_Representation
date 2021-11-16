@@ -4,6 +4,7 @@ import pandas as pd
 import os
 import random
 from datetime import datetime
+import math
 
 import fasttext
 import fasttext.util
@@ -213,7 +214,7 @@ class DatasetGenerator():
         dep = self.dep_types.index(token.dep_) if token.dep_ in self.dep_types else 99
         pos = self.pos_types.index(token.tag_) if token.tag_ in self.pos_types else 99
         
-        composition = (dep*pos)**1/2
+        composition = math.ceil((dep*pos)**1/2)
         return composition
 
     def build_nodes(self, sentences):

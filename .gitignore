@@ -8,3 +8,5 @@ Datasets/B2W-PT/Raw
 Raw-Classified/
 Datasets/MR/U2GNN-*/Train_MR.txt
 Datasets/B2W-PT/B2W_*/
+Datasets/MR/*
+Datasets/B2W-PT/*
