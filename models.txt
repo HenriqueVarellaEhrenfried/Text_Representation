@@ -1,0 +1,7 @@
+de-core-news-lg @ https://github.com/explosion/spacy-models/releases/download/de_core_news_lg-3.1.0/de_core_news_lg-3.1.0-py3-none-any.whl
+en-core-news-lg @ https://github.com/explosion/spacy-moenls/releases/download/en_core_news_lg-3.1.0/en_core_news_lg-3.1.0-py3-none-any.whl
+pt-core-news-lg @ https://github.com/explosion/spacy-moptls/releases/download/pt_core_news_lg-3.1.0/pt_core_news_lg-3.1.0-py3-none-any.whl
+
+
+
+/mnt/c/Users/hvehr/Documents/Doutorado/Text_Representation

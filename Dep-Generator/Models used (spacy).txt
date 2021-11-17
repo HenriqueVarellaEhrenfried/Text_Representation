@@ -1,0 +1,5 @@
+English = "en_core_web_lg"
+Portuguese = "pt_core_news_lg"
+German = "de_core_news_lg"
+
+python -m spacy download <MODEL>
