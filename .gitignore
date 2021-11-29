@@ -4,11 +4,22 @@ Dep-Generator/__pycache__
 Dep-Generator/Dataset
 Dep-Generator/Output
 Dep-Generator/cc.*
-Datasets/B2W-PT/Raw
 Raw-Classified/
-Datasets/MR/U2GNN-*/Train_MR.txt
-Datasets/B2W-PT/B2W_*/
-Datasets/MR/*
-Datasets/B2W-PT/*
+
+
 Datasets/10kGNAD-DE/Parsed
 Datasets/10kGNAD-DE/Tree*
+Datasets/10kGNAD-DE/10kGNAD-DE Graph-Transformer-Datasets.7z
+
+Datasets/B2W-PT/Raw*
+Datasets/B2W-PT/B2W_*/
+Datasets/B2W-PT/Parsed/*
+Datasets/B2W-PT/Datasets-Created-to-Graph_transformer.7z
+
+Datasets/MR/MR_*
+Datasets/MR/MR-*
+Datasets/MR/U2GNN-*
+Datasets/MR/U2GNN-*/Train_MR.txt
+Datasets/MR/Parsed/*
+
+Datasets/Ohsumed/Output-dataset
