@@ -1,0 +1,6 @@
+>>> Dataset Ohsumed statistics <<<
+-- Total files: 7400
+-- Mean: 193.73513513513512
+-- Std Dev: 76.36035024701368
+-- Max: 615
+-- Min: 30

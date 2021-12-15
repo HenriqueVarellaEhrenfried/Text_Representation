@@ -1,0 +1,6 @@
+>>> Dataset B2W-Rating statistics <<<
+-- Total files: 41945
+-- Mean: 26.364095839790203
+-- Std Dev: 25.76998280997365
+-- Max: 796
+-- Min: 1

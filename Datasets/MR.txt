@@ -1,0 +1,6 @@
+>>> Dataset MR statistics <<<
+-- Total files: 10662
+-- Mean: 21.044925905083474
+-- Std Dev: 9.415329122282992
+-- Max: 60
+-- Min: 1

@@ -1,0 +1,6 @@
+>>> Dataset 10kGNAD statistics <<<
+-- Total files: 10273
+-- Mean: 345.87033972549403
+-- Std Dev: 257.6143403976531
+-- Max: 4804
+-- Min: 3
