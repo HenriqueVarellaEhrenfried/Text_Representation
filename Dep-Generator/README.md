@@ -5,18 +5,22 @@ In the directory Dep-Generator run: `python main.py [PARAMETERS]`
 
 ### **Parameters**
 
-* **Input path (`-i` or `--input_path`):** Sets the location of the files of the unprocessed dataset
-* **Output path (`-o` or `--output_path`):** Sets the location to save processed dataset
-* **Name (`-n` or `--name`):** Sets the name of the file of the dataset
-* **Set (`-s` or `--set`):** Sets which set is been processed to name the dataset, if both is used, you can process the training ad test sets
-* **Dimension (`-d` or `--dimension`):** Sets the dimension of the word vector. The default value is 300
-* **Cores (`-d` or `--cores`):** Sets the number of CPU cores to use during the processing of the dataset. Default value is 1
+```
+-i OR --input_path = Set input path
+-o OR --output_path = Set output path
+-n OR --name = Name of the dataset
+-s OR --set = Select between 'Test' and 'Train' dataset creation to name it correctly. [options='Both', 'Test', 'Train']
+-d OR --dimension = Select the dimension of the embeddings [default='300']
+-c OR --cores = Number of CPU cores to use [default='1']
+-l OR --language = Language to load auxiliary models [default="en"] [options='en', 'pt', 'de']
+-g OR --graph_mode = Type of graph to build [default="tree_only"] [options='tree_only', 'tree_and_order', 'tree_and_order_multi_graph']
+-t OR --tag_mode = Type of tag for nodes [default="none"] [options='none', 'dep', 'pos', 'dep-pos', 'pos-dep', 'sqrt_product']
+```
 
 ### **Example**
 
 ```
-
-python main.py -i ./Example/Test -o ./Output -n Example -s Test -d 300 -c 1
+python main.py -i ../Datasets/MR/Parsed/Train/ -o ../Datasets/MR/MR-Order-Multigraph-Tag-DEP_POS/ -n MR -s Train -d 300 -c 4 -l en -g tree_and_order_multi_graph -t dep-pos
 
 ```
 ---
@@ -24,6 +28,7 @@ python main.py -i ./Example/Test -o ./Output -n Example -s Test -d 300 -c 1
 
 Each file must be in the file `class_id.txt` where `class` is a number that represents a class and `id` is the file id
 
+### Example:
 ```
 Dataset
 ├── MR
