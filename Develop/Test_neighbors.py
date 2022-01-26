@@ -247,8 +247,7 @@ def composition_as_tag_2(token, number_neighbors=0):
     return composition
 
 
-def composition_as_tag_3(token, fasttext_model):
-    vector = get_vector(token.text, fasttext_model)
+def composition_as_tag_3(token):
     pos_types = list(nlp.get_pipe("tagger").labels)
     dep_types = list(nlp.get_pipe("parser").labels)
 
@@ -258,8 +257,7 @@ def composition_as_tag_3(token, fasttext_model):
 
     return tag
 
-def composition_as_tag_4(token, fasttext_model):
-    vector = get_vector(token.text, fasttext_model)
+def composition_as_tag_4(token):
     pos_types = list(nlp.get_pipe("tagger").labels)
     dep_types = list(nlp.get_pipe("parser").labels)
 
@@ -267,6 +265,60 @@ def composition_as_tag_4(token, fasttext_model):
     pos = pos_types.index(token.tag_)
     tag = pos*len(dep_types)+dep
     
+    return tag
+
+def distance_as_tag(token):
+    def distancia(xa, xb, ya, yb):
+        x = (xb - xa) ** 2
+        y = (yb - ya) ** 2
+        s = x + y 
+        d = s ** 0.5
+        return d 
+
+    def combine(set1, set2):
+        combinations = []
+        for s1 in set1:
+            for s2 in set2:
+                combinations.append([s1,s2])
+        return combinations
+
+    def calculate_all_distances(combinations):
+        distances = []
+        distances1 = []
+        distances2 = []
+
+        for i in range(0,len(combinations)):
+            comb = combinations[i]
+            # Calculate distance of the point to the orgin
+            distances1.append(distancia(0,(comb[0]),0,(comb[1])))
+            # Calculate distance to the point above (max(X)+1, max(Y)+1)
+            distances2.append(distancia((combinations[-1][0])+1,(comb[0]),(combinations[-1][1])+1,(comb[1])))
+            # Calculate difference between the distances
+            distances.append((distances1[i]-distances2[i]))
+
+        return distances
+
+    def calculate_distance(limit, x, y):
+        # Calculate distance of the point to the orgin
+        d1 = distancia(0,x,0,y)
+        # Calculate distance to the point above (max(X)+1, max(Y)+1)
+        d2 = distancia(limit[0]+1,x,limit[1]+1,y)
+        # Calculate difference between the distances
+        d = d1 - d2
+
+        return d
+    
+    pos_types = list(nlp.get_pipe("tagger").labels)
+    dep_types = list(nlp.get_pipe("parser").labels)
+
+    dep = dep_types.index(token.dep_)
+    pos = pos_types.index(token.tag_) 
+
+    combinations = combine(list(range(0,len(dep_types))),list(range(0,len(pos_types))))
+    distances = calculate_all_distances(combinations)
+    distances_sorted = sorted(distances)
+
+    tag = distances_sorted.index(calculate_distance([len(dep_types)-1,len(pos_types)-1],dep,pos))
     return tag
 
 def build_nodes(sentences, fasttext_model):
@@ -308,7 +360,7 @@ def build_nodes(sentences, fasttext_model):
                 # Save the root children to create the root node at the end of the process
                 root_children.append(token.i)
 
-            TAG = str(composition_as_tag_3(token, fasttext_model))
+            TAG = str(distance_as_tag(token))
 
             NEIGHBORS = parcial_neighbor[i]
             NUMBER_NEIGHBORS = str(len(NEIGHBORS.split(" "))) if NEIGHBORS != '' else '0'
@@ -349,8 +401,8 @@ fasttext_model = load_fasttext()
 
 # https://explosion.ai/demos/displacy?text=I%20would%20like%20to%20present%20now.%20Could%20you%20make%20it%20happen%3F&model=en_core_web_sm&cpu=0&cph=0
 # file_content = "I would like to present now. Could you make it happen?"
-file_content = "I would like to present now"
-# file_content = "I like pizza, I like NASCAR"
+# file_content = "I would like to present now"
+file_content = "I like pizza, I like NASCAR"
 
 doc = nlp(file_content)
 

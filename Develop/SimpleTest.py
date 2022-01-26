@@ -58,6 +58,16 @@ def calculate_all_distances(combinations):
 
     return distances
 
+def calculate_distance(limit, x, y):
+    # Calculate distance of the point to the orgin
+    d1 = distancia(0,x,0,y)
+    # Calculate distance to the point above (max(X)+1, max(Y)+1)
+    d2 = distancia(limit[0]+1,x,limit[1]+1,y)
+    # Calculate difference between the distances
+    d = d1 - d2
+
+    return d
+
 def count_distances(distances):
     counter = {}
     for d in distances:
@@ -77,18 +87,27 @@ def equal_distances(points, distances):
             counter[str(d)] = [points[i]]
     return counter
    
-def build_table(distances, n):
-    table = [distances[i:i + n] for i in range(0, len(distances), n)]
-    return table
-
 
 def table():
     X = list(range(0,45))
     Y = list(range(0,49))
     combinations = combine(X,Y)
     distances = calculate_all_distances(combinations)
-    # itens = equal_distances(combinations, distances)
-    table = build_table(distances, len(Y))   
+    distances_sorted = sorted(distances)
+
+    TARGETS = [
+        [29,28,"I"],
+        [9,20,"would"],
+        [0,37,"like"],
+        [9,35,"to"],
+        [44,37,"present"],
+        [4,30,"now"]        
+    ]
+    for t in TARGETS:
+        # print(t[2])
+        # print(distances_sorted[-1],"\n\n\n\n")
+        tag = distances_sorted.index(calculate_distance([len(X)-1,len(Y)-1],t[0],t[1]))
+        print(t[2], ">", tag)
 
 
 table()
