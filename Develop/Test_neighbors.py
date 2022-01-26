@@ -235,7 +235,8 @@ def composition_as_tag(token):
     
     composition = (dep * 100) + pos
     return composition
-
+    
+# Not implemented in DatasetGenerator
 def composition_as_tag_2(token, number_neighbors=0):
     pos_types = list(nlp.get_pipe("tagger").labels)
     dep_types = list(nlp.get_pipe("parser").labels)
@@ -246,7 +247,7 @@ def composition_as_tag_2(token, number_neighbors=0):
     
     return composition
 
-
+# Not implemented in DatasetGenerator
 def composition_as_tag_3(token):
     pos_types = list(nlp.get_pipe("tagger").labels)
     dep_types = list(nlp.get_pipe("parser").labels)
@@ -257,6 +258,7 @@ def composition_as_tag_3(token):
 
     return tag
 
+# Not implemented in DatasetGenerator
 def composition_as_tag_4(token):
     pos_types = list(nlp.get_pipe("tagger").labels)
     dep_types = list(nlp.get_pipe("parser").labels)
