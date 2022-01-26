@@ -1,28 +1,94 @@
-import numpy as np
-from numpy import linalg as LA
+import json
+from turtle import distance
 
-vector = [1,2,3,4]
-# vector = [[50,63,27,12,13,82]]
+def distancia(xa, xb, ya, yb):
+    x = (xb - xa) ** 2
+    y = (yb - ya) ** 2
+    s = x + y 
+    d = s ** 0.5
+    return d 
 
-# vetor_np = np.array([vector])
-# vetor_np_transposed = np.transpose(vetor_np)
+def verify_dist():
+    TARGETS = [
+        [29,28,"I"],
+        [9,20,"would"],
+        [0,37,"like"],
+        [9,35,"to"],
+        [44,37,"present"],
+        [4,30,"now"],
+        [0,0,"EXTRA1"],
+        [45,49,"EXTRA2"],
+        [45,0,"EXTRA3"],
+        [0,49,"EXTRA4"]
+    ]
+    BASE1 = [0,0]
+    BASE2 = [45,49]
 
-# print("\n","Vector >>", np.shape(vetor_np), "\n")
-# print("\n","Vector T>>", np.shape(vetor_np_transposed), "\n")
+    for t in TARGETS:
+        d1 = distancia(BASE1[0], t[0], BASE1[1], t[1])
+        d2 = distancia(BASE2[0], t[0], BASE2[1], t[1])
 
-# gram = np.matmul(vetor_np, vetor_np_transposed)
+        print("Até origem da palavra", t[2], "> ", int(d1))
+        print("Até Limite da palavra", t[2], "> ", int(d2))
+        print("Média da palavra", t[2], "> ", int((d1+d2)/2))
+        print("------------------------------------------------")
 
-# gram2 = np.matmul(vetor_np_transposed,vetor_np)
+def combine(set1, set2):
+    combinations = []
+    for s1 in set1:
+        for s2 in set2:
+            combinations.append([s1,s2])
+    return combinations
+
+def calculate_all_distances(combinations):
+    offset = combinations[-1][0] + combinations[-1][1]
+    offset = 0
+    distances = []
+    distances1 = []
+    distances2 = []
+
+    for i in range(0,len(combinations)):
+        comb = combinations[i]
+        # Calculate distance of the point to the orgin
+        distances1.append(distancia(0,comb[0]+offset,0,comb[1]))
+        # Calculate distance to the point above (max(X)+1, max(Y)+1)
+        distances2.append(distancia(combinations[-1][0]+1,comb[0]+offset,combinations[-1][1]+1,comb[1]))
+        # Calculate difference between the distances
+        distances.append((distances1[i]-distances2[i]))
+
+    return distances
+
+def count_distances(distances):
+    counter = {}
+    for d in distances:
+        if str(d) in counter: 
+            counter[str(d)] += 1
+        else:
+            counter[str(d)] = 1
+    return counter
+
+def equal_distances(points, distances):
+    counter = {}
+    for i in range(0,len(distances)):
+        d = distances[i]
+        if str(d) in counter: 
+            counter[str(d)].append(points[i])
+        else:
+            counter[str(d)] = [points[i]]
+    return counter
+   
+def build_table(distances, n):
+    table = [distances[i:i + n] for i in range(0, len(distances), n)]
+    return table
 
 
-# print("Shaper 1 > ", np.shape(gram),"\n" ,gram)
-# print("Shaper 2 > ", np.shape(gram2),"\n" , gram2)
+def table():
+    X = list(range(0,45))
+    Y = list(range(0,49))
+    combinations = combine(X,Y)
+    distances = calculate_all_distances(combinations)
+    # itens = equal_distances(combinations, distances)
+    table = build_table(distances, len(Y))   
 
 
-# det = LA.det(gram2)
-
-# print(det)
-
-# print(LA.eig(gram))
-
-print(sum(vector))
+table()
