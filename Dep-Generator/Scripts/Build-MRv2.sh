@@ -53,9 +53,6 @@ echo ">>> Building MR-Order-Multigraph-Self-TAG-DEP"
 python main.py -i ../Datasets/MR/Parsed/ -o ../Datasets/MR/MR-Order-Multigraph-Self-TAG-DEP -n MR -s Train -d 300 -c 20 -l en -g tree_order_multigraph_and_self -t dep
 echo ">>> Building MR-Default-Self-TAG-POS"
 python main.py -i ../Datasets/MR/Parsed/ -o ../Datasets/MR/MR-Default-Self-TAG-POS -n MR -s Train -d 300 -c 20 -l en -g tree_and_self -t pos
-
-
-
 echo ">>> Building MR-Order-Self-TAG-POS"
 python main.py -i ../Datasets/MR/Parsed/ -o ../Datasets/MR/MR-Order-Self-TAG-POS -n MR -s Train -d 300 -c 20 -l en -g tree_order_and_self -t pos
 echo ">>> Building MR-Order-Multigraph-Self-TAG-POS"

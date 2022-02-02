@@ -55,6 +55,7 @@ dep_types_en = list(nlp_en.get_pipe("parser").labels)
 dep_types_pt = list(nlp_pt.get_pipe("parser").labels)    
 dep_types_de = list(nlp_de.get_pipe("parser").labels)    
 
+pos_types_en.append('_SP')
 
 VERIFY_VALUES = [
     ["English", (list(range(0,len(dep_types_en)))), (list(range(0,len(pos_types_en))))],
