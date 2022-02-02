@@ -27,6 +27,7 @@ class DatasetGenerator():
         #  PT MODEL = No component 'tagger' found in pipeline. Available names: ['tok2vec', 'morphologizer', 'parser', 'senter', 'attribute_ruler', 'lemmatizer', 'ner']
         if options.language == "en":
             self.pos_types = list(nlp.get_pipe("tagger").labels)
+            self.pos_types.append('_SP')
         if options.language == "de":
             self.pos_types = list(nlp.get_pipe("tagger").labels)
         elif options.language == "pt":
@@ -239,7 +240,7 @@ class DatasetGenerator():
                     NEIGHBORS = NEIGHBORS + str(child.i) + " "
                 i += 1
             token_number +=1
-            print(NEIGHBORS)
+            result.append(NEIGHBORS)
         return result
 
     def handle_neighbors_tree_order_and_self(self, sentence):
