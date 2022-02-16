@@ -17,6 +17,11 @@ class GraphRepresentation():
             parcial_neighbor = self.handle_neighbors_tree_order_and_self(sentence)
         elif self.graph_mode == "tree_order_multigraph_and_self":
             parcial_neighbor = self.handle_neighbors_tree_order_multigraph_and_self(sentence)
+            #### New Addition OTHER FORMATS ####
+        elif self.graph_mode == "only_order":
+            parcial_neighbor = self.order_only(sentence)
+        elif self.graph_mode == "order_circular":
+            parcial_neighbor = self.order_circular(sentence)
         
         return parcial_neighbor
 
@@ -158,3 +163,57 @@ class GraphRepresentation():
             token_number +=1
             result.append(NEIGHBORS)
         return result
+
+    ### WIP: Below methods are being constructed    
+    ## TODO: Finish and test below methods
+    def order_only(self, sentence):
+        ## This method uses only the order of the word
+        token_number = 0
+        num_tokens = len(sentence)
+        token_index = 0
+        result = []
+        
+        for token in sentence:   
+            NEIGHBORS = ""
+            if token_index < (num_tokens):    
+                if token_index + 1 != num_tokens:
+                    print("DEBUG >>", token.text , '| Now:', token_index, 'Next:' , token_index+1)
+                    NEIGHBORS = NEIGHBORS + str(token_index+1)
+                else:
+                    print("DEBUG >>", token.text , '| Now:', token_index, 'Next:' )
+            token_index +=1
+            token_number +=1
+            result.append(NEIGHBORS)
+        return result
+
+    def order_circular(self, sentence):
+        ## This method uses only the order of the word and the last token is linked to the first
+        token_number = 0
+        num_tokens = len(sentence)
+        token_index = 0
+        result = []
+        
+        for token in sentence:   
+            NEIGHBORS = ""
+            if token_index < (num_tokens):   
+                print("DEBUG >>", token.text , '| Now:', token_index, 'Next:' , (token_index+1)%num_tokens)
+                NEIGHBORS = NEIGHBORS + str((token_index+1)%num_tokens)
+
+            token_index +=1
+            token_number +=1
+            result.append(NEIGHBORS)
+        return result
+        
+
+    def order_rearranged(self):
+        ## This method uses only the order of the word after we rearrange it by its syntatical information
+        print(" ----- | WIP | -----")
+     
+        print("--------------------")
+
+    def graph_of_word(self):
+        ## This method creates a graph of word from the sentence
+        print(" ----- | WIP | -----")
+     
+        print("--------------------")
+
