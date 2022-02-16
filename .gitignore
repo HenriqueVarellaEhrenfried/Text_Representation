@@ -24,4 +24,9 @@ Datasets/MR/Parsed/*
 
 Datasets/Ohsumed/Output-dataset
 
+Datasets/B2W/
+Datasets/Ohsumed/*
+
 Develop/cc*
+
+Develop/__pycache__/

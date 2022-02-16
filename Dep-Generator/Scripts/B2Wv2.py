@@ -52,9 +52,14 @@ HELPER2 = {
     'Distance': 'distance'
 }
 
+for out in OUTPUT:
+    print("mkdir -p %s" %(out))
+
+print("\n")
 
 for out in OUTPUT:
     graph_mode = out.split("/")[-1]
     tag = out.split("/")[-1].split("TAG-")[-1]
-    print(">>> Building %s" % (graph_mode))
-    os.system("echo python main.py -i ../Datasets/B2W-PT/Raw/B2W-Rating-Balanced/ -o %s -n B2W-Rating -s Train -d 300 -c 20 -l en -g %s -t %s;" % (out, HELPER[graph_mode], HELPER2[tag]))
+    print("echo \">>> Building %s\"" % (graph_mode))
+    print("python main.py -i ../Datasets/B2W-PT/Raw/B2W-Rating-Balanced/ -o %s -n B2W-Rating -s Train -d 300 -c 20 -l pt -g %s -t %s;" % (out, HELPER[graph_mode], HELPER2[tag]))
+    print("")

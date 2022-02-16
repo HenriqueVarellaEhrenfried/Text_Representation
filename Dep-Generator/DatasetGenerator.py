@@ -1,10 +1,12 @@
+from LinearAlgebra import LinearAlgebra
+from Tags import Tags
+from GraphRepresentation import GraphRepresentation
 import glob
 import multiprocessing as mp
 import pandas as pd
 import os
 import random
 from datetime import datetime
-import math
 
 import fasttext
 import fasttext.util
@@ -23,6 +25,8 @@ class DatasetGenerator():
         self.graph_mode = options.graph_mode
         self.tag_mode = options.tag_mode
 
+        self.la = LinearAlgebra()
+        
         # TAG SECTION
         #  PT MODEL = No component 'tagger' found in pipeline. Available names: ['tok2vec', 'morphologizer', 'parser', 'senter', 'attribute_ruler', 'lemmatizer', 'ner']
         if options.language == "en":
@@ -32,13 +36,14 @@ class DatasetGenerator():
             self.pos_types = list(nlp.get_pipe("tagger").labels)
         elif options.language == "pt":
             self.pos_types = ['ADP', 'VERB', 'AUX', 'DET', 'X', 'INTJ', 'NUM', 'SCONJ', 'PROPN', 'CCONJ', 'NOUN', 'ADJ', 'SYM', 'PUNCT', 'PRON', 'PART', 'ADV']
+            self.pos_types.append('SPACE')
             
         self.dep_types = list(nlp.get_pipe("parser").labels)       
 
-        # Helper for distances 
-        self.combinations = self.combine(list(range(0,len(self.dep_types))),list(range(0,len(self.pos_types))))
-        self.distances = self.calculate_all_distances(self.combinations)
-        self.distances_sorted = sorted(self.distances)
+        # Initialize other classes
+        self.la.initialize(list(range(0,len(self.dep_types))),list(range(0,len(self.pos_types))))
+        self.graphs = GraphRepresentation(self.graph_mode)
+        self.tags = Tags(self.tag_mode, self.la, self.pos_types, self.dep_types)
 
         # States
         self.all_graphs = None
@@ -118,217 +123,6 @@ class DatasetGenerator():
 
         return sentences
 
-    def distance(self, xa, xb, ya, yb):
-        x = (xb - xa) ** 2
-        y = (yb - ya) ** 2
-        s = x + y 
-        d = s ** 0.5
-        return d 
-
-    def combine(self, set1, set2):
-        combinations = []
-        for s1 in set1:
-            for s2 in set2:
-                combinations.append([s1,s2])
-        return combinations
-
-    def calculate_all_distances(self, combinations):
-        distances = []
-
-        for i in range(0,len(combinations)):
-            comb = combinations[i]
-            # Calculate distance of the point to the orgin
-            distances1 = self.distance(0,(comb[0]),0,(comb[1]))
-            # Calculate distance to the point above (max(X)+1, max(Y)+1)
-            distances2 = self.distance((combinations[-1][0])+1,(comb[0]),(combinations[-1][1])+1,(comb[1]))
-            # Calculate difference between the distances
-            distances.append(distances1-distances2)
-        return distances
-
-    def list_neighbors(self, sentence,current_token, num_tokens, neighbors):
-        if current_token+1 != num_tokens:
-            linear_neighbor = sentence[current_token+1]
-        else:
-            return list(neighbors)
-        return list(set(list(neighbors) + [linear_neighbor]))
-
-    def list_neighbors_multi_graph(self, sentence,current_token, num_tokens, neighbors):
-        if current_token+1 != num_tokens:
-            linear_neighbor = sentence[current_token+1]
-        else:
-            return list(neighbors)
-        return list(list(neighbors) + [linear_neighbor])
-
-    def handle_neighbors_tree_and_order_multi_graph(self, sentence):
-        token_number = 0
-        num_tokens = len(sentence)
-        result = []
-        for token in sentence:            
-            token_children = self.list_neighbors_multi_graph(sentence, token_number, num_tokens, token.children)           
-            number_neighbors = len(list(token_children))
-            i = 0
-            NEIGHBORS = ""           
-            for child in token_children:
-                if i + 1 == number_neighbors:
-                    NEIGHBORS = NEIGHBORS + str(child.i)
-                else:
-                    NEIGHBORS = NEIGHBORS + str(child.i) + " "
-                i += 1
-            token_number +=1
-            result.append(NEIGHBORS)
-        return result
-
-
-    def handle_neighbors_tree_and_order(self, sentence):
-        # This Funciont parses the text using the sPacy and build the neighbors from it. Additionaly, it 
-        # inserts reading notation (not multigraph) - This means that if there is an edge to a node that
-        # occurs natually from the parsing, a new edge will not be added.
-        token_number = 0
-        num_tokens = len(sentence)
-        result = []
-        
-        for token in sentence:            
-            token_children = self.list_neighbors(sentence, token_number, num_tokens, token.children)           
-            number_neighbors = len(list(token_children))
-            i = 0
-            NEIGHBORS = ""           
-            for child in token_children:
-                if i + 1 == number_neighbors:
-                    NEIGHBORS = NEIGHBORS + str(child.i)
-                else:
-                    NEIGHBORS = NEIGHBORS + str(child.i) + " "
-                i += 1
-            token_number +=1
-            result.append(NEIGHBORS)
-        return result
-
-    def handle_neighbors_tree_only(self, sentence):
-        # This Funciont parses the text using the sPacy and build the neighbors from it
-        token_number = 0
-        num_tokens = len(sentence)
-        result = []
-
-        for token in sentence:            
-            token_children = list(token.children)
-            number_neighbors = len(list(token_children))
-            i = 0
-            NEIGHBORS = ""           
-            for child in token_children:
-                if i + 1 == number_neighbors:
-                    NEIGHBORS = NEIGHBORS + str(child.i)
-                else:
-                    NEIGHBORS = NEIGHBORS + str(child.i) + " "
-                i += 1
-            token_number +=1
-            result.append(NEIGHBORS)
-        return result
-
-    def handle_neighbors_tree_and_self(self, sentence):
-        token_number = 0
-        num_tokens = len(sentence)
-        result = []
-        for token in sentence:            
-            token_children = list(token.children)
-            token_children.append(token) # Add self-loop
-            number_neighbors = len(list(token_children))
-            i = 0
-            NEIGHBORS = ""           
-            for child in token_children:
-                if i + 1 == number_neighbors:
-                    NEIGHBORS = NEIGHBORS + str(child.i)
-                else:
-                    NEIGHBORS = NEIGHBORS + str(child.i) + " "
-                i += 1
-            token_number +=1
-            result.append(NEIGHBORS)
-        return result
-
-    def handle_neighbors_tree_order_and_self(self, sentence):
-        token_number = 0
-        num_tokens = len(sentence)
-        result = []
-        for token in sentence:            
-            token_children = self.list_neighbors(sentence, token_number, num_tokens, token.children)   
-            token_children.append(token) # Add self-loop        
-            number_neighbors = len(list(token_children))
-            i = 0
-            NEIGHBORS = ""           
-            for child in token_children:
-                if i + 1 == number_neighbors:
-                    NEIGHBORS = NEIGHBORS + str(child.i)
-                else:
-                    NEIGHBORS = NEIGHBORS + str(child.i) + " "
-                i += 1
-            token_number +=1
-            result.append(NEIGHBORS)
-        return result    
-
-    def handle_neighbors_tree_order_multigraph_and_self(self, sentence):
-        token_number = 0
-        num_tokens = len(sentence)
-        result = []
-        for token in sentence:            
-            token_children = self.list_neighbors_multi_graph(sentence, token_number, num_tokens, token.children) 
-            token_children.append(token) # Add self-loop           
-            number_neighbors = len(list(token_children))
-            i = 0
-            NEIGHBORS = ""           
-            for child in token_children:
-                if i + 1 == number_neighbors:
-                    NEIGHBORS = NEIGHBORS + str(child.i)
-                else:
-                    NEIGHBORS = NEIGHBORS + str(child.i) + " "
-                i += 1
-            token_number +=1
-            result.append(NEIGHBORS)
-        return result
-
-    def POS_as_tag(self, token):
-        index = self.pos_types.index(token.tag_) if token.tag_ in self.pos_types else 99
-        return index
-
-    def DEP_as_tag(self, token):
-        index = self.dep_types.index(token.dep_) if token.dep_ in self.dep_types else 99
-        return index
-
-    def composition_as_tag(self, token):
-        dep = self.dep_types.index(token.dep_) if token.dep_ in self.dep_types else 99
-        pos = self.pos_types.index(token.tag_) if token.tag_ in self.pos_types else 99
-        
-        composition = (dep * 100) + pos
-        return composition
-
-    def composition_as_tag_inverted(self, token):
-        dep = self.dep_types.index(token.dep_) if token.dep_ in self.dep_types else 99
-        pos = self.pos_types.index(token.tag_) if token.tag_ in self.pos_types else 99
-        
-        composition = (pos * 100) + dep
-        return composition
-
-    def sqrt_of_product_node_tag(self, token):
-        dep = self.dep_types.index(token.dep_) if token.dep_ in self.dep_types else 99
-        pos = self.pos_types.index(token.tag_) if token.tag_ in self.pos_types else 99
-        
-        composition = math.ceil((dep*pos)**1/2)
-        return composition
-
-    def distance_as_tag(self, token):
-        def calculate_distance(limit, x, y):
-            # Calculate distance of the point to the orgin
-            d1 = self.distance(0,x,0,y)
-            # Calculate distance to the point above (max(X)+1, max(Y)+1)
-            d2 = self.distance(limit[0]+1,x,limit[1]+1,y)
-            # Calculate difference between the distances
-            d = d1 - d2
-
-            return d
-        
-        dep = self.dep_types.index(token.dep_)
-        pos = self.pos_types.index(token.tag_)
-    
-        tag = self.distances_sorted.index(calculate_distance([len(self.dep_types)-1,len(self.pos_types)-1],dep,pos))
-        return tag
-
     def build_nodes(self, sentences):
         # This method must generate the following line:
         # [t (tag)] [m (number of neighbors)] [EACH_NEIGHBOR_NUMBER] [d (node features)]
@@ -336,43 +130,15 @@ class DatasetGenerator():
         sentence_parsed = []
         root_children = []
         for sentence in sentences:
-            if self.graph_mode == "tree_only":
-                parcial_neighbor = self.handle_neighbors_tree_only(sentence)
-            elif self.graph_mode == "tree_and_order":
-                parcial_neighbor = self.handle_neighbors_tree_and_order(sentence)
-            elif self.graph_mode == "tree_and_order_multi_graph":
-                parcial_neighbor = self.handle_neighbors_tree_and_order_multi_graph(sentence)
-                #### New Addition (After NAACL 2022 Submission) ####
-            elif self.graph_mode == "tree_and_self":
-                parcial_neighbor = self.handle_neighbors_tree_and_self(sentence)
-            elif self.graph_mode == "tree_order_and_self":
-                parcial_neighbor = self.handle_neighbors_tree_order_and_self(sentence)
-            elif self.graph_mode == "tree_order_multigraph_and_self":
-                parcial_neighbor = self.handle_neighbors_tree_order_multigraph_and_self(sentence)
-
+            # Build Sentence using the GraphRepresentation class
+            parcial_neighbor = self.graphs.build_graph(sentence)
             i = 0
             for token in sentence:
-                number_neighbors = len(list(token.children))
-
                 if token.dep_ == "ROOT":
                     # Save the root children to create the root node at the end of the process
                     root_children.append(token.i)
-
-                if self.tag_mode == "none":
-                    TAG = "0"
-                elif self.tag_mode == "dep":
-                    TAG = str(self.DEP_as_tag(token))
-                elif self.tag_mode == "pos":
-                    TAG = str(self.POS_as_tag(token))
-                elif self.tag_mode == "dep-pos":
-                    TAG = str(self.composition_as_tag(token))
-                elif self.tag_mode == "pos-dep":
-                    TAG = str(self.composition_as_tag_inverted(token))
-                elif self.tag_mode == "sqrt_product":
-                    TAG = str(self.sqrt_of_product_node_tag(token))
-                    #### New Addition (After NAACL 2022 Submission) ####
-                elif self.tag_mode == "distance":
-                    TAG = str(self.distance_as_tag(token))
+                # Build tag using the Tags class.
+                TAG = self.tags.build_tag(token)
 
                 NEIGHBORS = parcial_neighbor[i]
                 NUMBER_NEIGHBORS = str(len(NEIGHBORS.split(" "))) if NEIGHBORS != '' else '0'
