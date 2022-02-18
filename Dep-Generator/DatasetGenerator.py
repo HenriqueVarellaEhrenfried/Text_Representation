@@ -133,6 +133,9 @@ class DatasetGenerator():
             # Build Sentence using the GraphRepresentation class
             parcial_neighbor = self.graphs.build_graph(sentence)
             i = 0
+
+            # TODO: Validar se o word embedding está certo, parece-me que estou atribuindo se considerar a palavra da árvore
+
             for token in sentence:
                 if token.dep_ == "ROOT":
                     # Save the root children to create the root node at the end of the process

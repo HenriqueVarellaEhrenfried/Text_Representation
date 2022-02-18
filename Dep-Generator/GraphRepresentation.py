@@ -22,6 +22,8 @@ class GraphRepresentation():
             parcial_neighbor = self.order_only(sentence)
         elif self.graph_mode == "order_circular":
             parcial_neighbor = self.order_circular(sentence)
+        elif self.graph_mode == "order_rearranged":
+            parcial_neighbor = self.order_rearranged(sentence)
         
         return parcial_neighbor
 
@@ -89,18 +91,20 @@ class GraphRepresentation():
         num_tokens = len(sentence)
         result = []
 
-        for token in sentence:            
+        for token in sentence:   
             token_children = list(token.children)
             number_neighbors = len(list(token_children))
             i = 0
             NEIGHBORS = ""           
             for child in token_children:
+                print("TOKEN >>", token, "\t\tCHILD >>", child)
                 if i + 1 == number_neighbors:
                     NEIGHBORS = NEIGHBORS + str(child.i)
                 else:
                     NEIGHBORS = NEIGHBORS + str(child.i) + " "
                 i += 1
             token_number +=1
+            
             result.append(NEIGHBORS)
         return result
 
@@ -205,10 +209,44 @@ class GraphRepresentation():
         return result
         
 
-    def order_rearranged(self):
+    def order_rearranged(self, sentence):
         ## This method uses only the order of the word after we rearrange it by its syntatical information
+        def return_child(token, token_list):
+            """
+            Build the token order (similar to binary tree reading)
+            """
+            if len(list(token.children)) == 0:
+                token_list.append(token)
+                return token_list
+            else:
+                token_list.append(token)
+                for chd in list(token.children):
+                    return_child(chd, token_list)
+                return token_list
+
+
         print(" ----- | WIP | -----")
-     
+        result = []
+        tree = []
+        root = None
+        for token in sentence:
+            if token.dep_ == 'ROOT':
+                root = token
+        
+        tree = return_child(root, tree)
+        
+        ordering = {}
+        for i in range(0,len(tree)):
+            if i+1 < len(tree):
+                ordering[tree[i].i] = str(tree[i+1].i)
+            else:
+                ordering[tree[i].i] = ""
+
+        for i in range(0, len(ordering)):
+            NEIGHBORS = "%s" % (ordering[i])
+            result.append(NEIGHBORS)
+        return result
+
         print("--------------------")
 
     def graph_of_word(self):
