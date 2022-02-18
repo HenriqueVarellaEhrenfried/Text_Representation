@@ -12,10 +12,14 @@ class Test():
         self.nlp = spacy.load(SPACY_MODEL)
 
         self.tag_mode = "dep"
-        self.graph_mode = "order_circular"
+        self.graph_mode = "order_rearranged"
 
         self.pos_types = list(self.nlp.get_pipe("tagger").labels)
         self.pos_types.append('_SP')
+
+        # self.pos_types = ['ADP', 'VERB', 'AUX', 'DET', 'X', 'INTJ', 'NUM', 'SCONJ', 'PROPN', 'CCONJ', 'NOUN', 'ADJ', 'SYM', 'PUNCT', 'PRON', 'PART', 'ADV']
+        # self.pos_types.append('SPACE')
+
         self.dep_types = list(self.nlp.get_pipe("parser").labels)   
 
         self.la = LinearAlgebra()
@@ -25,7 +29,9 @@ class Test():
 
         self.graphs = GraphRepresentation(self.graph_mode)
 
-        file_content = "I would like to present now"
+        # file_content = "I would like to present now"
+        file_content = "Could you please help me with my homework ?"
+        # file_content = "Você pode me ajudar a programar ?"
 
         doc = self.nlp(file_content)
         sentences = self.separe_sentences(doc)  
@@ -54,13 +60,6 @@ class Test():
         ROOT_NAME = "@#|ROOT|#@"
         sentence_parsed = []
         root_children = []
-        # graph_mode = "tree_only"
-        # graph_mode = "tree_and_order"
-        # graph_mode = "tree_and_order_multi_graph"
-
-        # graph_mode = "tree_and_self"
-        # graph_mode = "tree_order_and_self"
-        
         
         for sentence in sentences:
             parcial_neighbor = self.graphs.build_graph(sentence)
@@ -78,7 +77,7 @@ class Test():
 
                 NEIGHBORS = parcial_neighbor[i]
                 NUMBER_NEIGHBORS = str(len(NEIGHBORS.split(" "))) if NEIGHBORS != '' else '0'
-            
+
                 NODE_FEATURES = "FEATURES"
                 
                 if NEIGHBORS != "":
