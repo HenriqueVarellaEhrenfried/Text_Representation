@@ -1,7 +1,12 @@
+from Trees import Tree
+
 class GraphRepresentation():
-    def __init__(self, graph_mode):
+    def __init__(self, graph_mode, dep_pos_types, la):
         # Parameters passed
         self.graph_mode = graph_mode
+        self.dep_types = dep_pos_types[0]
+        self.pos_types = dep_pos_types[1]
+        self.la = la
     
     def build_graph(self, sentence):
         if self.graph_mode == "tree_only":
@@ -24,6 +29,9 @@ class GraphRepresentation():
             parcial_neighbor = self.order_circular(sentence)
         elif self.graph_mode == "order_rearranged":
             parcial_neighbor = self.order_rearranged(sentence)
+        # Totally different idea
+        elif self.graph_mode == "binary_tree":
+            parcial_neighbor = self.generate_binary_tree(sentence)
         
         return parcial_neighbor
 
@@ -249,9 +257,54 @@ class GraphRepresentation():
 
         print("--------------------")
 
-    def graph_of_word(self):
+    def generate_binary_tree(self,sentence):
         ## This method creates a graph of word from the sentence
+        ## TODO: Finish this representation model
         print(" ----- | WIP | -----")
-     
-        print("--------------------")
+        tree = Tree()
+        elements = []
+        for token in sentence:
+            temp = {}
+            temp["id"] = token.i
+            # Using Distance first
+            dep = self.dep_types.index(token.dep_)
+            pos = self.pos_types.index(token.tag_)
+            temp["value"] = self.la.distances_sorted.index(self.la.distance_difference(dep,pos,[len(self.dep_types)-1,len(self.pos_types)-1]))
 
+            tree.insert(temp)
+            temp["token"] = token.text
+            elements.append(temp)
+
+        print("~~~~~~~~~~~~~~~~~~~~~")
+        results = tree.defineNeighborsByID(tree.root, {})
+        print("-----ELEMENTS-----")
+        print(elements)
+        print("-----TREE-------")
+        print(results)
+        print("--------------------")
+        # TODO return correct format
+
+
+
+#  """
+#       IDEAS:
+#         Usar uma estrutura de árvore junto com POS/DEP/Distância
+#         Ver qual árvore se enquadra melhor - Binária Red-Black / B / B+ / Patrícia
+#         - Provavelmente será uma árvore Patrícia
+#         - Explorar outras árvores
+
+#         Basicamente vamos pegar o atributo POS/DEP/Distância de cada palavra e 
+#         mapear para a árvore escolhida. 
+
+#         IMPORTANTE precisa ter um jeito de colocar o TAG, portanto a ligação
+#         de cada nó deve ser descoberto e depois mapeado para o formato original da
+#         sentença. Assim como feito no order_rearranged 
+
+#         ---
+
+#         Outra ideia
+#         Fazer as árvores de dependência e linkar o último nó com o  primeiro, porque 
+#         nós humanos as vezes precisamos reler uma sentença para entender, então se
+#         eu adicionar um loop numa árvore, tirando as propriedades de árvore, pode ser
+#         que melhore o desempenho.
+# """

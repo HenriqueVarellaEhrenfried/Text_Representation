@@ -42,7 +42,7 @@ class DatasetGenerator():
 
         # Initialize other classes
         self.la.initialize(list(range(0,len(self.dep_types))),list(range(0,len(self.pos_types))))
-        self.graphs = GraphRepresentation(self.graph_mode)
+        self.graphs = GraphRepresentation(self.graph_mode, [self.dep_types, self.pos_types], self.la)
         self.tags = Tags(self.tag_mode, self.la, self.pos_types, self.dep_types)
 
         # States

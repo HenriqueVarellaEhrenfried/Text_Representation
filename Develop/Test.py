@@ -12,7 +12,7 @@ class Test():
         self.nlp = spacy.load(SPACY_MODEL)
 
         self.tag_mode = "dep"
-        self.graph_mode = "order_rearranged"
+        self.graph_mode = "binary_tree"
 
         self.pos_types = list(self.nlp.get_pipe("tagger").labels)
         self.pos_types.append('_SP')
@@ -27,7 +27,7 @@ class Test():
 
         self.tags = Tags(self.tag_mode, self.la, self.pos_types, self.dep_types)
 
-        self.graphs = GraphRepresentation(self.graph_mode)
+        self.graphs = GraphRepresentation(self.graph_mode, [self.dep_types, self.pos_types], self.la)
 
         # file_content = "I would like to present now"
         file_content = "Could you please help me with my homework ?"
