@@ -14,18 +14,18 @@ class Tree():
 
     
     def insert(self, data):
-        print("Inserting: ", data)
+        # print("Inserting: ", data)
         if self.type == "Binary":
             self.insertBinaryTree(self.root, data)
         
     def insertBinaryTree(self, node, data):
-        print(">> Debugging (node, data): ",  node, " |", data )
+        # print(">> Debugging (node, data): ",  node, " |", data )
         if node.data == None:
             node.data = data["value"]
             node.id = data["id"]
             node.left = BinaryNode()
             node.right = BinaryNode()  
-            print("Node inserted !",node)          
+            # print("Node inserted !",node)          
         else:
             if data["value"] < node.data:
                 self.insertBinaryTree(node.left, data)
@@ -34,7 +34,7 @@ class Tree():
     
     def defineNeighborsByData(self, node, neighbors={}):
         """
-        Returns a dictionary where the value of the node is the
+        Returns a dictionary where the value of the node is the key
         """
         if node.data != None:
             neighbors[node.data] = []
@@ -45,7 +45,7 @@ class Tree():
         return neighbors
     def defineNeighborsByID(self, node, neighbors={}):
         """
-        Returns a dictionary where the id of the node is the
+        Returns a dictionary where the id of the node is the key
         """
         if node.data != None:
             neighbors[node.id] = []

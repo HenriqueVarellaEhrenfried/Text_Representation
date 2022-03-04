@@ -259,8 +259,24 @@ class GraphRepresentation():
 
     def generate_binary_tree(self,sentence):
         ## This method creates a graph of word from the sentence
-        ## TODO: Finish this representation model
-        print(" ----- | WIP | -----")
+        def return_strings(tree):
+            """Receives the result of Tree.defineNeighborsByID"""
+            function_result = []
+            for key in sorted(tree):
+                data = tree[key]
+                neighbor_left = str(data[0]["id"]) if data[0]["id"] != None else data[0]["id"]
+                neighbor_right =str(data[1]["id"]) if data[1]["id"] != None else data[1]["id"]
+                if neighbor_left and neighbor_right:
+                    function_result.append(neighbor_left + " " + neighbor_right)
+                elif neighbor_left and not neighbor_right:
+                    function_result.append(neighbor_left)
+                elif not neighbor_left and neighbor_right:
+                    function_result.append(neighbor_right)
+                else:
+                    function_result.append('')
+            return function_result
+
+
         tree = Tree()
         elements = []
         for token in sentence:
@@ -275,15 +291,14 @@ class GraphRepresentation():
             temp["token"] = token.text
             elements.append(temp)
 
-        print("~~~~~~~~~~~~~~~~~~~~~")
+        # print("~~~~~~~~~~~~~~~~~~~~~")
         results = tree.defineNeighborsByID(tree.root, {})
-        print("-----ELEMENTS-----")
-        print(elements)
-        print("-----TREE-------")
-        print(results)
-        print("--------------------")
-        # TODO return correct format
-
+        return  return_strings(results)
+        # print("-----ELEMENTS-----")
+        # print(elements)
+        # print("-----TREE-------")
+        # print(results)
+        # print("--------------------")
 
 
 #  """
