@@ -27,12 +27,13 @@ class GraphRepresentation():
             parcial_neighbor = self.order_only(sentence)
         elif self.graph_mode == "order_circular":
             parcial_neighbor = self.order_circular(sentence)
-        elif self.graph_mode == "order_rearranged":
-            parcial_neighbor = self.order_rearranged(sentence)
         # Totally different idea
         elif self.graph_mode == "binary_tree":
             parcial_neighbor = self.generate_binary_tree(sentence)
         
+        else:
+            print("!!! ATTENTION !!! >>> Graph mode unavailable")
+
         return parcial_neighbor
 
 
@@ -189,10 +190,10 @@ class GraphRepresentation():
             NEIGHBORS = ""
             if token_index < (num_tokens):    
                 if token_index + 1 != num_tokens:
-                    print("DEBUG >>", token.text , '| Now:', token_index, 'Next:' , token_index+1)
+                    # print("DEBUG >>", token.text , '| Now:', token_index, 'Next:' , token_index+1)
                     NEIGHBORS = NEIGHBORS + str(token_index+1)
-                else:
-                    print("DEBUG >>", token.text , '| Now:', token_index, 'Next:' )
+                # else:
+                    # print("DEBUG >>", token.text , '| Now:', token_index, 'Next:' )
             token_index +=1
             token_number +=1
             result.append(NEIGHBORS)
@@ -208,7 +209,7 @@ class GraphRepresentation():
         for token in sentence:   
             NEIGHBORS = ""
             if token_index < (num_tokens):   
-                print("DEBUG >>", token.text , '| Now:', token_index, 'Next:' , (token_index+1)%num_tokens)
+                # print("DEBUG >>", token.text , '| Now:', token_index, 'Next:' , (token_index+1)%num_tokens)
                 NEIGHBORS = NEIGHBORS + str((token_index+1)%num_tokens)
 
             token_index +=1
@@ -216,47 +217,6 @@ class GraphRepresentation():
             result.append(NEIGHBORS)
         return result
         
-
-    def order_rearranged(self, sentence):
-        ## This method uses only the order of the word after we rearrange it by its syntatical information
-        def return_child(token, token_list):
-            """
-            Build the token order (similar to binary tree reading)
-            """
-            if len(list(token.children)) == 0:
-                token_list.append(token)
-                return token_list
-            else:
-                token_list.append(token)
-                for chd in list(token.children):
-                    return_child(chd, token_list)
-                return token_list
-
-
-        print(" ----- | WIP | -----")
-        result = []
-        tree = []
-        root = None
-        for token in sentence:
-            if token.dep_ == 'ROOT':
-                root = token
-        
-        tree = return_child(root, tree)
-        
-        ordering = {}
-        for i in range(0,len(tree)):
-            if i+1 < len(tree):
-                ordering[tree[i].i] = str(tree[i+1].i)
-            else:
-                ordering[tree[i].i] = ""
-
-        for i in range(0, len(ordering)):
-            NEIGHBORS = "%s" % (ordering[i])
-            result.append(NEIGHBORS)
-        return result
-
-        print("--------------------")
-
     def generate_binary_tree(self,sentence):
         ## This method creates a graph of word from the sentence
         def return_strings(tree):
