@@ -34,6 +34,7 @@ class DatasetGenerator():
             self.pos_types.append('_SP')
         if options.language == "de":
             self.pos_types = list(nlp.get_pipe("tagger").labels)
+            self.pos_types.append('_SP')
         elif options.language == "pt":
             self.pos_types = ['ADP', 'VERB', 'AUX', 'DET', 'X', 'INTJ', 'NUM', 'SCONJ', 'PROPN', 'CCONJ', 'NOUN', 'ADJ', 'SYM', 'PUNCT', 'PRON', 'PART', 'ADV']
             self.pos_types.append('SPACE')
