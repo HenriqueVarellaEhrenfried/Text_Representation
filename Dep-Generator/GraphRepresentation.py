@@ -106,7 +106,7 @@ class GraphRepresentation():
             i = 0
             NEIGHBORS = ""           
             for child in token_children:
-                print("TOKEN >>", token, "\t\tCHILD >>", child)
+                # print("TOKEN >>", token, "\t\tCHILD >>", child)
                 if i + 1 == number_neighbors:
                     NEIGHBORS = NEIGHBORS + str(child.i)
                 else:
