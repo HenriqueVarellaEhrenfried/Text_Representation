@@ -1,4 +1,5 @@
 import spacy 
+import json 
 
 def distancia(xa, xb, ya, yb):
     x = (xb - xa) ** 2
@@ -39,6 +40,33 @@ def verify(lang, X, Y):
     len_dist = len(distances)
     print("%s | Combination size = %d, Distance size = %d" % (lang, len_comb, len_dist))
 
+def view_positions(lang, X, Y, VECTORS):
+    combinations = combine(X,Y)
+    distances = calculate_all_distances(combinations)
+    distances_sorted = sorted(distances)
+    
+
+
+    results = {}
+
+    for comb in combinations:
+        current_x = VECTORS[lang]['X'][comb[0]]
+        current_y = VECTORS[lang]['Y'][comb[1]]
+        difference = distances[combinations.index(comb)]
+        position = distances_sorted.index(difference)
+
+        if not(current_x) in results:
+            results[current_x] = {current_y: {'x': comb[0], 'y': comb[1], 'sorted position': position, 'difference': difference}}
+        else:
+            results[current_x][current_y] = {'x': comb[0], 'y': comb[1],'sorted position': position, 'difference': difference}
+
+    return json.dumps(results,indent=2)
+
+def to_file(json, file):
+    file1 = open(file, "w")
+    file1.write(json)
+    file1.close()
+
 
 SPACY_MODEL_EN = "en_core_web_lg"
 SPACY_MODEL_PT = "pt_core_news_lg"
@@ -56,6 +84,15 @@ dep_types_pt = list(nlp_pt.get_pipe("parser").labels)
 dep_types_de = list(nlp_de.get_pipe("parser").labels)    
 
 pos_types_en.append('_SP')
+pos_types_de.append('_SP')
+pos_types_pt.append('SPACE')
+
+VECTORS={
+    "English":{'X': dep_types_en, 'Y': pos_types_en},
+    "Portuguese":{'X': dep_types_pt, 'Y': pos_types_pt},
+    "German":{'X': dep_types_de, 'Y': pos_types_de}
+}
+
 
 VERIFY_VALUES = [
     ["English", (list(range(0,len(dep_types_en)))), (list(range(0,len(pos_types_en))))],
@@ -64,3 +101,5 @@ VERIFY_VALUES = [
 ]
 for v in VERIFY_VALUES:
     verify(v[0],v[1],v[2])
+    r = view_positions(v[0],v[1],v[2], VECTORS)
+    to_file(r, v[0]+'_positions.json')
