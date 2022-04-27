@@ -1,0 +1,104 @@
+CASO 01
+DEP >> ['dative', 'dep', 'acl', 'case', 'det', 'advmod', 'pobj', 'nsubjpass', 'ROOT', 'compound', 'nsubj', 'pcomp', 'appos', 'nmod', 'amod', 'quantmod', 'ccomp', 'acomp', 'prt', 'neg', 'aux', 'meta', 'npadvmod', 'preconj', 'csubjpass', 'expl', 'nummod', 'attr', 'poss', 'prep', 'oprd', 'punct', 'advcl', 'agent', 'relcl', 'intj', 'csubj', 'cc', 'parataxis', 'auxpass', 'xcomp', 'predet', 'mark', 'conj', 'dobj']
+POS >> ['ADD', 'WRB', 'VBG', 'NN', 'WP', '_SP', 'VBP', 'JJ', 'NNPS', '$', 'TO', ':', 'POS', 'FW', 'NNS', 'CD', 'PRP$', 'IN', 'VBD', '-LRB-', 'EX', '.', 'RB', 'XX', 'AFX', 'DT', 'PRP', 'WP$', 'SYM', 'RP', 'PDT', 'RBS', 'RBR', ',', 'VBZ', 'VB', 'NFP', 'CC', 'JJR', "''", 'UH', 'MD', '``', 'HYPH', '-RRB-', 'NNP', 'VBN', 'JJS', 'WDT', 'LS']
+========================================
+['1 2', '7 3', '4', '6 5', '', '8', '', '', '']
+parcial_neighbor ['1 2', '7 3', '4', '6 5', '', '8', '', '', '']
+['0 2 1 2 FEATURES', '0 2 7 3 FEATURES', '0 1 4 FEATURES', '0 2 6 5 FEATURES', '0 0 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 0 FEATURES']
+['0 2 1 2 FEATURES', '0 2 7 3 FEATURES', '0 1 4 FEATURES', '0 2 6 5 FEATURES', '0 0 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 0 FEATURES']
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CASO 02
+DEP >> ['parataxis', 'csubjpass', 'preconj', 'dative', 'pcomp', 'conj', 'mark', 'prep', 'cc', 'predet', 'advcl', 'neg', 'dobj', 'punct', 'acl', 'xcomp', 'nsubjpass', 'expl', 'intj', 'auxpass', 'csubj', 'nmod', 'prt', 'attr', 'ccomp', 'ROOT', 'det', 'compound', 'case', 'poss', 'appos', 'aux', 'npadvmod', 'advmod', 'acomp', 'pobj', 'amod', 'nsubj', 'dep', 'oprd', 'meta', 'relcl', 'nummod', 'quantmod', 'agent']
+POS >> ["''", 'PRP', 'PRP$', 'NFP', 'RB', 'WP', 'ADD', '$', '``', 'WRB', 'UH', '.', 'XX', 'POS', 'CC', 'NNS', 'RBS', 'VBN', 'WDT', 'JJR', 'HYPH', 'TO', 'NNPS', 'SYM', 'EX', 'MD', 'CD', 'RBR', 'NN', 'WP$', 'VBD', 'AFX', ',', '-LRB-', 'VBP', 'VBG', 'VBZ', 'LS', 'DT', 'RP', '_SP', 'JJS', 'VB', 'JJ', 'PDT', ':', 'NNP', 'IN', 'FW', '-RRB-']
+========================================
+['1 3', '2 5', '4 6', '7', '8', '', '', '', '']
+parcial_neighbor ['1 3', '2 5', '4 6', '7', '8', '', '', '', '']
+['0 2 1 3 FEATURES', '0 2 2 5 FEATURES', '0 2 4 6 FEATURES', '0 1 7 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 0 FEATURES']
+['0 2 1 3 FEATURES', '0 2 2 5 FEATURES', '0 2 4 6 FEATURES', '0 1 7 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 0 FEATURES']
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CASO 03
+DEP >> ['aux', 'preconj', 'mark', 'intj', 'advmod', 'det', 'neg', 'csubjpass', 'npadvmod', 'pcomp', 'oprd', 'cc', 'prt', 'acomp', 'agent', 'amod', 'nsubj', 'prep', 'compound', 'dative', 'conj', 'auxpass', 'xcomp', 'advcl', 'relcl', 'poss', 'attr', 'csubj', 'nmod', 'appos', 'case', 'ROOT', 'expl', 'dep', 'acl', 'meta', 'parataxis', 'punct', 'nsubjpass', 'predet', 'nummod', 'pobj', 'dobj', 'ccomp', 'quantmod']
+POS >> ['PRP', '-RRB-', 'RP', 'VBZ', '``', 'RBS', 'JJS', 'IN', '-LRB-', ',', 'RBR', 'XX', '_SP', 'NNP', 'EX', 'MD', 'VBD', 'FW', 'TO', 'VBG', 'VBP', 'POS', 'DT', 'CD', 'JJR', 'CC', "''", 'NNS', 'VB', 'WP', 'NNPS', 'PRP$', 'NN', 'JJ', 'WDT', 'WP$', 'WRB', 'VBN', 'LS', 'NFP', 'UH', 'AFX', 'SYM', 'ADD', '.', ':', 'PDT', 'HYPH', 'RB', '$']
+========================================
+['1', '2', '4 3', '6 7', '5', '', '', '8', '']
+parcial_neighbor ['1', '2', '4 3', '6 7', '5', '', '', '8', '']
+['0 1 1 FEATURES', '0 1 2 FEATURES', '0 2 4 3 FEATURES', '0 2 6 7 FEATURES', '0 1 5 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES']
+['0 1 1 FEATURES', '0 1 2 FEATURES', '0 2 4 3 FEATURES', '0 2 6 7 FEATURES', '0 1 5 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES']
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CASO 04
+DEP >> ['expl', 'punct', 'pobj', 'det', 'npadvmod', 'oprd', 'dep', 'quantmod', 'dative', 'attr', 'prep', 'compound', 'auxpass', 'appos', 'csubj', 'csubjpass', 'poss', 'aux', 'acl', 'amod', 'preconj', 'prt', 'predet', 'dobj', 'relcl', 'conj', 'nummod', 'advmod', 'neg', 'advcl', 'intj', 'case', 'nsubjpass', 'agent', 'ROOT', 'ccomp', 'nmod', 'meta', 'pcomp', 'nsubj', 'acomp', 'mark', 'cc', 'xcomp', 'parataxis']
+POS >> ['NN', 'CD', 'WP', ',', 'WP$', '_SP', 'CC', 'PRP', 'WDT', '.', 'RB', 'PRP$', 'VBP', 'HYPH', 'VB', 'RBR', 'NNS', 'RBS', 'NNP', 'LS', 'RP', 'POS', 'XX', 'MD', 'JJ', 'ADD', 'VBG', 'VBZ', "''", 'AFX', 'VBD', '$', 'WRB', 'NNPS', '-RRB-', 'SYM', 'NFP', 'UH', '-LRB-', '``', 'JJS', 'TO', 'PDT', 'VBN', 'EX', 'IN', 'FW', 'JJR', ':', 'DT']
+========================================
+['4 1', '2', '3', '5', '6', '', '7', '8', '']
+parcial_neighbor ['4 1', '2', '3', '5', '6', '', '7', '8', '']
+['0 2 4 1 FEATURES', '0 1 2 FEATURES', '0 1 3 FEATURES', '0 1 5 FEATURES', '0 1 6 FEATURES', '0 0 FEATURES', '0 1 7 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES']
+['0 2 4 1 FEATURES', '0 1 2 FEATURES', '0 1 3 FEATURES', '0 1 5 FEATURES', '0 1 6 FEATURES', '0 0 FEATURES', '0 1 7 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES']
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CASO 05
+DEP >> ['preconj', 'xcomp', 'expl', 'quantmod', 'nsubj', 'pobj', 'ROOT', 'advcl', 'amod', 'oprd', 'dobj', 'det', 'acl', 'appos', 'ccomp', 'nummod', 'parataxis', 'csubj', 'relcl', 'auxpass', 'attr', 'agent', 'predet', 'prep', 'dative', 'case', 'mark', 'compound', 'aux', 'neg', 'poss', 'punct', 'dep', 'acomp', 'intj', 'nsubjpass', 'advmod', 'meta', 'pcomp', 'csubjpass', 'nmod', 'cc', 'conj', 'npadvmod', 'prt']
+POS >> ['RBS', '-RRB-', 'VBP', 'NFP', 'VBN', 'TO', 'VBZ', 'EX', 'XX', 'VBD', 'LS', 'VBG', 'MD', '.', 'ADD', 'CD', "''", 'RBR', 'UH', 'NNPS', 'WRB', 'RP', 'POS', ',', 'JJ', 'CC', 'WP$', 'PDT', 'WDT', 'DT', 'HYPH', 'NNS', 'PRP', '_SP', 'VB', '``', 'AFX', 'PRP$', 'NNP', 'RB', 'JJS', '$', 'JJR', 'NN', 'FW', ':', 'IN', '-LRB-', 'WP', 'SYM']
+========================================
+['1 2', '', '3 5', '4', '8 7', '6', '', '', '']
+parcial_neighbor ['1 2', '', '3 5', '4', '8 7', '6', '', '', '']
+['0 2 1 2 FEATURES', '0 0 FEATURES', '0 2 3 5 FEATURES', '0 1 4 FEATURES', '0 2 8 7 FEATURES', '0 1 6 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 0 FEATURES']
+['0 2 1 2 FEATURES', '0 0 FEATURES', '0 2 3 5 FEATURES', '0 1 4 FEATURES', '0 2 8 7 FEATURES', '0 1 6 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 0 FEATURES']
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CASO 06
+DEP >> ['intj', 'xcomp', 'meta', 'agent', 'acl', 'nmod', 'dobj', 'dative', 'poss', 'nummod', 'relcl', 'dep', 'attr', 'ROOT', 'amod', 'parataxis', 'csubjpass', 'quantmod', 'pcomp', 'mark', 'aux', 'npadvmod', 'cc', 'appos', 'expl', 'preconj', 'nsubj', 'oprd', 'conj', 'pobj', 'compound', 'predet', 'csubj', 'det', 'prt', 'punct', 'ccomp', 'case', 'acomp', 'advcl', 'prep', 'auxpass', 'nsubjpass', 'advmod', 'neg']
+POS >> ['AFX', 'RBS', 'VBG', 'SYM', 'CD', 'CC', 'IN', 'RB', 'NN', 'WP$', "''", '.', 'NNPS', 'VB', 'POS', '_SP', 'RBR', ',', 'PDT', 'VBZ', 'RP', 'JJS', 'PRP$', 'JJ', '$', 'PRP', 'NNS', 'WRB', 'TO', 'XX', 'FW', 'WP', 'JJR', ':', '-RRB-', 'VBD', 'ADD', 'VBN', 'HYPH', 'DT', 'NFP', 'UH', 'MD', 'NNP', 'EX', 'LS', 'WDT', '``', '-LRB-', 'VBP']
+========================================
+['1', '2', '3 5', '4', '6 7', '8', '', '', '']
+parcial_neighbor ['1', '2', '3 5', '4', '6 7', '8', '', '', '']
+['0 1 1 FEATURES', '0 1 2 FEATURES', '0 2 3 5 FEATURES', '0 1 4 FEATURES', '0 2 6 7 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 0 FEATURES']
+['0 1 1 FEATURES', '0 1 2 FEATURES', '0 2 3 5 FEATURES', '0 1 4 FEATURES', '0 2 6 7 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 0 FEATURES']
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CASO 07
+DEP >> ['appos', 'prt', 'ccomp', 'oprd', 'mark', 'nmod', 'cc', 'predet', 'npadvmod', 'parataxis', 'xcomp', 'advmod', 'poss', 'dative', 'neg', 'pcomp', 'intj', 'auxpass', 'dobj', 'det', 'conj', 'expl', 'ROOT', 'amod', 'pobj', 'preconj', 'compound', 'relcl', 'agent', 'csubjpass', 'quantmod', 'csubj', 'acomp', 'prep', 'meta', 'nummod', 'punct', 'nsubjpass', 'acl', 'nsubj', 'advcl', 'dep', 'case', 'aux', 'attr']
+POS >> ['PRP$', 'JJS', 'RP', 'EX', 'NN', 'NNS', 'WP$', 'JJ', 'WP', '.', 'FW', 'VBN', '-LRB-', 'HYPH', "''", ',', 'PRP', 'RB', 'VBG', 'TO', '``', 'IN', 'NNP', 'RBR', 'PDT', 'POS', 'MD', 'JJR', '-RRB-', '_SP', 'RBS', 'CC', ':', 'SYM', 'CD', '$', 'VB', 'ADD', 'VBP', 'NFP', 'WRB', 'DT', 'NNPS', 'XX', 'VBZ', 'WDT', 'VBD', 'UH', 'AFX', 'LS']
+========================================
+['1', '4 2', '3', '5', '6 8', '', '7', '', '']
+parcial_neighbor ['1', '4 2', '3', '5', '6 8', '', '7', '', '']
+['0 1 1 FEATURES', '0 2 4 2 FEATURES', '0 1 3 FEATURES', '0 1 5 FEATURES', '0 2 6 8 FEATURES', '0 0 FEATURES', '0 1 7 FEATURES', '0 0 FEATURES', '0 0 FEATURES']
+['0 1 1 FEATURES', '0 2 4 2 FEATURES', '0 1 3 FEATURES', '0 1 5 FEATURES', '0 2 6 8 FEATURES', '0 0 FEATURES', '0 1 7 FEATURES', '0 0 FEATURES', '0 0 FEATURES']
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CASO 08
+DEP >> ['nsubj', 'csubjpass', 'xcomp', 'prt', 'relcl', 'case', 'dobj', 'oprd', 'parataxis', 'poss', 'acomp', 'nsubjpass', 'advmod', 'agent', 'cc', 'intj', 'aux', 'ROOT', 'advcl', 'csubj', 'preconj', 'appos', 'compound', 'amod', 'conj', 'neg', 'ccomp', 'meta', 'mark', 'npadvmod', 'nmod', 'predet', 'quantmod', 'dep', 'acl', 'nummod', 'expl', 'pcomp', 'det', 'punct', 'prep', 'attr', 'pobj', 'auxpass', 'dative']
+POS >> ['JJ', 'VBN', '_SP', 'HYPH', 'ADD', 'JJS', '$', 'JJR', 'FW', 'SYM', '``', '.', 'RB', 'IN', 'NNPS', 'RBS', 'WRB', 'AFX', '-RRB-', 'DT', 'WP$', 'LS', 'PRP$', 'RP', 'NFP', 'PRP', 'RBR', 'WDT', "''", 'TO', 'VBD', 'POS', 'NNP', 'WP', 'VB', 'VBG', 'VBZ', 'EX', ':', 'PDT', 'UH', 'NN', 'NNS', 'XX', '-LRB-', 'MD', 'CD', 'VBP', 'CC', ',']
+========================================
+['1 7', '2', '3', '4', '6 5', '8', '', '', '']
+parcial_neighbor ['1 7', '2', '3', '4', '6 5', '8', '', '', '']
+['0 2 1 7 FEATURES', '0 1 2 FEATURES', '0 1 3 FEATURES', '0 1 4 FEATURES', '0 2 6 5 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 0 FEATURES']
+['0 2 1 7 FEATURES', '0 1 2 FEATURES', '0 1 3 FEATURES', '0 1 4 FEATURES', '0 2 6 5 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 0 FEATURES']
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CASO 09
+DEP >> ['ccomp', 'poss', 'nmod', 'amod', 'case', 'oprd', 'xcomp', 'auxpass', 'nsubjpass', 'predet', 'advmod', 'appos', 'cc', 'quantmod', 'expl', 'relcl', 'dative', 'mark', 'nsubj', 'acomp', 'compound', 'intj', 'dobj', 'acl', 'prep', 'aux', 'agent', 'parataxis', 'pcomp', 'neg', 'nummod', 'det', 'punct', 'preconj', 'npadvmod', 'ROOT', 'csubjpass', 'attr', 'csubj', 'advcl', 'prt', 'meta', 'pobj', 'conj', 'dep']
+POS >> [',', 'FW', 'CC', 'AFX', 'JJS', 'JJ', '-LRB-', 'MD', '``', 'LS', 'DT', '.', "''", 'PRP', 'VBN', 'HYPH', 'NNPS', 'WP', 'WRB', 'UH', 'TO', 'RB', 'VBZ', 'VBP', 'WDT', 'PDT', '-RRB-', 'XX', 'PRP$', 'VB', 'EX', 'VBD', 'ADD', 'RBR', 'NFP', 'POS', 'CD', '_SP', 'NNS', 'IN', 'WP$', 'VBG', 'RP', ':', 'JJR', 'RBS', '$', 'SYM', 'NN', 'NNP']
+========================================
+['1 2', '', '4 3', '5 7', '6', '8', '', '', '']
+parcial_neighbor ['1 2', '', '4 3', '5 7', '6', '8', '', '', '']
+['0 2 1 2 FEATURES', '0 0 FEATURES', '0 2 4 3 FEATURES', '0 2 5 7 FEATURES', '0 1 6 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 0 FEATURES']
+['0 2 1 2 FEATURES', '0 0 FEATURES', '0 2 4 3 FEATURES', '0 2 5 7 FEATURES', '0 1 6 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES', '0 0 FEATURES', '0 0 FEATURES']
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CASO 10
+DEP >> ['intj', 'npadvmod', 'dative', 'agent', 'preconj', 'auxpass', 'xcomp', 'poss', 'punct', 'ccomp', 'pcomp', 'case', 'nmod', 'dobj', 'expl', 'nummod', 'acl', 'relcl', 'appos', 'mark', 'nsubjpass', 'amod', 'prep', 'aux', 'det', 'cc', 'parataxis', 'compound', 'advmod', 'dep', 'pobj', 'advcl', 'meta', 'predet', 'csubj', 'acomp', 'neg', 'quantmod', 'prt', 'oprd', 'nsubj', 'ROOT', 'csubjpass', 'attr', 'conj']
+POS >> ['PRP$', 'RP', 'PDT', '``', 'SYM', 'NNP', ',', 'NN', "''", 'FW', '-LRB-', 'VBD', 'HYPH', 'RBS', 'RB', 'EX', 'ADD', 'NNS', 'JJS', 'AFX', 'DT', 'MD', 'CC', 'TO', 'IN', 'LS', 'WP$', '_SP', '.', 'CD', 'POS', 'RBR', 'NNPS', '$', 'VBN', 'XX', 'WDT', 'VB', 'VBG', 'UH', '-RRB-', 'JJR', 'VBP', 'VBZ', 'PRP', 'NFP', 'WRB', ':', 'WP', 'JJ']
+========================================
+['2 1', '3', '6', '4', '5', '', '7', '8', '']
+parcial_neighbor ['2 1', '3', '6', '4', '5', '', '7', '8', '']
+['0 2 2 1 FEATURES', '0 1 3 FEATURES', '0 1 6 FEATURES', '0 1 4 FEATURES', '0 1 5 FEATURES', '0 0 FEATURES', '0 1 7 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES']
+['0 2 2 1 FEATURES', '0 1 3 FEATURES', '0 1 6 FEATURES', '0 1 4 FEATURES', '0 1 5 FEATURES', '0 0 FEATURES', '0 1 7 FEATURES', '0 1 8 FEATURES', '0 0 FEATURES']
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CASO ORIGINAL 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

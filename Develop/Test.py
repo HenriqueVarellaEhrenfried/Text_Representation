@@ -5,13 +5,14 @@ from GraphRepresentation import GraphRepresentation
 from LinearAlgebra import LinearAlgebra
 from Tags import Tags
 import spacy
+import random
 
 class Test():
     def __init__(self):
         SPACY_MODEL = "en_core_web_lg"
         self.nlp = spacy.load(SPACY_MODEL)
 
-        self.tag_mode = "dep"
+        self.tag_mode = "none"
         self.graph_mode = "binary_tree"
 
         self.pos_types = list(self.nlp.get_pipe("tagger").labels)
@@ -21,6 +22,13 @@ class Test():
         # self.pos_types.append('SPACE')
 
         self.dep_types = list(self.nlp.get_pipe("parser").labels)   
+
+        ## Code to randomize the DEP and POS positions - May affect Binary Tree
+        # random.shuffle(self.dep_types)
+        # random.shuffle(self.pos_types)
+
+        print('DEP >>', self.dep_types)
+        print('POS >>',  self.pos_types)
 
         self.la = LinearAlgebra()
         self.la.initialize(list(range(0,len(self.dep_types))),list(range(0,len(self.pos_types))))
@@ -32,6 +40,17 @@ class Test():
         # file_content = "I would like to present now"
         file_content = "Could you please help me with my homework ?"
         # file_content = "Você pode me ajudar a programar ?"
+        # file_content = """
+        # Characteristics of cholinergic neuroeffector transmission of ganglionic and aganglionic colon in Hirschsprung's disease.
+        # Differences in the release and content of acetylcholine and the alpha 2 adrenoceptor mediated interaction between noradrenergic and cholinergic neurons were investigated by neurochemical and pharmacological methods in aganglionic and ganglionic segments of isolated human colon taken from children suffering from Hirschsprung's disease.
+        # Both at rest and during transmural stimulation the release of acetylcholine was significantly higher in the spastic (aganglionic) segment than in the proximal dilated bowel.
+        # Significant differences were found in the tissue concentration of acetylcholine between ganglionic and aganglionic specimens.
+        # The pattern of response to transmural stimulation was also different in the spastic and dilated bowel.
+        # Transmural stimulation induced relaxation and contraction in ganglionic specimens but only contractions in aganglionic specimens.
+        # The sensitivity of the smooth muscle in the aganglionic portion to exogenous acetylcholine and to field stimulation was found to be higher than in the ganglionic portion.
+        # While noradrenaline added to the organ bath reduced the stimulation-evoked release of acetylcholine from spastic segments, via an alpha 2 adrenoceptor mediated process, yohimbine did not enhance the release.
+        # It is suggested that in Hirschsprung's disease the increased acetylcholine release, the enhanced sensitivity of smooth muscle cells to acetylcholine, and the lack of alpha 2 adrenoceptor mediated noradrenergic modulation of acetylcholine release from cholinergic interneurons might be responsible for the spasm of aganglionic segments.
+        # """
 
         doc = self.nlp(file_content)
         sentences = self.separe_sentences(doc)  
