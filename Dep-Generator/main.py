@@ -23,6 +23,7 @@ parser.add_option("-c", "--cores", dest="cores",  default='1', help="Number of C
 parser.add_option("-l", "--language", dest="language", default="en", help="Language to load auxiliary models")
 parser.add_option("-g", "--graph_mode", dest="graph_mode", default="tree_only", help="Type of graph to build")
 parser.add_option("-t", "--tag_mode", dest="tag_mode", default="none", help="Type of tag for nodes")
+parser.add_option("-S", "--shuffle_seed", dest="shuffle_seed", default="off", help="Shuffle POS and TAG nodes with seed provided")
 
 (options, args) = parser.parse_args()
 

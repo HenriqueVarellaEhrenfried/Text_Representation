@@ -41,6 +41,22 @@ class DatasetGenerator():
             
         self.dep_types = list(nlp.get_pipe("parser").labels)       
 
+        # Deal with shuffling dep and pos
+        if options.shuffle_seed != "off":
+            seed = int(options.shuffle_seed)
+            self.pos_types = self.shuffle_array(self.pos_types, seed)
+            self.dep_types = self.shuffle_array(self.dep_types, seed)
+            print("Seed:", seed, "generated \n >> POS:", self.pos_types, "\n >> DEP:", self.dep_types)
+            # Save info about shuffle
+            with open(self.output + "Info.txt", 'w') as f:
+                f.write("Shuffle seed: " + str(seed) + "\n")
+                f.write("POS: [" + ', '.join(self.pos_types) + "]\n")
+                f.write("DEP: [" + ', '.join(self.dep_types) + "]\n")
+        else:
+            with open(self.output + "Info.txt", 'w') as f:
+                f.write("POS: [" + ', '.join(self.pos_types) + "]\n")
+                f.write("DEP: [" + ', '.join(self.dep_types) + "]\n")
+
         # Initialize other classes
         self.la.initialize(list(range(0,len(self.dep_types))),list(range(0,len(self.pos_types))))
         self.graphs = GraphRepresentation(self.graph_mode, [self.dep_types, self.pos_types], self.la)
@@ -81,6 +97,13 @@ class DatasetGenerator():
   
 ###############################################################################
     # Useful methods
+    def shuffle_array(self, array, seed):
+        new_array = array.copy()
+        random.seed()
+        random.seed(seed)
+        random.shuffle(new_array)
+        random.seed()
+        return new_array
 
     def timestamp(self):
         now = datetime.now()

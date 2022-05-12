@@ -23,12 +23,12 @@ class Test():
 
         self.dep_types = list(self.nlp.get_pipe("parser").labels)   
 
-        ## Code to randomize the DEP and POS positions - May affect Binary Tree
-        # random.shuffle(self.dep_types)
-        # random.shuffle(self.pos_types)
+        self.seeds = [10, 20, 30, 40]
+        self.shuffled_pos_types = self.shuffles_array(self.pos_types, self.seeds)
+        self.shuffled_dep_types = self.shuffles_array(self.dep_types, self.seeds)
 
-        print('DEP >>', self.dep_types)
-        print('POS >>',  self.pos_types)
+        self.print_shuffled(self.shuffled_pos_types)
+        self.print_shuffled(self.shuffled_dep_types)
 
         self.la = LinearAlgebra()
         self.la.initialize(list(range(0,len(self.dep_types))),list(range(0,len(self.pos_types))))
@@ -59,6 +59,26 @@ class Test():
 
         print(self.build_nodes(sentences))
 
+    
+    def print_shuffled(self, array):
+        for a in array:
+            print(a)
+            print("\n")
+        
+    def shuffles_array(self, array, seeds):
+        output = []
+        output.append(array)
+        random.seed()
+        for s in seeds:
+            random.seed(s)
+            aux = array.copy()
+            random.shuffle(aux)
+            aux2 = aux.copy()
+            aux = array.copy()
+            output.append(aux2)
+            random.seed()
+        return output
+    
     def separe_sentences(self, doc):
             aux = []
             sentences = []

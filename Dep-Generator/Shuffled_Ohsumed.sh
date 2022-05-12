@@ -1,0 +1,4 @@
+python main.py -i ../Datasets/Ohsumed/Output-dataset/ -o ../Datasets/Ohsumed/Ohsumed-Binary-Tree-TAG-None-SH10 -n Ohsumed -s Train -d 300 -c 20 -l en -g binary_tree -t none -S 10;
+python main.py -i ../Datasets/Ohsumed/Output-dataset/ -o ../Datasets/Ohsumed/Ohsumed-Binary-Tree-TAG-None-SH20 -n Ohsumed -s Train -d 300 -c 20 -l en -g binary_tree -t none -S 20;
+python main.py -i ../Datasets/Ohsumed/Output-dataset/ -o ../Datasets/Ohsumed/Ohsumed-Binary-Tree-TAG-None-SH30 -n Ohsumed -s Train -d 300 -c 20 -l en -g binary_tree -t none -S 30;
+python main.py -i ../Datasets/Ohsumed/Output-dataset/ -o ../Datasets/Ohsumed/Ohsumed-Binary-Tree-TAG-None-SH40 -n Ohsumed -s Train -d 300 -c 20 -l en -g binary_tree -t none -S 40;
