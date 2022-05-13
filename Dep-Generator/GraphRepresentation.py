@@ -15,19 +15,16 @@ class GraphRepresentation():
             parcial_neighbor = self.handle_neighbors_tree_and_order(sentence)
         elif self.graph_mode == "tree_and_order_multi_graph":
             parcial_neighbor = self.handle_neighbors_tree_and_order_multi_graph(sentence)
-            #### New Addition (After NAACL 2022 Submission) ####
         elif self.graph_mode == "tree_and_self":
             parcial_neighbor = self.handle_neighbors_tree_and_self(sentence)
         elif self.graph_mode == "tree_order_and_self":
             parcial_neighbor = self.handle_neighbors_tree_order_and_self(sentence)
         elif self.graph_mode == "tree_order_multigraph_and_self":
             parcial_neighbor = self.handle_neighbors_tree_order_multigraph_and_self(sentence)
-            #### New Addition OTHER FORMATS ####
         elif self.graph_mode == "only_order":
             parcial_neighbor = self.order_only(sentence)
         elif self.graph_mode == "order_circular":
             parcial_neighbor = self.order_circular(sentence)
-        # Totally different idea
         elif self.graph_mode == "binary_tree":
             parcial_neighbor = self.generate_binary_tree(sentence)
         
@@ -95,7 +92,7 @@ class GraphRepresentation():
         return result
 
     def handle_neighbors_tree_only(self, sentence):
-        # This Funciont parses the text using the sPacy and build the neighbors from it
+        # This Funcion parses the text using the sPacy and build the neighbors from it
         token_number = 0
         num_tokens = len(sentence)
         result = []
@@ -106,7 +103,6 @@ class GraphRepresentation():
             i = 0
             NEIGHBORS = ""           
             for child in token_children:
-                # print("TOKEN >>", token, "\t\tCHILD >>", child)
                 if i + 1 == number_neighbors:
                     NEIGHBORS = NEIGHBORS + str(child.i)
                 else:
@@ -177,8 +173,6 @@ class GraphRepresentation():
             result.append(NEIGHBORS)
         return result
 
-    ### WIP: Below methods are being constructed    
-    ## TODO: Finish and test below methods
     def order_only(self, sentence):
         ## This method uses only the order of the word
         token_number = 0
@@ -190,10 +184,7 @@ class GraphRepresentation():
             NEIGHBORS = ""
             if token_index < (num_tokens):    
                 if token_index + 1 != num_tokens:
-                    # print("DEBUG >>", token.text , '| Now:', token_index, 'Next:' , token_index+1)
                     NEIGHBORS = NEIGHBORS + str(token_index+1)
-                # else:
-                    # print("DEBUG >>", token.text , '| Now:', token_index, 'Next:' )
             token_index +=1
             token_number +=1
             result.append(NEIGHBORS)
@@ -209,7 +200,6 @@ class GraphRepresentation():
         for token in sentence:   
             NEIGHBORS = ""
             if token_index < (num_tokens):   
-                # print("DEBUG >>", token.text , '| Now:', token_index, 'Next:' , (token_index+1)%num_tokens)
                 NEIGHBORS = NEIGHBORS + str((token_index+1)%num_tokens)
 
             token_index +=1
@@ -251,35 +241,5 @@ class GraphRepresentation():
             temp["token"] = token.text
             elements.append(temp)
 
-        # print("~~~~~~~~~~~~~~~~~~~~~")
         results = tree.defineNeighborsByID(tree.root, {})
         return  return_strings(results)
-        # print("-----ELEMENTS-----")
-        # print(elements)
-        # print("-----TREE-------")
-        # print(results)
-        # print("--------------------")
-
-
-#  """
-#       IDEAS:
-#         Usar uma estrutura de árvore junto com POS/DEP/Distância
-#         Ver qual árvore se enquadra melhor - Binária Red-Black / B / B+ / Patrícia
-#         - Provavelmente será uma árvore Patrícia
-#         - Explorar outras árvores
-
-#         Basicamente vamos pegar o atributo POS/DEP/Distância de cada palavra e 
-#         mapear para a árvore escolhida. 
-
-#         IMPORTANTE precisa ter um jeito de colocar o TAG, portanto a ligação
-#         de cada nó deve ser descoberto e depois mapeado para o formato original da
-#         sentença. Assim como feito no order_rearranged 
-
-#         ---
-
-#         Outra ideia
-#         Fazer as árvores de dependência e linkar o último nó com o  primeiro, porque 
-#         nós humanos as vezes precisamos reler uma sentença para entender, então se
-#         eu adicionar um loop numa árvore, tirando as propriedades de árvore, pode ser
-#         que melhore o desempenho.
-# """

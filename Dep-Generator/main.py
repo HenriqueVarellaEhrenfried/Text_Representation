@@ -59,9 +59,6 @@ dg = DatasetGenerator(nlp, options)
 # Run dataset generator
 dg.generate_dataset()
 
-## TODO: Make a way to allow the training and test dataset to be created with a single command
 
 
 print("Everything done")
-
-# python main.py -i ./Dataset/IDPT_2021/Alternative/Train_Tweets/ -o ./Output/IDPT_2021/Tweets -n IDPT_2021_Tweets -s Train -d 300 -c 20 -l pt

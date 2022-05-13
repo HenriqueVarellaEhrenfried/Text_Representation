@@ -21,7 +21,6 @@ class Tags():
             TAG = str(self.composition_as_tag_inverted(token))
         elif self.tag_mode == "sqrt_product":
             TAG = str(self.sqrt_of_product_node_tag(token))
-            #### New Addition (After NAACL 2022 Submission) ####
         elif self.tag_mode == "distance":
             TAG = str(self.distance_as_tag(token))
         return(TAG)

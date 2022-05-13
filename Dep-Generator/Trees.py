@@ -14,18 +14,15 @@ class Tree():
 
     
     def insert(self, data):
-        # print("Inserting: ", data)
         if self.type == "Binary":
             self.insertBinaryTree(self.root, data)
         
     def insertBinaryTree(self, node, data):
-        # print(">> Debugging (node, data): ",  node, " |", data )
         if node.data == None:
             node.data = data["value"]
             node.id = data["id"]
             node.left = BinaryNode()
             node.right = BinaryNode()  
-            # print("Node inserted !",node)          
         else:
             if data["value"] < node.data:
                 self.insertBinaryTree(node.left, data)
@@ -54,27 +51,3 @@ class Tree():
             self.defineNeighborsByID(node.left, neighbors)
             self.defineNeighborsByID(node.right, neighbors)
         return neighbors
-
-
-# tree = Tree()
-# tree.setType("Binary")
-# # elements = [5,2,6,1,10,8,7]
-
-# elements = [
-#     {"id":1, "value": 5},
-#     {"id":2, "value": 2},
-#     {"id":3, "value": 6},
-#     {"id":4, "value": 1},
-#     {"id":5, "value": 10},
-#     {"id":6, "value": 8},
-#     {"id":7, "value": 7},
-# ]
-
-# for element in elements:
-#     print(">> Inserting element:", element)
-#     tree.insert(element)
-
-# other_rep2 = tree.defineNeighborsByID(tree.root, {})
-# print("\n\n_____________________________________\n\n")
-# print(other_rep2)
-
