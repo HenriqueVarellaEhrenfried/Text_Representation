@@ -10,8 +10,8 @@ from DatasetGenerator import DatasetGenerator
 
 SET_OPTIONS = ['Both', 'Test', 'Train']
 LANGUAGES = ['en', 'pt', 'de']
-GRAPH_MODE = ['tree_only', 'tree_and_order', 'tree_and_order_multi_graph']
-TAG_MODE = ['none', 'dep', 'pos', 'dep-pos', 'pos-dep', 'sqrt_product']
+GRAPH_MODE = ['tree_only', 'tree_and_order', 'tree_and_order_multi_graph', 'tree_and_self', 'tree_order_and_self', 'tree_order_multigraph_and_self', 'only_order', 'order_circular','binary_tree']
+TAG_MODE = ['none', 'dep', 'pos', 'dep-pos', 'pos-dep', 'sqrt_product', 'distance']
 
 parser = OptionParser()
 parser.add_option("-i", "--input_path", dest="input_path", help="Set input path")
@@ -23,6 +23,7 @@ parser.add_option("-c", "--cores", dest="cores",  default='1', help="Number of C
 parser.add_option("-l", "--language", dest="language", default="en", help="Language to load auxiliary models")
 parser.add_option("-g", "--graph_mode", dest="graph_mode", default="tree_only", help="Type of graph to build")
 parser.add_option("-t", "--tag_mode", dest="tag_mode", default="none", help="Type of tag for nodes")
+parser.add_option("-S", "--shuffle_seed", dest="shuffle_seed", default="off", help="Shuffle POS and TAG nodes with seed provided")
 
 (options, args) = parser.parse_args()
 
@@ -58,9 +59,6 @@ dg = DatasetGenerator(nlp, options)
 # Run dataset generator
 dg.generate_dataset()
 
-## TODO: Make a way to allow the training and test dataset to be created with a single command
 
 
 print("Everything done")
-
-# python main.py -i ./Dataset/IDPT_2021/Alternative/Train_Tweets/ -o ./Output/IDPT_2021/Tweets -n IDPT_2021_Tweets -s Train -d 300 -c 20 -l pt

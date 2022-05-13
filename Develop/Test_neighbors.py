@@ -1,4 +1,8 @@
 import spacy
+import fasttext
+import fasttext.util
+import numpy as np
+from numpy import linalg as LA
 
 def separe_sentences(doc):
         aux = []
@@ -97,6 +101,75 @@ def handle_neighbors_tree_and_order_multi_graph(sentence):
         print(NEIGHBORS)
         result.append(NEIGHBORS)
     return result
+def handle_neighbors_tree_and_self(sentence):
+    print("Sentence:: ", sentence)
+    token_number = 0
+    num_tokens = len(sentence)
+    result = []
+    for token in sentence:            
+        print("Token ", token_number, ">> ", token)
+        token_children = list(token.children)
+        token_children.append(token) # Add self-loop
+        print("\tTOKEN CHILDREN >>", token_children)
+        number_neighbors = len(list(token_children))
+        i = 0
+        NEIGHBORS = ""           
+        for child in token_children:
+            if i + 1 == number_neighbors:
+                NEIGHBORS = NEIGHBORS + str(child.i)
+            else:
+                NEIGHBORS = NEIGHBORS + str(child.i) + " "
+            i += 1
+        token_number +=1
+        print(NEIGHBORS)
+        result.append(NEIGHBORS)
+    return result
+def handle_neighbors_tree_order_and_self(sentence):
+    print("Sentence:: ", sentence)
+    token_number = 0
+    num_tokens = len(sentence)
+    result = []
+    for token in sentence:            
+        print("Token ", token_number, ">> ", token)
+        token_children = list_neighbors(sentence, token_number, num_tokens, token.children)   
+        token_children.append(token) # Add self-loop        
+        print("\tTOKEN CHILDREN >>", token_children)
+        number_neighbors = len(list(token_children))
+        i = 0
+        NEIGHBORS = ""           
+        for child in token_children:
+            if i + 1 == number_neighbors:
+                NEIGHBORS = NEIGHBORS + str(child.i)
+            else:
+                NEIGHBORS = NEIGHBORS + str(child.i) + " "
+            i += 1
+        token_number +=1
+        print(NEIGHBORS)
+        result.append(NEIGHBORS)
+    return result    
+def handle_neighbors_tree_order_multigraph_and_self(sentence):
+    print("Sentence:: ", sentence)
+    token_number = 0
+    num_tokens = len(sentence)
+    result = []
+    for token in sentence:            
+        print("Token ", token_number, ">> ", token)
+        token_children = list_neighbors_multi_graph(sentence, token_number, num_tokens, token.children) 
+        token_children.append(token) # Add self-loop           
+        print("\tTOKEN CHILDREN >>", token_children)
+        number_neighbors = len(list(token_children))
+        i = 0
+        NEIGHBORS = ""           
+        for child in token_children:
+            if i + 1 == number_neighbors:
+                NEIGHBORS = NEIGHBORS + str(child.i)
+            else:
+                NEIGHBORS = NEIGHBORS + str(child.i) + " "
+            i += 1
+        token_number +=1
+        print(NEIGHBORS)
+        result.append(NEIGHBORS)
+    return result
 
 def token_information(token):
     # Text: The original word text.
@@ -162,8 +235,95 @@ def composition_as_tag(token):
     
     composition = (dep * 100) + pos
     return composition
+    
+# Not implemented in DatasetGenerator
+def composition_as_tag_2(token, number_neighbors=0):
+    pos_types = list(nlp.get_pipe("tagger").labels)
+    dep_types = list(nlp.get_pipe("parser").labels)
+    dep = dep_types.index(token.dep_)
+    pos = pos_types.index(token.tag_)
+    
+    composition = str(dep) + str(pos) + str(number_neighbors)
+    
+    return composition
 
-def build_nodes( sentences):
+# Not implemented in DatasetGenerator
+def composition_as_tag_3(token):
+    pos_types = list(nlp.get_pipe("tagger").labels)
+    dep_types = list(nlp.get_pipe("parser").labels)
+
+    dep = dep_types.index(token.dep_)
+    pos = pos_types.index(token.tag_)  
+    tag = dep*len(pos_types)+pos 
+
+    return tag
+
+# Not implemented in DatasetGenerator
+def composition_as_tag_4(token):
+    pos_types = list(nlp.get_pipe("tagger").labels)
+    dep_types = list(nlp.get_pipe("parser").labels)
+
+    dep = dep_types.index(token.dep_)
+    pos = pos_types.index(token.tag_)
+    tag = pos*len(dep_types)+dep
+    
+    return tag
+
+def distance_as_tag(token):
+    def distancia(xa, xb, ya, yb):
+        x = (xb - xa) ** 2
+        y = (yb - ya) ** 2
+        s = x + y 
+        d = s ** 0.5
+        return d 
+
+    def combine(set1, set2):
+        combinations = []
+        for s1 in set1:
+            for s2 in set2:
+                combinations.append([s1,s2])
+        return combinations
+
+    def calculate_all_distances(combinations):
+        distances = []
+        distances1 = []
+        distances2 = []
+
+        for i in range(0,len(combinations)):
+            comb = combinations[i]
+            # Calculate distance of the point to the orgin
+            distances1.append(distancia(0,(comb[0]),0,(comb[1])))
+            # Calculate distance to the point above (max(X)+1, max(Y)+1)
+            distances2.append(distancia((combinations[-1][0])+1,(comb[0]),(combinations[-1][1])+1,(comb[1])))
+            # Calculate difference between the distances
+            distances.append((distances1[i]-distances2[i]))
+
+        return distances
+
+    def calculate_distance(limit, x, y):
+        # Calculate distance of the point to the orgin
+        d1 = distancia(0,x,0,y)
+        # Calculate distance to the point above (max(X)+1, max(Y)+1)
+        d2 = distancia(limit[0]+1,x,limit[1]+1,y)
+        # Calculate difference between the distances
+        d = d1 - d2
+
+        return d
+    
+    pos_types = list(nlp.get_pipe("tagger").labels)
+    dep_types = list(nlp.get_pipe("parser").labels)
+
+    dep = dep_types.index(token.dep_)
+    pos = pos_types.index(token.tag_) 
+
+    combinations = combine(list(range(0,len(dep_types))),list(range(0,len(pos_types))))
+    distances = calculate_all_distances(combinations)
+    distances_sorted = sorted(distances)
+
+    tag = distances_sorted.index(calculate_distance([len(dep_types)-1,len(pos_types)-1],dep,pos))
+    return tag
+
+def build_nodes(sentences, fasttext_model):
     # This method must generate the following line:
     # [t (tag)] [m (number of neighbors)] [EACH_NEIGHBOR_NUMBER] [d (node features)]
     ROOT_NAME = "@#|ROOT|#@"
@@ -171,7 +331,11 @@ def build_nodes( sentences):
     root_children = []
     # graph_mode = "tree_only"
     # graph_mode = "tree_and_order"
-    graph_mode = "tree_and_order_multi_graph"
+    # graph_mode = "tree_and_order_multi_graph"
+
+    # graph_mode = "tree_and_self"
+    # graph_mode = "tree_order_and_self"
+    graph_mode = "tree_order_multigraph_and_self"
     
     for sentence in sentences:
         if graph_mode == "tree_only":
@@ -180,18 +344,26 @@ def build_nodes( sentences):
             parcial_neighbor = handle_neighbors_tree_and_order(sentence)
         elif graph_mode == "tree_and_order_multi_graph":
             parcial_neighbor = handle_neighbors_tree_and_order_multi_graph(sentence)
-       
+            ##### New addition above #####
+        elif graph_mode == "tree_and_self":
+            parcial_neighbor = handle_neighbors_tree_and_self(sentence)
+        elif graph_mode == "tree_order_and_self":
+            parcial_neighbor = handle_neighbors_tree_order_and_self(sentence)
+        elif graph_mode == "tree_order_multigraph_and_self":
+            parcial_neighbor = handle_neighbors_tree_order_multigraph_and_self(sentence)
+
         i = 0
         print("parcial_neighbor", parcial_neighbor)
         for token in sentence:
-            token_information(token)
+            # token_information(token)
             number_neighbors = len(list(token.children))
             
             if token.dep_ == "ROOT":
                 # Save the root children to create the root node at the end of the process
                 root_children.append(token.i)
 
-            TAG = "0"
+            TAG = str(distance_as_tag(token))
+
             NEIGHBORS = parcial_neighbor[i]
             NUMBER_NEIGHBORS = str(len(NEIGHBORS.split(" "))) if NEIGHBORS != '' else '0'
           
@@ -205,12 +377,34 @@ def build_nodes( sentences):
     return sentence_parsed
 
 
+
+def load_fasttext(language='en', dimension=300):
+    # English - Download model if it does not exist
+    fasttext.util.download_model(language, if_exists='ignore')
+    
+    model_to_load = 'cc.' + language + ".300.bin"
+
+    # Load the model
+    word_vectors = fasttext.load_model(model_to_load)
+    
+    # Change its dimension
+    if  dimension != 300:
+        fasttext.util.reduce_model(word_vectors, dimension)
+    
+    return word_vectors
+
+def get_vector(raw_word, model):
+    word = raw_word.lower()
+    return model.get_word_vector(word)
+
 SPACY_MODEL = "en_core_web_lg"
 nlp = spacy.load(SPACY_MODEL)
+fasttext_model = load_fasttext()
 
 # https://explosion.ai/demos/displacy?text=I%20would%20like%20to%20present%20now.%20Could%20you%20make%20it%20happen%3F&model=en_core_web_sm&cpu=0&cph=0
 # file_content = "I would like to present now. Could you make it happen?"
-file_content = "I would like to present now"
+# file_content = "I would like to present now"
+file_content = "I like pizza, I like NASCAR"
 
 doc = nlp(file_content)
 
@@ -220,5 +414,5 @@ explain(nlp)
 sentences = separe_sentences(doc)  
 print("========================================")
 
-print(build_nodes(sentences))
+print(build_nodes(sentences, fasttext_model))
 # print(handle_neighbors_tree_only(sentences[0]))

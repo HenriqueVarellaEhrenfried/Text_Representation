@@ -23,3 +23,10 @@ Datasets/MR/U2GNN-*/Train_MR.txt
 Datasets/MR/Parsed/*
 
 Datasets/Ohsumed/Output-dataset
+
+Datasets/B2W/
+Datasets/Ohsumed/*
+
+Develop/cc*
+
+Develop/__pycache__/

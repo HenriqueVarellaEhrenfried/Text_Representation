@@ -1,0 +1,3962 @@
+{
+  "ROOT": {
+    "ADP": {
+      "x": 0,
+      "y": 0,
+      "sorted position": 0,
+      "difference": -40.24922359499622
+    },
+    "VERB": {
+      "x": 0,
+      "y": 1,
+      "sorted position": 1,
+      "difference": -38.81205847478876
+    },
+    "AUX": {
+      "x": 0,
+      "y": 2,
+      "sorted position": 4,
+      "difference": -37.395431207184416
+    },
+    "DET": {
+      "x": 0,
+      "y": 3,
+      "sorted position": 7,
+      "difference": -36.0
+    },
+    "X": {
+      "x": 0,
+      "y": 4,
+      "sorted position": 11,
+      "difference": -34.62641583165593
+    },
+    "INTJ": {
+      "x": 0,
+      "y": 5,
+      "sorted position": 16,
+      "difference": -33.27531841800928
+    },
+    "NUM": {
+      "x": 0,
+      "y": 6,
+      "sorted position": 23,
+      "difference": -31.947331922020552
+    },
+    "SCONJ": {
+      "x": 0,
+      "y": 7,
+      "sorted position": 29,
+      "difference": -30.64306044943742
+    },
+    "PROPN": {
+      "x": 0,
+      "y": 8,
+      "sorted position": 36,
+      "difference": -29.36308338453881
+    },
+    "CCONJ": {
+      "x": 0,
+      "y": 9,
+      "sorted position": 45,
+      "difference": -28.107950630558946
+    },
+    "NOUN": {
+      "x": 0,
+      "y": 10,
+      "sorted position": 53,
+      "difference": -26.87817782917155
+    },
+    "ADJ": {
+      "x": 0,
+      "y": 11,
+      "sorted position": 63,
+      "difference": -25.674241641784498
+    },
+    "SYM": {
+      "x": 0,
+      "y": 12,
+      "sorted position": 73,
+      "difference": -24.496575181789318
+    },
+    "PUNCT": {
+      "x": 0,
+      "y": 13,
+      "sorted position": 83,
+      "difference": -23.345563690772494
+    },
+    "PRON": {
+      "x": 0,
+      "y": 14,
+      "sorted position": 93,
+      "difference": -22.22154055254967
+    },
+    "PART": {
+      "x": 0,
+      "y": 15,
+      "sorted position": 105,
+      "difference": -21.124783736376884
+    },
+    "ADV": {
+      "x": 0,
+      "y": 16,
+      "sorted position": 116,
+      "difference": -20.055512754639892
+    },
+    "SPACE": {
+      "x": 0,
+      "y": 17,
+      "sorted position": 128,
+      "difference": -19.013886210738214
+    }
+  },
+  "acl": {
+    "ADP": {
+      "x": 1,
+      "y": 0,
+      "sorted position": 2,
+      "difference": -38.35733730830886
+    },
+    "VERB": {
+      "x": 1,
+      "y": 1,
+      "sorted position": 3,
+      "difference": -37.495939354314345
+    },
+    "AUX": {
+      "x": 1,
+      "y": 2,
+      "sorted position": 6,
+      "difference": -36.24769483228792
+    },
+    "DET": {
+      "x": 1,
+      "y": 3,
+      "sorted position": 9,
+      "difference": -34.916587869151165
+    },
+    "X": {
+      "x": 1,
+      "y": 4,
+      "sorted position": 14,
+      "difference": -33.57304802432387
+    },
+    "INTJ": {
+      "x": 1,
+      "y": 5,
+      "sorted position": 20,
+      "difference": -32.237289891596156
+    },
+    "NUM": {
+      "x": 1,
+      "y": 6,
+      "sorted position": 26,
+      "difference": -30.91723746970178
+    },
+    "SCONJ": {
+      "x": 1,
+      "y": 7,
+      "sorted position": 34,
+      "difference": -29.616804843822806
+    },
+    "PROPN": {
+      "x": 1,
+      "y": 8,
+      "sorted position": 43,
+      "difference": -28.338291698104044
+    },
+    "CCONJ": {
+      "x": 1,
+      "y": 9,
+      "sorted position": 51,
+      "difference": -27.083236861047887
+    },
+    "NOUN": {
+      "x": 1,
+      "y": 10,
+      "sorted position": 60,
+      "difference": -25.85277052091159
+    },
+    "ADJ": {
+      "x": 1,
+      "y": 11,
+      "sorted position": 71,
+      "difference": -24.647775577962236
+    },
+    "SYM": {
+      "x": 1,
+      "y": 12,
+      "sorted position": 80,
+      "difference": -23.46896723033711
+    },
+    "PUNCT": {
+      "x": 1,
+      "y": 13,
+      "sorted position": 92,
+      "difference": -22.31693424892208
+    },
+    "PRON": {
+      "x": 1,
+      "y": 14,
+      "sorted position": 103,
+      "difference": -21.192161059998874
+    },
+    "PART": {
+      "x": 1,
+      "y": 15,
+      "sorted position": 114,
+      "difference": -20.095039762127684
+    },
+    "ADV": {
+      "x": 1,
+      "y": 16,
+      "sorted position": 127,
+      "difference": -19.02587674403481
+    },
+    "SPACE": {
+      "x": 1,
+      "y": 17,
+      "sorted position": 140,
+      "difference": -17.984896434096793
+    }
+  },
+  "acl:relcl": {
+    "ADP": {
+      "x": 2,
+      "y": 0,
+      "sorted position": 5,
+      "difference": -36.47076812334269
+    },
+    "VERB": {
+      "x": 2,
+      "y": 1,
+      "sorted position": 8,
+      "difference": -35.77708763999664
+    },
+    "AUX": {
+      "x": 2,
+      "y": 2,
+      "sorted position": 10,
+      "difference": -34.74816133136568
+    },
+    "DET": {
+      "x": 2,
+      "y": 3,
+      "sorted position": 15,
+      "difference": -33.5562570766601
+    },
+    "X": {
+      "x": 2,
+      "y": 4,
+      "sorted position": 19,
+      "difference": -32.29741666670089
+    },
+    "INTJ": {
+      "x": 2,
+      "y": 5,
+      "sorted position": 25,
+      "difference": -31.01538463926809
+    },
+    "NUM": {
+      "x": 2,
+      "y": 6,
+      "sorted position": 32,
+      "difference": -29.730957434303132
+    },
+    "SCONJ": {
+      "x": 2,
+      "y": 7,
+      "sorted position": 40,
+      "difference": -28.455026881130756
+    },
+    "PROPN": {
+      "x": 2,
+      "y": 8,
+      "sorted position": 48,
+      "difference": -27.193879042103376
+    },
+    "CCONJ": {
+      "x": 2,
+      "y": 9,
+      "sorted position": 57,
+      "difference": -25.95146633284506
+    },
+    "NOUN": {
+      "x": 2,
+      "y": 10,
+      "sorted position": 68,
+      "difference": -24.73045936596039
+    },
+    "ADJ": {
+      "x": 2,
+      "y": 11,
+      "sorted position": 78,
+      "difference": -23.532770027920616
+    },
+    "SYM": {
+      "x": 2,
+      "y": 12,
+      "sorted position": 90,
+      "difference": -22.3598279426677
+    },
+    "PUNCT": {
+      "x": 2,
+      "y": 13,
+      "sorted position": 102,
+      "difference": -21.212734116913257
+    },
+    "PRON": {
+      "x": 2,
+      "y": 14,
+      "sorted position": 115,
+      "difference": -20.09234991351643
+    },
+    "PART": {
+      "x": 2,
+      "y": 15,
+      "sorted position": 129,
+      "difference": -18.999350381330466
+    },
+    "ADV": {
+      "x": 2,
+      "y": 16,
+      "sorted position": 141,
+      "difference": -17.934257235255707
+    },
+    "SPACE": {
+      "x": 2,
+      "y": 17,
+      "sorted position": 154,
+      "difference": -16.89745993476621
+    }
+  },
+  "advcl": {
+    "ADP": {
+      "x": 3,
+      "y": 0,
+      "sorted position": 12,
+      "difference": -34.589892258425
+    },
+    "VERB": {
+      "x": 3,
+      "y": 1,
+      "sorted position": 13,
+      "difference": -33.95914472637279
+    },
+    "AUX": {
+      "x": 3,
+      "y": 2,
+      "sorted position": 17,
+      "difference": -33.06869036632051
+    },
+    "DET": {
+      "x": 3,
+      "y": 3,
+      "sorted position": 22,
+      "difference": -32.00649723366443
+    },
+    "X": {
+      "x": 3,
+      "y": 4,
+      "sorted position": 27,
+      "difference": -30.84689665786984
+    },
+    "INTJ": {
+      "x": 3,
+      "y": 5,
+      "sorted position": 33,
+      "difference": -29.6373438070911
+    },
+    "NUM": {
+      "x": 3,
+      "y": 6,
+      "sorted position": 41,
+      "difference": -28.405895799659508
+    },
+    "SCONJ": {
+      "x": 3,
+      "y": 7,
+      "sorted position": 49,
+      "difference": -27.169281155988266
+    },
+    "PROPN": {
+      "x": 3,
+      "y": 8,
+      "sorted position": 58,
+      "difference": -25.9378755538158
+    },
+    "CCONJ": {
+      "x": 3,
+      "y": 9,
+      "sorted position": 69,
+      "difference": -24.718429772469005
+    },
+    "NOUN": {
+      "x": 3,
+      "y": 10,
+      "sorted position": 79,
+      "difference": -23.51554718378874
+    },
+    "ADJ": {
+      "x": 3,
+      "y": 11,
+      "sorted position": 91,
+      "difference": -22.332501335874618
+    },
+    "SYM": {
+      "x": 3,
+      "y": 12,
+      "sorted position": 104,
+      "difference": -21.171702785643863
+    },
+    "PUNCT": {
+      "x": 3,
+      "y": 13,
+      "sorted position": 118,
+      "difference": -20.03497447243094
+    },
+    "PRON": {
+      "x": 3,
+      "y": 14,
+      "sorted position": 131,
+      "difference": -18.923719213912968
+    },
+    "PART": {
+      "x": 3,
+      "y": 15,
+      "sorted position": 144,
+      "difference": -17.839024510783428
+    },
+    "ADV": {
+      "x": 3,
+      "y": 16,
+      "sorted position": 156,
+      "difference": -16.781729913533376
+    },
+    "SPACE": {
+      "x": 3,
+      "y": 17,
+      "sorted position": 167,
+      "difference": -15.752471536806286
+    }
+  },
+  "advmod": {
+    "ADP": {
+      "x": 4,
+      "y": 0,
+      "sorted position": 18,
+      "difference": -32.71511950137164
+    },
+    "VERB": {
+      "x": 4,
+      "y": 1,
+      "sorted position": 21,
+      "difference": -32.11223623836921
+    },
+    "AUX": {
+      "x": 4,
+      "y": 2,
+      "sorted position": 24,
+      "difference": -31.304951684997057
+    },
+    "DET": {
+      "x": 4,
+      "y": 3,
+      "sorted position": 30,
+      "difference": -30.341194094144583
+    },
+    "X": {
+      "x": 4,
+      "y": 4,
+      "sorted position": 37,
+      "difference": -29.271644143653578
+    },
+    "INTJ": {
+      "x": 4,
+      "y": 5,
+      "sorted position": 44,
+      "difference": -28.136707840908237
+    },
+    "NUM": {
+      "x": 4,
+      "y": 6,
+      "sorted position": 52,
+      "difference": -26.964912430342142
+    },
+    "SCONJ": {
+      "x": 4,
+      "y": 7,
+      "sorted position": 62,
+      "difference": -25.775590883078713
+    },
+    "PROPN": {
+      "x": 4,
+      "y": 8,
+      "sorted position": 72,
+      "difference": -24.581837318481263
+    },
+    "CCONJ": {
+      "x": 4,
+      "y": 9,
+      "sorted position": 82,
+      "difference": -23.39268247539322
+    },
+    "NOUN": {
+      "x": 4,
+      "y": 10,
+      "sorted position": 94,
+      "difference": -22.214515390672275
+    },
+    "ADJ": {
+      "x": 4,
+      "y": 11,
+      "sorted position": 107,
+      "difference": -21.05197879759877
+    },
+    "SYM": {
+      "x": 4,
+      "y": 12,
+      "sorted position": 119,
+      "difference": -19.908530551525892
+    },
+    "PUNCT": {
+      "x": 4,
+      "y": 13,
+      "sorted position": 132,
+      "difference": -18.786798972667846
+    },
+    "PRON": {
+      "x": 4,
+      "y": 14,
+      "sorted position": 147,
+      "difference": -17.688811214633162
+    },
+    "PART": {
+      "x": 4,
+      "y": 15,
+      "sorted position": 159,
+      "difference": -16.616142663716367
+    },
+    "ADV": {
+      "x": 4,
+      "y": 16,
+      "sorted position": 170,
+      "difference": -15.570016581292155
+    },
+    "SPACE": {
+      "x": 4,
+      "y": 17,
+      "sorted position": 181,
+      "difference": -14.551371990591264
+    }
+  },
+  "amod": {
+    "ADP": {
+      "x": 5,
+      "y": 0,
+      "sorted position": 27,
+      "difference": -30.84689665786984
+    },
+    "VERB": {
+      "x": 5,
+      "y": 1,
+      "sorted position": 31,
+      "difference": -30.25631954573459
+    },
+    "AUX": {
+      "x": 5,
+      "y": 2,
+      "sorted position": 35,
+      "difference": -29.500362277890314
+    },
+    "DET": {
+      "x": 5,
+      "y": 3,
+      "sorted position": 39,
+      "difference": -28.607398820599826
+    },
+    "X": {
+      "x": 5,
+      "y": 4,
+      "sorted position": 47,
+      "difference": -27.611578465957052
+    },
+    "INTJ": {
+      "x": 5,
+      "y": 5,
+      "sorted position": 55,
+      "difference": -26.544404816077744
+    },
+    "NUM": {
+      "x": 5,
+      "y": 6,
+      "sorted position": 64,
+      "difference": -25.43129060128267
+    },
+    "SCONJ": {
+      "x": 5,
+      "y": 7,
+      "sorted position": 74,
+      "difference": -24.291443139754424
+    },
+    "PROPN": {
+      "x": 5,
+      "y": 8,
+      "sorted position": 86,
+      "difference": -23.139013817748058
+    },
+    "CCONJ": {
+      "x": 5,
+      "y": 9,
+      "sorted position": 97,
+      "difference": -21.984394642150946
+    },
+    "NOUN": {
+      "x": 5,
+      "y": 10,
+      "sorted position": 109,
+      "difference": -20.835281299665294
+    },
+    "ADJ": {
+      "x": 5,
+      "y": 11,
+      "sorted position": 121,
+      "difference": -19.697451190546836
+    },
+    "SYM": {
+      "x": 5,
+      "y": 12,
+      "sorted position": 135,
+      "difference": -18.575306807693888
+    },
+    "PUNCT": {
+      "x": 5,
+      "y": 13,
+      "sorted position": 148,
+      "difference": -17.472248659031045
+    },
+    "PRON": {
+      "x": 5,
+      "y": 14,
+      "sorted position": 160,
+      "difference": -16.390930468857064
+    },
+    "PART": {
+      "x": 5,
+      "y": 15,
+      "sorted position": 172,
+      "difference": -15.333434703952976
+    },
+    "ADV": {
+      "x": 5,
+      "y": 16,
+      "sorted position": 183,
+      "difference": -14.301394519777922
+    },
+    "SPACE": {
+      "x": 5,
+      "y": 17,
+      "sorted position": 196,
+      "difference": -13.296079691872297
+    }
+  },
+  "appos": {
+    "ADP": {
+      "x": 6,
+      "y": 0,
+      "sorted position": 38,
+      "difference": -28.9857113690718
+    },
+    "VERB": {
+      "x": 6,
+      "y": 1,
+      "sorted position": 42,
+      "difference": -28.399116768835114
+    },
+    "AUX": {
+      "x": 6,
+      "y": 2,
+      "sorted position": 46,
+      "difference": -27.67544467966324
+    },
+    "DET": {
+      "x": 6,
+      "y": 3,
+      "sorted position": 54,
+      "difference": -26.832815729997474
+    },
+    "X": {
+      "x": 6,
+      "y": 4,
+      "sorted position": 59,
+      "difference": -25.894788163565718
+    },
+    "INTJ": {
+      "x": 6,
+      "y": 5,
+      "sorted position": 67,
+      "difference": -24.88531577263698
+    },
+    "NUM": {
+      "x": 6,
+      "y": 6,
+      "sorted position": 77,
+      "difference": -23.825707468568453
+    },
+    "SCONJ": {
+      "x": 6,
+      "y": 7,
+      "sorted position": 88,
+      "difference": -22.73354616004803
+    },
+    "PROPN": {
+      "x": 6,
+      "y": 8,
+      "sorted position": 98,
+      "difference": -21.622776601683793
+    },
+    "CCONJ": {
+      "x": 6,
+      "y": 9,
+      "sorted position": 111,
+      "difference": -20.50426570033968
+    },
+    "NOUN": {
+      "x": 6,
+      "y": 10,
+      "sorted position": 125,
+      "difference": -19.386445602829447
+    },
+    "ADJ": {
+      "x": 6,
+      "y": 11,
+      "sorted position": 138,
+      "difference": -18.275879515357058
+    },
+    "SYM": {
+      "x": 6,
+      "y": 12,
+      "sorted position": 151,
+      "difference": -17.17770921655797
+    },
+    "PUNCT": {
+      "x": 6,
+      "y": 13,
+      "sorted position": 163,
+      "difference": -16.095991588214744
+    },
+    "PRON": {
+      "x": 6,
+      "y": 14,
+      "sorted position": 177,
+      "difference": -15.033945689115296
+    },
+    "PART": {
+      "x": 6,
+      "y": 15,
+      "sorted position": 189,
+      "difference": -13.99413244195916
+    },
+    "ADV": {
+      "x": 6,
+      "y": 16,
+      "sorted position": 200,
+      "difference": -12.978585266110755
+    },
+    "SPACE": {
+      "x": 6,
+      "y": 17,
+      "sorted position": 210,
+      "difference": -11.988905662287323
+    }
+  },
+  "aux": {
+    "ADP": {
+      "x": 7,
+      "y": 0,
+      "sorted position": 50,
+      "difference": -27.132096331752024
+    },
+    "VERB": {
+      "x": 7,
+      "y": 1,
+      "sorted position": 55,
+      "difference": -26.544404816077744
+    },
+    "AUX": {
+      "x": 7,
+      "y": 2,
+      "sorted position": 61,
+      "difference": -25.840880434077874
+    },
+    "DET": {
+      "x": 7,
+      "y": 3,
+      "sorted position": 66,
+      "difference": -25.03388232876511
+    },
+    "X": {
+      "x": 7,
+      "y": 4,
+      "sorted position": 75,
+      "difference": -24.140226627910685
+    },
+    "INTJ": {
+      "x": 7,
+      "y": 5,
+      "sorted position": 85,
+      "difference": -23.178171897098782
+    },
+    "NUM": {
+      "x": 7,
+      "y": 6,
+      "sorted position": 95,
+      "difference": -22.165165195657544
+    },
+    "SCONJ": {
+      "x": 7,
+      "y": 7,
+      "sorted position": 106,
+      "difference": -21.116629901929983
+    },
+    "PROPN": {
+      "x": 7,
+      "y": 8,
+      "sorted position": 117,
+      "difference": -20.045577487621284
+    },
+    "CCONJ": {
+      "x": 7,
+      "y": 9,
+      "sorted position": 130,
+      "difference": -18.96269865038657
+    },
+    "NOUN": {
+      "x": 7,
+      "y": 10,
+      "sorted position": 143,
+      "difference": -17.876662297248945
+    },
+    "ADJ": {
+      "x": 7,
+      "y": 11,
+      "sorted position": 155,
+      "difference": -16.794462969947297
+    },
+    "SYM": {
+      "x": 7,
+      "y": 12,
+      "sorted position": 169,
+      "difference": -15.721741800471891
+    },
+    "PUNCT": {
+      "x": 7,
+      "y": 13,
+      "sorted position": 180,
+      "difference": -14.663054878890922
+    },
+    "PRON": {
+      "x": 7,
+      "y": 14,
+      "sorted position": 192,
+      "difference": -13.622086494110366
+    },
+    "PART": {
+      "x": 7,
+      "y": 15,
+      "sorted position": 203,
+      "difference": -12.601814116979654
+    },
+    "ADV": {
+      "x": 7,
+      "y": 16,
+      "sorted position": 214,
+      "difference": -11.604634510924289
+    },
+    "SPACE": {
+      "x": 7,
+      "y": 17,
+      "sorted position": 225,
+      "difference": -10.632459946243582
+    }
+  },
+  "aux:pass": {
+    "ADP": {
+      "x": 8,
+      "y": 0,
+      "sorted position": 65,
+      "difference": -25.286633954186478
+    },
+    "VERB": {
+      "x": 8,
+      "y": 1,
+      "sorted position": 70,
+      "difference": -24.694420960019848
+    },
+    "AUX": {
+      "x": 8,
+      "y": 2,
+      "sorted position": 76,
+      "difference": -24.002819741958874
+    },
+    "DET": {
+      "x": 8,
+      "y": 3,
+      "sorted position": 84,
+      "difference": -23.220756603219648
+    },
+    "X": {
+      "x": 8,
+      "y": 4,
+      "sorted position": 89,
+      "difference": -22.360679774997898
+    },
+    "INTJ": {
+      "x": 8,
+      "y": 5,
+      "sorted position": 100,
+      "difference": -21.43671694880966
+    },
+    "NUM": {
+      "x": 8,
+      "y": 6,
+      "sorted position": 112,
+      "difference": -20.463092423455635
+    },
+    "SCONJ": {
+      "x": 8,
+      "y": 7,
+      "sorted position": 124,
+      "difference": -19.453072100247997
+    },
+    "PROPN": {
+      "x": 8,
+      "y": 8,
+      "sorted position": 137,
+      "difference": -18.41842899565225
+    },
+    "CCONJ": {
+      "x": 8,
+      "y": 9,
+      "sorted position": 149,
+      "difference": -17.36928776091319
+    },
+    "NOUN": {
+      "x": 8,
+      "y": 10,
+      "sorted position": 161,
+      "difference": -16.314191082256375
+    },
+    "ADJ": {
+      "x": 8,
+      "y": 11,
+      "sorted position": 173,
+      "difference": -15.26026887058818
+    },
+    "SYM": {
+      "x": 8,
+      "y": 12,
+      "sorted position": 186,
+      "difference": -14.21343702469675
+    },
+    "PUNCT": {
+      "x": 8,
+      "y": 13,
+      "sorted position": 197,
+      "difference": -13.178587784182037
+    },
+    "PRON": {
+      "x": 8,
+      "y": 14,
+      "sorted position": 208,
+      "difference": -12.159755750864804
+    },
+    "PART": {
+      "x": 8,
+      "y": 15,
+      "sorted position": 219,
+      "difference": -11.160255680657446
+    },
+    "ADV": {
+      "x": 8,
+      "y": 16,
+      "sorted position": 230,
+      "difference": -10.18279387523808
+    },
+    "SPACE": {
+      "x": 8,
+      "y": 17,
+      "sorted position": 239,
+      "difference": -9.229557224187865
+    }
+  },
+  "case": {
+    "ADP": {
+      "x": 9,
+      "y": 0,
+      "sorted position": 81,
+      "difference": -23.449961479175904
+    },
+    "VERB": {
+      "x": 9,
+      "y": 1,
+      "sorted position": 87,
+      "difference": -22.850727128950215
+    },
+    "AUX": {
+      "x": 9,
+      "y": 2,
+      "sorted position": 95,
+      "difference": -22.165165195657544
+    },
+    "DET": {
+      "x": 9,
+      "y": 3,
+      "sorted position": 101,
+      "difference": -21.400057442455864
+    },
+    "X": {
+      "x": 9,
+      "y": 4,
+      "sorted position": 110,
+      "difference": -20.564954849694995
+    },
+    "INTJ": {
+      "x": 9,
+      "y": 5,
+      "sorted position": 122,
+      "difference": -19.671017986556393
+    },
+    "NUM": {
+      "x": 9,
+      "y": 6,
+      "sorted position": 134,
+      "difference": -18.729919578996345
+    },
+    "SCONJ": {
+      "x": 9,
+      "y": 7,
+      "sorted position": 145,
+      "difference": -17.75300522323512
+    },
+    "PROPN": {
+      "x": 9,
+      "y": 8,
+      "sorted position": 157,
+      "difference": -16.75076551898364
+    },
+    "CCONJ": {
+      "x": 9,
+      "y": 9,
+      "sorted position": 168,
+      "difference": -15.73257688015756
+    },
+    "NOUN": {
+      "x": 9,
+      "y": 10,
+      "sorted position": 179,
+      "difference": -14.706631633583736
+    },
+    "ADJ": {
+      "x": 9,
+      "y": 11,
+      "sorted position": 191,
+      "difference": -13.67998095841081
+    },
+    "SYM": {
+      "x": 9,
+      "y": 12,
+      "sorted position": 201,
+      "difference": -12.658633371878661
+    },
+    "PUNCT": {
+      "x": 9,
+      "y": 13,
+      "sorted position": 212,
+      "difference": -11.647672134650067
+    },
+    "PRON": {
+      "x": 9,
+      "y": 14,
+      "sorted position": 224,
+      "difference": -10.651371150819124
+    },
+    "PART": {
+      "x": 9,
+      "y": 15,
+      "sorted position": 236,
+      "difference": -9.673299729876348
+    },
+    "ADV": {
+      "x": 9,
+      "y": 16,
+      "sorted position": 247,
+      "difference": -8.716412990675948
+    },
+    "SPACE": {
+      "x": 9,
+      "y": 17,
+      "sorted position": 255,
+      "difference": -7.783128110541249
+    }
+  },
+  "cc": {
+    "ADP": {
+      "x": 10,
+      "y": 0,
+      "sorted position": 98,
+      "difference": -21.622776601683793
+    },
+    "VERB": {
+      "x": 10,
+      "y": 1,
+      "sorted position": 108,
+      "difference": -21.014573512897243
+    },
+    "AUX": {
+      "x": 10,
+      "y": 2,
+      "sorted position": 113,
+      "difference": -20.330636017761925
+    },
+    "DET": {
+      "x": 10,
+      "y": 3,
+      "sorted position": 123,
+      "difference": -19.576355530696716
+    },
+    "X": {
+      "x": 10,
+      "y": 4,
+      "sorted position": 133,
+      "difference": -18.75931650619779
+    },
+    "INTJ": {
+      "x": 10,
+      "y": 5,
+      "sorted position": 142,
+      "difference": -17.88854381999832
+    },
+    "NUM": {
+      "x": 10,
+      "y": 6,
+      "sorted position": 152,
+      "difference": -16.973738336862105
+    },
+    "SCONJ": {
+      "x": 10,
+      "y": 7,
+      "sorted position": 165,
+      "difference": -16.024632811252506
+    },
+    "PROPN": {
+      "x": 10,
+      "y": 8,
+      "sorted position": 176,
+      "difference": -15.050528079502541
+    },
+    "CCONJ": {
+      "x": 10,
+      "y": 9,
+      "sorted position": 188,
+      "difference": -14.060008937321498
+    },
+    "NOUN": {
+      "x": 10,
+      "y": 10,
+      "sorted position": 198,
+      "difference": -13.060805393739937
+    },
+    "ADJ": {
+      "x": 10,
+      "y": 11,
+      "sorted position": 209,
+      "difference": -12.059755288354014
+    },
+    "SYM": {
+      "x": 10,
+      "y": 12,
+      "sorted position": 220,
+      "difference": -11.06282877643936
+    },
+    "PUNCT": {
+      "x": 10,
+      "y": 13,
+      "sorted position": 231,
+      "difference": -10.075185122890726
+    },
+    "PRON": {
+      "x": 10,
+      "y": 14,
+      "sorted position": 241,
+      "difference": -9.101242341846557
+    },
+    "PART": {
+      "x": 10,
+      "y": 15,
+      "sorted position": 250,
+      "difference": -8.144748279284855
+    },
+    "ADV": {
+      "x": 10,
+      "y": 16,
+      "sorted position": 260,
+      "difference": -7.20884735669739
+    },
+    "SPACE": {
+      "x": 10,
+      "y": 17,
+      "sorted position": 269,
+      "difference": -6.296140739199355
+    }
+  },
+  "ccomp": {
+    "ADP": {
+      "x": 11,
+      "y": 0,
+      "sorted position": 120,
+      "difference": -19.805843601498726
+    },
+    "VERB": {
+      "x": 11,
+      "y": 1,
+      "sorted position": 126,
+      "difference": -19.187071898474688
+    },
+    "AUX": {
+      "x": 11,
+      "y": 2,
+      "sorted position": 136,
+      "difference": -18.50130427181271
+    },
+    "DET": {
+      "x": 11,
+      "y": 3,
+      "sorted position": 145,
+      "difference": -17.75300522323512
+    },
+    "X": {
+      "x": 11,
+      "y": 4,
+      "sorted position": 153,
+      "difference": -16.94839765306918
+    },
+    "INTJ": {
+      "x": 11,
+      "y": 5,
+      "sorted position": 164,
+      "difference": -16.09495963361617
+    },
+    "NUM": {
+      "x": 11,
+      "y": 6,
+      "sorted position": 174,
+      "difference": -15.200885161582427
+    },
+    "SCONJ": {
+      "x": 11,
+      "y": 7,
+      "sorted position": 185,
+      "difference": -14.274595757090028
+    },
+    "PROPN": {
+      "x": 11,
+      "y": 8,
+      "sorted position": 194,
+      "difference": -13.324353526937076
+    },
+    "CCONJ": {
+      "x": 11,
+      "y": 9,
+      "sorted position": 206,
+      "difference": -12.357990107620951
+    },
+    "NOUN": {
+      "x": 11,
+      "y": 10,
+      "sorted position": 217,
+      "difference": -11.38274074949487
+    },
+    "ADJ": {
+      "x": 11,
+      "y": 11,
+      "sorted position": 228,
+      "difference": -10.405160785390295
+    },
+    "SYM": {
+      "x": 11,
+      "y": 12,
+      "sorted position": 238,
+      "difference": -9.431099668265176
+    },
+    "PUNCT": {
+      "x": 11,
+      "y": 13,
+      "sorted position": 248,
+      "difference": -8.465711202037522
+    },
+    "PRON": {
+      "x": 11,
+      "y": 14,
+      "sorted position": 258,
+      "difference": -7.51348398757947
+    },
+    "PART": {
+      "x": 11,
+      "y": 15,
+      "sorted position": 268,
+      "difference": -6.578281386290069
+    },
+    "ADV": {
+      "x": 11,
+      "y": 16,
+      "sorted position": 278,
+      "difference": -5.663384569021307
+    },
+    "SPACE": {
+      "x": 11,
+      "y": 17,
+      "sorted position": 287,
+      "difference": -4.771535275077021
+    }
+  },
+  "compound": {
+    "ADP": {
+      "x": 12,
+      "y": 0,
+      "sorted position": 139,
+      "difference": -18.0
+    },
+    "VERB": {
+      "x": 12,
+      "y": 1,
+      "sorted position": 149,
+      "difference": -17.36928776091319
+    },
+    "AUX": {
+      "x": 12,
+      "y": 2,
+      "sorted position": 158,
+      "difference": -16.678885143115473
+    },
+    "DET": {
+      "x": 12,
+      "y": 3,
+      "sorted position": 166,
+      "difference": -15.93262651931683
+    },
+    "X": {
+      "x": 12,
+      "y": 4,
+      "sorted position": 175,
+      "difference": -15.13577733822609
+    },
+    "INTJ": {
+      "x": 12,
+      "y": 5,
+      "sorted position": 184,
+      "difference": -14.294688127912362
+    },
+    "NUM": {
+      "x": 12,
+      "y": 6,
+      "sorted position": 193,
+      "difference": -13.416407864998739
+    },
+    "SCONJ": {
+      "x": 12,
+      "y": 7,
+      "sorted position": 204,
+      "difference": -12.508313575438367
+    },
+    "PROPN": {
+      "x": 12,
+      "y": 8,
+      "sorted position": 215,
+      "difference": -11.577794898144044
+    },
+    "CCONJ": {
+      "x": 12,
+      "y": 9,
+      "sorted position": 226,
+      "difference": -10.632011235952593
+    },
+    "NOUN": {
+      "x": 12,
+      "y": 10,
+      "sorted position": 235,
+      "difference": -9.677721929533728
+    },
+    "ADJ": {
+      "x": 12,
+      "y": 11,
+      "sorted position": 245,
+      "difference": -8.721179403900294
+    },
+    "SYM": {
+      "x": 12,
+      "y": 12,
+      "sorted position": 256,
+      "difference": -7.768071005228823
+    },
+    "PUNCT": {
+      "x": 12,
+      "y": 13,
+      "sorted position": 266,
+      "difference": -6.8234953313083935
+    },
+    "PRON": {
+      "x": 12,
+      "y": 14,
+      "sorted position": 276,
+      "difference": -5.891961206607103
+    },
+    "PART": {
+      "x": 12,
+      "y": 15,
+      "sorted position": 286,
+      "difference": -4.977400532597102
+    },
+    "ADV": {
+      "x": 12,
+      "y": 16,
+      "sorted position": 295,
+      "difference": -4.0831891575845916
+    },
+    "SPACE": {
+      "x": 12,
+      "y": 17,
+      "sorted position": 305,
+      "difference": -3.212172252243814
+    }
+  },
+  "conj": {
+    "ADP": {
+      "x": 13,
+      "y": 0,
+      "sorted position": 162,
+      "difference": -16.206163733020468
+    },
+    "VERB": {
+      "x": 13,
+      "y": 1,
+      "sorted position": 171,
+      "difference": -15.562294481744884
+    },
+    "AUX": {
+      "x": 13,
+      "y": 2,
+      "sorted position": 178,
+      "difference": -14.864905014277895
+    },
+    "DET": {
+      "x": 13,
+      "y": 3,
+      "sorted position": 187,
+      "difference": -14.11739637136563
+    },
+    "X": {
+      "x": 13,
+      "y": 4,
+      "sorted position": 194,
+      "difference": -13.324353526937076
+    },
+    "INTJ": {
+      "x": 13,
+      "y": 5,
+      "sorted position": 205,
+      "difference": -12.491301350061693
+    },
+    "NUM": {
+      "x": 13,
+      "y": 6,
+      "sorted position": 213,
+      "difference": -11.62442247886934
+    },
+    "SCONJ": {
+      "x": 13,
+      "y": 7,
+      "sorted position": 222,
+      "difference": -10.730274507730524
+    },
+    "PROPN": {
+      "x": 13,
+      "y": 8,
+      "sorted position": 233,
+      "difference": -9.81553488549516
+    },
+    "CCONJ": {
+      "x": 13,
+      "y": 9,
+      "sorted position": 243,
+      "difference": -8.88678976961504
+    },
+    "NOUN": {
+      "x": 13,
+      "y": 10,
+      "sorted position": 253,
+      "difference": -7.950371856915115
+    },
+    "ADJ": {
+      "x": 13,
+      "y": 11,
+      "sorted position": 264,
+      "difference": -7.012244194416212
+    },
+    "SYM": {
+      "x": 13,
+      "y": 12,
+      "sorted position": 274,
+      "difference": -6.077922635055295
+    },
+    "PUNCT": {
+      "x": 13,
+      "y": 13,
+      "sorted position": 284,
+      "difference": -5.152428281029405
+    },
+    "PRON": {
+      "x": 13,
+      "y": 14,
+      "sorted position": 293,
+      "difference": -4.240261885314705
+    },
+    "PART": {
+      "x": 13,
+      "y": 15,
+      "sorted position": 303,
+      "difference": -3.3453937682071953
+    },
+    "ADV": {
+      "x": 13,
+      "y": 16,
+      "sorted position": 313,
+      "difference": -2.4712646331420878
+    },
+    "SPACE": {
+      "x": 13,
+      "y": 17,
+      "sorted position": 323,
+      "difference": -1.6207943074099802
+    }
+  },
+  "cop": {
+    "ADP": {
+      "x": 14,
+      "y": 0,
+      "sorted position": 182,
+      "difference": -14.42534080710379
+    },
+    "VERB": {
+      "x": 14,
+      "y": 1,
+      "sorted position": 190,
+      "difference": -13.76720870129749
+    },
+    "AUX": {
+      "x": 14,
+      "y": 2,
+      "sorted position": 198,
+      "difference": -13.060805393739937
+    },
+    "DET": {
+      "x": 14,
+      "y": 3,
+      "sorted position": 207,
+      "difference": -12.309232848112343
+    },
+    "X": {
+      "x": 14,
+      "y": 4,
+      "sorted position": 216,
+      "difference": -11.51658984224956
+    },
+    "INTJ": {
+      "x": 14,
+      "y": 5,
+      "sorted position": 223,
+      "difference": -10.68779593104277
+    },
+    "NUM": {
+      "x": 14,
+      "y": 6,
+      "sorted position": 232,
+      "difference": -9.828381960555518
+    },
+    "SCONJ": {
+      "x": 14,
+      "y": 7,
+      "sorted position": 242,
+      "difference": -8.94427190999916
+    },
+    "PROPN": {
+      "x": 14,
+      "y": 8,
+      "sorted position": 251,
+      "difference": -8.041576450592046
+    },
+    "CCONJ": {
+      "x": 14,
+      "y": 9,
+      "sorted position": 262,
+      "difference": -7.1264116709161875
+    },
+    "NOUN": {
+      "x": 14,
+      "y": 10,
+      "sorted position": 272,
+      "difference": -6.204749287353998
+    },
+    "ADJ": {
+      "x": 14,
+      "y": 11,
+      "sorted position": 282,
+      "difference": -5.282298946465534
+    },
+    "SYM": {
+      "x": 14,
+      "y": 12,
+      "sorted position": 291,
+      "difference": -4.364419587396984
+    },
+    "PUNCT": {
+      "x": 14,
+      "y": 13,
+      "sorted position": 301,
+      "difference": -3.4560551708141567
+    },
+    "PRON": {
+      "x": 14,
+      "y": 14,
+      "sorted position": 311,
+      "difference": -2.5616899017745673
+    },
+    "PART": {
+      "x": 14,
+      "y": 15,
+      "sorted position": 321,
+      "difference": -1.6853187824913256
+    },
+    "ADV": {
+      "x": 14,
+      "y": 16,
+      "sorted position": 331,
+      "difference": -0.8304304089052224
+    },
+    "SPACE": {
+      "x": 14,
+      "y": 17,
+      "sorted position": 333,
+      "difference": 0.0
+    }
+  },
+  "csubj": {
+    "ADP": {
+      "x": 15,
+      "y": 0,
+      "sorted position": 201,
+      "difference": -12.658633371878661
+    },
+    "VERB": {
+      "x": 15,
+      "y": 1,
+      "sorted position": 211,
+      "difference": -11.985215793839684
+    },
+    "AUX": {
+      "x": 15,
+      "y": 2,
+      "sorted position": 218,
+      "difference": -11.268011614466614
+    },
+    "DET": {
+      "x": 15,
+      "y": 3,
+      "sorted position": 227,
+      "difference": -10.509917260349525
+    },
+    "X": {
+      "x": 15,
+      "y": 4,
+      "sorted position": 234,
+      "difference": -9.714684231987901
+    },
+    "INTJ": {
+      "x": 15,
+      "y": 5,
+      "sorted position": 243,
+      "difference": -8.88678976961504
+    },
+    "NUM": {
+      "x": 15,
+      "y": 6,
+      "sorted position": 252,
+      "difference": -8.031278823492137
+    },
+    "SCONJ": {
+      "x": 15,
+      "y": 7,
+      "sorted position": 261,
+      "difference": -7.153593825012546
+    },
+    "PROPN": {
+      "x": 15,
+      "y": 8,
+      "sorted position": 270,
+      "difference": -6.259406699226016
+    },
+    "CCONJ": {
+      "x": 15,
+      "y": 9,
+      "sorted position": 280,
+      "difference": -5.3544636330558255
+    },
+    "NOUN": {
+      "x": 15,
+      "y": 10,
+      "sorted position": 289,
+      "difference": -4.444448676924285
+    },
+    "ADJ": {
+      "x": 15,
+      "y": 11,
+      "sorted position": 299,
+      "difference": -3.5348683834403793
+    },
+    "SYM": {
+      "x": 15,
+      "y": 12,
+      "sorted position": 309,
+      "difference": -2.6309569555430095
+    },
+    "PUNCT": {
+      "x": 15,
+      "y": 13,
+      "sorted position": 319,
+      "difference": -1.7375999036436944
+    },
+    "PRON": {
+      "x": 15,
+      "y": 14,
+      "sorted position": 329,
+      "difference": -0.8592737977487559
+    },
+    "PART": {
+      "x": 15,
+      "y": 15,
+      "sorted position": 333,
+      "difference": 0.0
+    },
+    "ADV": {
+      "x": 15,
+      "y": 16,
+      "sorted position": 344,
+      "difference": 0.8366890897323209
+    },
+    "SPACE": {
+      "x": 15,
+      "y": 17,
+      "sorted position": 352,
+      "difference": 1.6477720558806297
+    }
+  },
+  "dep": {
+    "ADP": {
+      "x": 16,
+      "y": 0,
+      "sorted position": 221,
+      "difference": -10.90724809414742
+    },
+    "VERB": {
+      "x": 16,
+      "y": 1,
+      "sorted position": 229,
+      "difference": -10.217589954931977
+    },
+    "AUX": {
+      "x": 16,
+      "y": 2,
+      "sorted position": 237,
+      "difference": -9.487981453134296
+    },
+    "DET": {
+      "x": 16,
+      "y": 3,
+      "sorted position": 245,
+      "difference": -8.721179403900294
+    },
+    "X": {
+      "x": 16,
+      "y": 4,
+      "sorted position": 254,
+      "difference": -7.920688728996762
+    },
+    "INTJ": {
+      "x": 16,
+      "y": 5,
+      "sorted position": 263,
+      "difference": -7.090666269512916
+    },
+    "NUM": {
+      "x": 16,
+      "y": 6,
+      "sorted position": 271,
+      "difference": -6.235800088746142
+    },
+    "SCONJ": {
+      "x": 16,
+      "y": 7,
+      "sorted position": 279,
+      "difference": -5.361175224453675
+    },
+    "PROPN": {
+      "x": 16,
+      "y": 8,
+      "sorted position": 288,
+      "difference": -4.47213595499958
+    },
+    "CCONJ": {
+      "x": 16,
+      "y": 9,
+      "sorted position": 297,
+      "difference": -3.5741524487754894
+    },
+    "NOUN": {
+      "x": 16,
+      "y": 10,
+      "sorted position": 307,
+      "difference": -2.6726969644248086
+    },
+    "ADJ": {
+      "x": 16,
+      "y": 11,
+      "sorted position": 317,
+      "difference": -1.7731322614694918
+    },
+    "SYM": {
+      "x": 16,
+      "y": 12,
+      "sorted position": 327,
+      "difference": -0.8806130178211014
+    },
+    "PUNCT": {
+      "x": 16,
+      "y": 13,
+      "sorted position": 333,
+      "difference": 0.0
+    },
+    "PRON": {
+      "x": 16,
+      "y": 14,
+      "sorted position": 346,
+      "difference": 0.864213571098162
+    },
+    "PART": {
+      "x": 16,
+      "y": 15,
+      "sorted position": 354,
+      "difference": 1.7079637833046242
+    },
+    "ADV": {
+      "x": 16,
+      "y": 16,
+      "sorted position": 362,
+      "difference": 2.5276657557277424
+    },
+    "SPACE": {
+      "x": 16,
+      "y": 17,
+      "sorted position": 370,
+      "difference": 3.320250665356717
+    }
+  },
+  "det": {
+    "ADP": {
+      "x": 17,
+      "y": 0,
+      "sorted position": 240,
+      "difference": -9.1725046566048
+    },
+    "VERB": {
+      "x": 17,
+      "y": 1,
+      "sorted position": 248,
+      "difference": -8.465711202037522
+    },
+    "AUX": {
+      "x": 17,
+      "y": 2,
+      "sorted position": 257,
+      "difference": -7.7222419281247525
+    },
+    "DET": {
+      "x": 17,
+      "y": 3,
+      "sorted position": 265,
+      "difference": -6.944760372188341
+    },
+    "X": {
+      "x": 17,
+      "y": 4,
+      "sorted position": 273,
+      "difference": -6.136598245838915
+    },
+    "INTJ": {
+      "x": 17,
+      "y": 5,
+      "sorted position": 281,
+      "difference": -5.301683719773326
+    },
+    "NUM": {
+      "x": 17,
+      "y": 6,
+      "sorted position": 289,
+      "difference": -4.444448676924285
+    },
+    "SCONJ": {
+      "x": 17,
+      "y": 7,
+      "sorted position": 298,
+      "difference": -3.5697220892499146
+    },
+    "PROPN": {
+      "x": 17,
+      "y": 8,
+      "sorted position": 306,
+      "difference": -2.6826163255279525
+    },
+    "CCONJ": {
+      "x": 17,
+      "y": 9,
+      "sorted position": 315,
+      "difference": -1.7884119799572957
+    },
+    "NOUN": {
+      "x": 17,
+      "y": 10,
+      "sorted position": 325,
+      "difference": -0.8924452047722831
+    },
+    "ADJ": {
+      "x": 17,
+      "y": 11,
+      "sorted position": 333,
+      "difference": 0.0
+    },
+    "SYM": {
+      "x": 17,
+      "y": 12,
+      "sorted position": 348,
+      "difference": 0.8837932015135372
+    },
+    "PUNCT": {
+      "x": 17,
+      "y": 13,
+      "sorted position": 356,
+      "difference": 1.7540518546441959
+    },
+    "PRON": {
+      "x": 17,
+      "y": 14,
+      "sorted position": 364,
+      "difference": 2.6062277065976396
+    },
+    "PART": {
+      "x": 17,
+      "y": 15,
+      "sorted position": 372,
+      "difference": 3.4361840358379254
+    },
+    "ADV": {
+      "x": 17,
+      "y": 16,
+      "sorted position": 380,
+      "difference": 4.240261885314705
+    },
+    "SPACE": {
+      "x": 17,
+      "y": 17,
+      "sorted position": 389,
+      "difference": 5.015332969902168
+    }
+  },
+  "discourse": {
+    "ADP": {
+      "x": 18,
+      "y": 0,
+      "sorted position": 259,
+      "difference": -7.45584412271571
+    },
+    "VERB": {
+      "x": 18,
+      "y": 1,
+      "sorted position": 267,
+      "difference": -6.731080428959949
+    },
+    "AUX": {
+      "x": 18,
+      "y": 2,
+      "sorted position": 275,
+      "difference": -5.972418881309757
+    },
+    "DET": {
+      "x": 18,
+      "y": 3,
+      "sorted position": 283,
+      "difference": -5.182461436825303
+    },
+    "X": {
+      "x": 18,
+      "y": 4,
+      "sorted position": 291,
+      "difference": -4.364419587396984
+    },
+    "INTJ": {
+      "x": 18,
+      "y": 5,
+      "sorted position": 300,
+      "difference": -3.522061618905113
+    },
+    "NUM": {
+      "x": 18,
+      "y": 6,
+      "sorted position": 308,
+      "difference": -2.659641691773661
+    },
+    "SCONJ": {
+      "x": 18,
+      "y": 7,
+      "sorted position": 316,
+      "difference": -1.7818151939010214
+    },
+    "PROPN": {
+      "x": 18,
+      "y": 8,
+      "sorted position": 324,
+      "difference": -0.8935446783817937
+    },
+    "CCONJ": {
+      "x": 18,
+      "y": 9,
+      "sorted position": 333,
+      "difference": 0.0
+    },
+    "NOUN": {
+      "x": 18,
+      "y": 10,
+      "sorted position": 350,
+      "difference": 0.8935446783817937
+    },
+    "ADJ": {
+      "x": 18,
+      "y": 11,
+      "sorted position": 358,
+      "difference": 1.7818151939010214
+    },
+    "SYM": {
+      "x": 18,
+      "y": 12,
+      "sorted position": 366,
+      "difference": 2.659641691773661
+    },
+    "PUNCT": {
+      "x": 18,
+      "y": 13,
+      "sorted position": 374,
+      "difference": 3.522061618905113
+    },
+    "PRON": {
+      "x": 18,
+      "y": 14,
+      "sorted position": 382,
+      "difference": 4.364419587396984
+    },
+    "PART": {
+      "x": 18,
+      "y": 15,
+      "sorted position": 391,
+      "difference": 5.182461436825303
+    },
+    "ADV": {
+      "x": 18,
+      "y": 16,
+      "sorted position": 399,
+      "difference": 5.972418881309757
+    },
+    "SPACE": {
+      "x": 18,
+      "y": 17,
+      "sorted position": 407,
+      "difference": 6.731080428959949
+    }
+  },
+  "expl": {
+    "ADP": {
+      "x": 19,
+      "y": 0,
+      "sorted position": 277,
+      "difference": -5.758836806279895
+    },
+    "VERB": {
+      "x": 19,
+      "y": 1,
+      "sorted position": 285,
+      "difference": -5.015332969902168
+    },
+    "AUX": {
+      "x": 19,
+      "y": 2,
+      "sorted position": 293,
+      "difference": -4.240261885314705
+    },
+    "DET": {
+      "x": 19,
+      "y": 3,
+      "sorted position": 302,
+      "difference": -3.4361840358379254
+    },
+    "X": {
+      "x": 19,
+      "y": 4,
+      "sorted position": 310,
+      "difference": -2.6062277065976396
+    },
+    "INTJ": {
+      "x": 19,
+      "y": 5,
+      "sorted position": 318,
+      "difference": -1.7540518546441959
+    },
+    "NUM": {
+      "x": 19,
+      "y": 6,
+      "sorted position": 326,
+      "difference": -0.8837932015135372
+    },
+    "SCONJ": {
+      "x": 19,
+      "y": 7,
+      "sorted position": 333,
+      "difference": 0.0
+    },
+    "PROPN": {
+      "x": 19,
+      "y": 8,
+      "sorted position": 349,
+      "difference": 0.8924452047722831
+    },
+    "CCONJ": {
+      "x": 19,
+      "y": 9,
+      "sorted position": 359,
+      "difference": 1.7884119799572957
+    },
+    "NOUN": {
+      "x": 19,
+      "y": 10,
+      "sorted position": 368,
+      "difference": 2.6826163255279525
+    },
+    "ADJ": {
+      "x": 19,
+      "y": 11,
+      "sorted position": 376,
+      "difference": 3.5697220892499146
+    },
+    "SYM": {
+      "x": 19,
+      "y": 12,
+      "sorted position": 384,
+      "difference": 4.444448676924285
+    },
+    "PUNCT": {
+      "x": 19,
+      "y": 13,
+      "sorted position": 393,
+      "difference": 5.301683719773326
+    },
+    "PRON": {
+      "x": 19,
+      "y": 14,
+      "sorted position": 401,
+      "difference": 6.136598245838915
+    },
+    "PART": {
+      "x": 19,
+      "y": 15,
+      "sorted position": 410,
+      "difference": 6.944760372188341
+    },
+    "ADV": {
+      "x": 19,
+      "y": 16,
+      "sorted position": 417,
+      "difference": 7.7222419281247525
+    },
+    "SPACE": {
+      "x": 19,
+      "y": 17,
+      "sorted position": 426,
+      "difference": 8.465711202037522
+    }
+  },
+  "fixed": {
+    "ADP": {
+      "x": 20,
+      "y": 0,
+      "sorted position": 295,
+      "difference": -4.0831891575845916
+    },
+    "VERB": {
+      "x": 20,
+      "y": 1,
+      "sorted position": 304,
+      "difference": -3.320250665356717
+    },
+    "AUX": {
+      "x": 20,
+      "y": 2,
+      "sorted position": 312,
+      "difference": -2.5276657557277424
+    },
+    "DET": {
+      "x": 20,
+      "y": 3,
+      "sorted position": 320,
+      "difference": -1.7079637833046242
+    },
+    "X": {
+      "x": 20,
+      "y": 4,
+      "sorted position": 328,
+      "difference": -0.864213571098162
+    },
+    "INTJ": {
+      "x": 20,
+      "y": 5,
+      "sorted position": 333,
+      "difference": 0.0
+    },
+    "NUM": {
+      "x": 20,
+      "y": 6,
+      "sorted position": 347,
+      "difference": 0.8806130178211014
+    },
+    "SCONJ": {
+      "x": 20,
+      "y": 7,
+      "sorted position": 357,
+      "difference": 1.7731322614694918
+    },
+    "PROPN": {
+      "x": 20,
+      "y": 8,
+      "sorted position": 367,
+      "difference": 2.6726969644248086
+    },
+    "CCONJ": {
+      "x": 20,
+      "y": 9,
+      "sorted position": 377,
+      "difference": 3.5741524487754894
+    },
+    "NOUN": {
+      "x": 20,
+      "y": 10,
+      "sorted position": 386,
+      "difference": 4.47213595499958
+    },
+    "ADJ": {
+      "x": 20,
+      "y": 11,
+      "sorted position": 395,
+      "difference": 5.361175224453675
+    },
+    "SYM": {
+      "x": 20,
+      "y": 12,
+      "sorted position": 403,
+      "difference": 6.235800088746142
+    },
+    "PUNCT": {
+      "x": 20,
+      "y": 13,
+      "sorted position": 412,
+      "difference": 7.090666269512916
+    },
+    "PRON": {
+      "x": 20,
+      "y": 14,
+      "sorted position": 420,
+      "difference": 7.920688728996762
+    },
+    "PART": {
+      "x": 20,
+      "y": 15,
+      "sorted position": 429,
+      "difference": 8.721179403900294
+    },
+    "ADV": {
+      "x": 20,
+      "y": 16,
+      "sorted position": 437,
+      "difference": 9.487981453134296
+    },
+    "SPACE": {
+      "x": 20,
+      "y": 17,
+      "sorted position": 446,
+      "difference": 10.217589954931977
+    }
+  },
+  "flat": {
+    "ADP": {
+      "x": 21,
+      "y": 0,
+      "sorted position": 314,
+      "difference": -2.430749027719962
+    },
+    "VERB": {
+      "x": 21,
+      "y": 1,
+      "sorted position": 322,
+      "difference": -1.6477720558806297
+    },
+    "AUX": {
+      "x": 21,
+      "y": 2,
+      "sorted position": 330,
+      "difference": -0.8366890897323209
+    },
+    "DET": {
+      "x": 21,
+      "y": 3,
+      "sorted position": 333,
+      "difference": 0.0
+    },
+    "X": {
+      "x": 21,
+      "y": 4,
+      "sorted position": 345,
+      "difference": 0.8592737977487559
+    },
+    "INTJ": {
+      "x": 21,
+      "y": 5,
+      "sorted position": 355,
+      "difference": 1.7375999036436944
+    },
+    "NUM": {
+      "x": 21,
+      "y": 6,
+      "sorted position": 365,
+      "difference": 2.6309569555430095
+    },
+    "SCONJ": {
+      "x": 21,
+      "y": 7,
+      "sorted position": 375,
+      "difference": 3.5348683834403793
+    },
+    "PROPN": {
+      "x": 21,
+      "y": 8,
+      "sorted position": 384,
+      "difference": 4.444448676924285
+    },
+    "CCONJ": {
+      "x": 21,
+      "y": 9,
+      "sorted position": 394,
+      "difference": 5.3544636330558255
+    },
+    "NOUN": {
+      "x": 21,
+      "y": 10,
+      "sorted position": 404,
+      "difference": 6.259406699226016
+    },
+    "ADJ": {
+      "x": 21,
+      "y": 11,
+      "sorted position": 414,
+      "difference": 7.153593825012546
+    },
+    "SYM": {
+      "x": 21,
+      "y": 12,
+      "sorted position": 422,
+      "difference": 8.031278823492137
+    },
+    "PUNCT": {
+      "x": 21,
+      "y": 13,
+      "sorted position": 431,
+      "difference": 8.88678976961504
+    },
+    "PRON": {
+      "x": 21,
+      "y": 14,
+      "sorted position": 441,
+      "difference": 9.714684231987901
+    },
+    "PART": {
+      "x": 21,
+      "y": 15,
+      "sorted position": 448,
+      "difference": 10.509917260349525
+    },
+    "ADV": {
+      "x": 21,
+      "y": 16,
+      "sorted position": 457,
+      "difference": 11.268011614466614
+    },
+    "SPACE": {
+      "x": 21,
+      "y": 17,
+      "sorted position": 464,
+      "difference": 11.985215793839684
+    }
+  },
+  "flat:foreign": {
+    "ADP": {
+      "x": 22,
+      "y": 0,
+      "sorted position": 332,
+      "difference": -0.8035085019827584
+    },
+    "VERB": {
+      "x": 22,
+      "y": 1,
+      "sorted position": 333,
+      "difference": 0.0
+    },
+    "AUX": {
+      "x": 22,
+      "y": 2,
+      "sorted position": 343,
+      "difference": 0.8304304089052224
+    },
+    "DET": {
+      "x": 22,
+      "y": 3,
+      "sorted position": 353,
+      "difference": 1.6853187824913256
+    },
+    "X": {
+      "x": 22,
+      "y": 4,
+      "sorted position": 363,
+      "difference": 2.5616899017745673
+    },
+    "INTJ": {
+      "x": 22,
+      "y": 5,
+      "sorted position": 373,
+      "difference": 3.4560551708141567
+    },
+    "NUM": {
+      "x": 22,
+      "y": 6,
+      "sorted position": 382,
+      "difference": 4.364419587396984
+    },
+    "SCONJ": {
+      "x": 22,
+      "y": 7,
+      "sorted position": 392,
+      "difference": 5.282298946465534
+    },
+    "PROPN": {
+      "x": 22,
+      "y": 8,
+      "sorted position": 402,
+      "difference": 6.204749287353998
+    },
+    "CCONJ": {
+      "x": 22,
+      "y": 9,
+      "sorted position": 413,
+      "difference": 7.1264116709161875
+    },
+    "NOUN": {
+      "x": 22,
+      "y": 10,
+      "sorted position": 423,
+      "difference": 8.041576450592046
+    },
+    "ADJ": {
+      "x": 22,
+      "y": 11,
+      "sorted position": 433,
+      "difference": 8.94427190999916
+    },
+    "SYM": {
+      "x": 22,
+      "y": 12,
+      "sorted position": 443,
+      "difference": 9.828381960555518
+    },
+    "PUNCT": {
+      "x": 22,
+      "y": 13,
+      "sorted position": 452,
+      "difference": 10.68779593104277
+    },
+    "PRON": {
+      "x": 22,
+      "y": 14,
+      "sorted position": 459,
+      "difference": 11.51658984224956
+    },
+    "PART": {
+      "x": 22,
+      "y": 15,
+      "sorted position": 468,
+      "difference": 12.309232848112343
+    },
+    "ADV": {
+      "x": 22,
+      "y": 16,
+      "sorted position": 476,
+      "difference": 13.060805393739937
+    },
+    "SPACE": {
+      "x": 22,
+      "y": 17,
+      "sorted position": 486,
+      "difference": 13.76720870129749
+    }
+  },
+  "flat:name": {
+    "ADP": {
+      "x": 23,
+      "y": 0,
+      "sorted position": 342,
+      "difference": 0.7963966888254816
+    },
+    "VERB": {
+      "x": 23,
+      "y": 1,
+      "sorted position": 351,
+      "difference": 1.6207943074099802
+    },
+    "AUX": {
+      "x": 23,
+      "y": 2,
+      "sorted position": 361,
+      "difference": 2.4712646331420878
+    },
+    "DET": {
+      "x": 23,
+      "y": 3,
+      "sorted position": 371,
+      "difference": 3.3453937682071953
+    },
+    "X": {
+      "x": 23,
+      "y": 4,
+      "sorted position": 380,
+      "difference": 4.240261885314705
+    },
+    "INTJ": {
+      "x": 23,
+      "y": 5,
+      "sorted position": 390,
+      "difference": 5.152428281029405
+    },
+    "NUM": {
+      "x": 23,
+      "y": 6,
+      "sorted position": 400,
+      "difference": 6.077922635055295
+    },
+    "SCONJ": {
+      "x": 23,
+      "y": 7,
+      "sorted position": 411,
+      "difference": 7.012244194416212
+    },
+    "PROPN": {
+      "x": 23,
+      "y": 8,
+      "sorted position": 421,
+      "difference": 7.950371856915115
+    },
+    "CCONJ": {
+      "x": 23,
+      "y": 9,
+      "sorted position": 431,
+      "difference": 8.88678976961504
+    },
+    "NOUN": {
+      "x": 23,
+      "y": 10,
+      "sorted position": 442,
+      "difference": 9.81553488549516
+    },
+    "ADJ": {
+      "x": 23,
+      "y": 11,
+      "sorted position": 453,
+      "difference": 10.730274507730524
+    },
+    "SYM": {
+      "x": 23,
+      "y": 12,
+      "sorted position": 462,
+      "difference": 11.62442247886934
+    },
+    "PUNCT": {
+      "x": 23,
+      "y": 13,
+      "sorted position": 471,
+      "difference": 12.491301350061693
+    },
+    "PRON": {
+      "x": 23,
+      "y": 14,
+      "sorted position": 480,
+      "difference": 13.324353526937076
+    },
+    "PART": {
+      "x": 23,
+      "y": 15,
+      "sorted position": 489,
+      "difference": 14.11739637136563
+    },
+    "ADV": {
+      "x": 23,
+      "y": 16,
+      "sorted position": 498,
+      "difference": 14.864905014277895
+    },
+    "SPACE": {
+      "x": 23,
+      "y": 17,
+      "sorted position": 505,
+      "difference": 15.562294481744884
+    }
+  },
+  "iobj": {
+    "ADP": {
+      "x": 24,
+      "y": 0,
+      "sorted position": 360,
+      "difference": 2.3666923472160626
+    },
+    "VERB": {
+      "x": 24,
+      "y": 1,
+      "sorted position": 369,
+      "difference": 3.212172252243814
+    },
+    "AUX": {
+      "x": 24,
+      "y": 2,
+      "sorted position": 379,
+      "difference": 4.0831891575845916
+    },
+    "DET": {
+      "x": 24,
+      "y": 3,
+      "sorted position": 388,
+      "difference": 4.977400532597102
+    },
+    "X": {
+      "x": 24,
+      "y": 4,
+      "sorted position": 398,
+      "difference": 5.891961206607103
+    },
+    "INTJ": {
+      "x": 24,
+      "y": 5,
+      "sorted position": 408,
+      "difference": 6.8234953313083935
+    },
+    "NUM": {
+      "x": 24,
+      "y": 6,
+      "sorted position": 418,
+      "difference": 7.768071005228823
+    },
+    "SCONJ": {
+      "x": 24,
+      "y": 7,
+      "sorted position": 429,
+      "difference": 8.721179403900294
+    },
+    "PROPN": {
+      "x": 24,
+      "y": 8,
+      "sorted position": 439,
+      "difference": 9.677721929533728
+    },
+    "CCONJ": {
+      "x": 24,
+      "y": 9,
+      "sorted position": 449,
+      "difference": 10.632011235952593
+    },
+    "NOUN": {
+      "x": 24,
+      "y": 10,
+      "sorted position": 460,
+      "difference": 11.577794898144044
+    },
+    "ADJ": {
+      "x": 24,
+      "y": 11,
+      "sorted position": 472,
+      "difference": 12.508313575438367
+    },
+    "SYM": {
+      "x": 24,
+      "y": 12,
+      "sorted position": 482,
+      "difference": 13.416407864998739
+    },
+    "PUNCT": {
+      "x": 24,
+      "y": 13,
+      "sorted position": 492,
+      "difference": 14.294688127912362
+    },
+    "PRON": {
+      "x": 24,
+      "y": 14,
+      "sorted position": 501,
+      "difference": 15.13577733822609
+    },
+    "PART": {
+      "x": 24,
+      "y": 15,
+      "sorted position": 511,
+      "difference": 15.93262651931683
+    },
+    "ADV": {
+      "x": 24,
+      "y": 16,
+      "sorted position": 518,
+      "difference": 16.678885143115473
+    },
+    "SPACE": {
+      "x": 24,
+      "y": 17,
+      "sorted position": 527,
+      "difference": 17.36928776091319
+    }
+  },
+  "mark": {
+    "ADP": {
+      "x": 25,
+      "y": 0,
+      "sorted position": 378,
+      "difference": 3.904976890271012
+    },
+    "VERB": {
+      "x": 25,
+      "y": 1,
+      "sorted position": 387,
+      "difference": 4.771535275077021
+    },
+    "AUX": {
+      "x": 25,
+      "y": 2,
+      "sorted position": 397,
+      "difference": 5.663384569021307
+    },
+    "DET": {
+      "x": 25,
+      "y": 3,
+      "sorted position": 406,
+      "difference": 6.578281386290069
+    },
+    "X": {
+      "x": 25,
+      "y": 4,
+      "sorted position": 416,
+      "difference": 7.51348398757947
+    },
+    "INTJ": {
+      "x": 25,
+      "y": 5,
+      "sorted position": 426,
+      "difference": 8.465711202037522
+    },
+    "NUM": {
+      "x": 25,
+      "y": 6,
+      "sorted position": 436,
+      "difference": 9.431099668265176
+    },
+    "SCONJ": {
+      "x": 25,
+      "y": 7,
+      "sorted position": 447,
+      "difference": 10.405160785390295
+    },
+    "PROPN": {
+      "x": 25,
+      "y": 8,
+      "sorted position": 458,
+      "difference": 11.38274074949487
+    },
+    "CCONJ": {
+      "x": 25,
+      "y": 9,
+      "sorted position": 470,
+      "difference": 12.357990107620951
+    },
+    "NOUN": {
+      "x": 25,
+      "y": 10,
+      "sorted position": 480,
+      "difference": 13.324353526937076
+    },
+    "ADJ": {
+      "x": 25,
+      "y": 11,
+      "sorted position": 491,
+      "difference": 14.274595757090028
+    },
+    "SYM": {
+      "x": 25,
+      "y": 12,
+      "sorted position": 502,
+      "difference": 15.200885161582427
+    },
+    "PUNCT": {
+      "x": 25,
+      "y": 13,
+      "sorted position": 513,
+      "difference": 16.09495963361617
+    },
+    "PRON": {
+      "x": 25,
+      "y": 14,
+      "sorted position": 523,
+      "difference": 16.94839765306918
+    },
+    "PART": {
+      "x": 25,
+      "y": 15,
+      "sorted position": 531,
+      "difference": 17.75300522323512
+    },
+    "ADV": {
+      "x": 25,
+      "y": 16,
+      "sorted position": 540,
+      "difference": 18.50130427181271
+    },
+    "SPACE": {
+      "x": 25,
+      "y": 17,
+      "sorted position": 549,
+      "difference": 19.187071898474688
+    }
+  },
+  "nmod": {
+    "ADP": {
+      "x": 26,
+      "y": 0,
+      "sorted position": 396,
+      "difference": 5.408739718025998
+    },
+    "VERB": {
+      "x": 26,
+      "y": 1,
+      "sorted position": 405,
+      "difference": 6.296140739199355
+    },
+    "AUX": {
+      "x": 26,
+      "y": 2,
+      "sorted position": 415,
+      "difference": 7.20884735669739
+    },
+    "DET": {
+      "x": 26,
+      "y": 3,
+      "sorted position": 424,
+      "difference": 8.144748279284855
+    },
+    "X": {
+      "x": 26,
+      "y": 4,
+      "sorted position": 434,
+      "difference": 9.101242341846557
+    },
+    "INTJ": {
+      "x": 26,
+      "y": 5,
+      "sorted position": 444,
+      "difference": 10.075185122890726
+    },
+    "NUM": {
+      "x": 26,
+      "y": 6,
+      "sorted position": 455,
+      "difference": 11.06282877643936
+    },
+    "SCONJ": {
+      "x": 26,
+      "y": 7,
+      "sorted position": 466,
+      "difference": 12.059755288354014
+    },
+    "PROPN": {
+      "x": 26,
+      "y": 8,
+      "sorted position": 476,
+      "difference": 13.060805393739937
+    },
+    "CCONJ": {
+      "x": 26,
+      "y": 9,
+      "sorted position": 488,
+      "difference": 14.060008937321498
+    },
+    "NOUN": {
+      "x": 26,
+      "y": 10,
+      "sorted position": 500,
+      "difference": 15.050528079502541
+    },
+    "ADJ": {
+      "x": 26,
+      "y": 11,
+      "sorted position": 512,
+      "difference": 16.024632811252506
+    },
+    "SYM": {
+      "x": 26,
+      "y": 12,
+      "sorted position": 525,
+      "difference": 16.973738336862105
+    },
+    "PUNCT": {
+      "x": 26,
+      "y": 13,
+      "sorted position": 535,
+      "difference": 17.88854381999832
+    },
+    "PRON": {
+      "x": 26,
+      "y": 14,
+      "sorted position": 543,
+      "difference": 18.75931650619779
+    },
+    "PART": {
+      "x": 26,
+      "y": 15,
+      "sorted position": 552,
+      "difference": 19.576355530696716
+    },
+    "ADV": {
+      "x": 26,
+      "y": 16,
+      "sorted position": 560,
+      "difference": 20.330636017761925
+    },
+    "SPACE": {
+      "x": 26,
+      "y": 17,
+      "sorted position": 565,
+      "difference": 21.014573512897243
+    }
+  },
+  "nsubj": {
+    "ADP": {
+      "x": 27,
+      "y": 0,
+      "sorted position": 409,
+      "difference": 6.875388202501892
+    },
+    "VERB": {
+      "x": 27,
+      "y": 1,
+      "sorted position": 419,
+      "difference": 7.783128110541249
+    },
+    "AUX": {
+      "x": 27,
+      "y": 2,
+      "sorted position": 428,
+      "difference": 8.716412990675948
+    },
+    "DET": {
+      "x": 27,
+      "y": 3,
+      "sorted position": 438,
+      "difference": 9.673299729876348
+    },
+    "X": {
+      "x": 27,
+      "y": 4,
+      "sorted position": 451,
+      "difference": 10.651371150819124
+    },
+    "INTJ": {
+      "x": 27,
+      "y": 5,
+      "sorted position": 463,
+      "difference": 11.647672134650067
+    },
+    "NUM": {
+      "x": 27,
+      "y": 6,
+      "sorted position": 474,
+      "difference": 12.658633371878661
+    },
+    "SCONJ": {
+      "x": 27,
+      "y": 7,
+      "sorted position": 485,
+      "difference": 13.67998095841081
+    },
+    "PROPN": {
+      "x": 27,
+      "y": 8,
+      "sorted position": 496,
+      "difference": 14.706631633583736
+    },
+    "CCONJ": {
+      "x": 27,
+      "y": 9,
+      "sorted position": 508,
+      "difference": 15.73257688015756
+    },
+    "NOUN": {
+      "x": 27,
+      "y": 10,
+      "sorted position": 519,
+      "difference": 16.75076551898364
+    },
+    "ADJ": {
+      "x": 27,
+      "y": 11,
+      "sorted position": 531,
+      "difference": 17.75300522323512
+    },
+    "SYM": {
+      "x": 27,
+      "y": 12,
+      "sorted position": 542,
+      "difference": 18.729919578996345
+    },
+    "PUNCT": {
+      "x": 27,
+      "y": 13,
+      "sorted position": 553,
+      "difference": 19.671017986556393
+    },
+    "PRON": {
+      "x": 27,
+      "y": 14,
+      "sorted position": 563,
+      "difference": 20.564954849694995
+    },
+    "PART": {
+      "x": 27,
+      "y": 15,
+      "sorted position": 571,
+      "difference": 21.400057442455864
+    },
+    "ADV": {
+      "x": 27,
+      "y": 16,
+      "sorted position": 575,
+      "difference": 22.165165195657544
+    },
+    "SPACE": {
+      "x": 27,
+      "y": 17,
+      "sorted position": 583,
+      "difference": 22.850727128950215
+    }
+  },
+  "nsubj:pass": {
+    "ADP": {
+      "x": 28,
+      "y": 0,
+      "sorted position": 425,
+      "difference": 8.302284396407792
+    },
+    "VERB": {
+      "x": 28,
+      "y": 1,
+      "sorted position": 435,
+      "difference": 9.229557224187865
+    },
+    "AUX": {
+      "x": 28,
+      "y": 2,
+      "sorted position": 445,
+      "difference": 10.18279387523808
+    },
+    "DET": {
+      "x": 28,
+      "y": 3,
+      "sorted position": 456,
+      "difference": 11.160255680657446
+    },
+    "X": {
+      "x": 28,
+      "y": 4,
+      "sorted position": 467,
+      "difference": 12.159755750864804
+    },
+    "INTJ": {
+      "x": 28,
+      "y": 5,
+      "sorted position": 478,
+      "difference": 13.178587784182037
+    },
+    "NUM": {
+      "x": 28,
+      "y": 6,
+      "sorted position": 490,
+      "difference": 14.21343702469675
+    },
+    "SCONJ": {
+      "x": 28,
+      "y": 7,
+      "sorted position": 503,
+      "difference": 15.26026887058818
+    },
+    "PROPN": {
+      "x": 28,
+      "y": 8,
+      "sorted position": 515,
+      "difference": 16.314191082256375
+    },
+    "CCONJ": {
+      "x": 28,
+      "y": 9,
+      "sorted position": 527,
+      "difference": 17.36928776091319
+    },
+    "NOUN": {
+      "x": 28,
+      "y": 10,
+      "sorted position": 539,
+      "difference": 18.41842899565225
+    },
+    "ADJ": {
+      "x": 28,
+      "y": 11,
+      "sorted position": 551,
+      "difference": 19.453072100247997
+    },
+    "SYM": {
+      "x": 28,
+      "y": 12,
+      "sorted position": 561,
+      "difference": 20.463092423455635
+    },
+    "PUNCT": {
+      "x": 28,
+      "y": 13,
+      "sorted position": 572,
+      "difference": 21.43671694880966
+    },
+    "PRON": {
+      "x": 28,
+      "y": 14,
+      "sorted position": 581,
+      "difference": 22.360679774997898
+    },
+    "PART": {
+      "x": 28,
+      "y": 15,
+      "sorted position": 586,
+      "difference": 23.220756603219648
+    },
+    "ADV": {
+      "x": 28,
+      "y": 16,
+      "sorted position": 592,
+      "difference": 24.002819741958874
+    },
+    "SPACE": {
+      "x": 28,
+      "y": 17,
+      "sorted position": 597,
+      "difference": 24.694420960019848
+    }
+  },
+  "nummod": {
+    "ADP": {
+      "x": 29,
+      "y": 0,
+      "sorted position": 440,
+      "difference": 9.686792084172033
+    },
+    "VERB": {
+      "x": 29,
+      "y": 1,
+      "sorted position": 450,
+      "difference": 10.632459946243582
+    },
+    "AUX": {
+      "x": 29,
+      "y": 2,
+      "sorted position": 461,
+      "difference": 11.604634510924289
+    },
+    "DET": {
+      "x": 29,
+      "y": 3,
+      "sorted position": 473,
+      "difference": 12.601814116979654
+    },
+    "X": {
+      "x": 29,
+      "y": 4,
+      "sorted position": 484,
+      "difference": 13.622086494110366
+    },
+    "INTJ": {
+      "x": 29,
+      "y": 5,
+      "sorted position": 495,
+      "difference": 14.663054878890922
+    },
+    "NUM": {
+      "x": 29,
+      "y": 6,
+      "sorted position": 507,
+      "difference": 15.721741800471891
+    },
+    "SCONJ": {
+      "x": 29,
+      "y": 7,
+      "sorted position": 521,
+      "difference": 16.794462969947297
+    },
+    "PROPN": {
+      "x": 29,
+      "y": 8,
+      "sorted position": 534,
+      "difference": 17.876662297248945
+    },
+    "CCONJ": {
+      "x": 29,
+      "y": 9,
+      "sorted position": 546,
+      "difference": 18.96269865038657
+    },
+    "NOUN": {
+      "x": 29,
+      "y": 10,
+      "sorted position": 557,
+      "difference": 20.045577487621284
+    },
+    "ADJ": {
+      "x": 29,
+      "y": 11,
+      "sorted position": 567,
+      "difference": 21.116629901929983
+    },
+    "SYM": {
+      "x": 29,
+      "y": 12,
+      "sorted position": 575,
+      "difference": 22.165165195657544
+    },
+    "PUNCT": {
+      "x": 29,
+      "y": 13,
+      "sorted position": 585,
+      "difference": 23.178171897098782
+    },
+    "PRON": {
+      "x": 29,
+      "y": 14,
+      "sorted position": 593,
+      "difference": 24.140226627910685
+    },
+    "PART": {
+      "x": 29,
+      "y": 15,
+      "sorted position": 601,
+      "difference": 25.03388232876511
+    },
+    "ADV": {
+      "x": 29,
+      "y": 16,
+      "sorted position": 604,
+      "difference": 25.840880434077874
+    },
+    "SPACE": {
+      "x": 29,
+      "y": 17,
+      "sorted position": 609,
+      "difference": 26.544404816077744
+    }
+  },
+  "obj": {
+    "ADP": {
+      "x": 30,
+      "y": 0,
+      "sorted position": 454,
+      "difference": 11.026334038989724
+    },
+    "VERB": {
+      "x": 30,
+      "y": 1,
+      "sorted position": 465,
+      "difference": 11.988905662287323
+    },
+    "AUX": {
+      "x": 30,
+      "y": 2,
+      "sorted position": 475,
+      "difference": 12.978585266110755
+    },
+    "DET": {
+      "x": 30,
+      "y": 3,
+      "sorted position": 487,
+      "difference": 13.99413244195916
+    },
+    "X": {
+      "x": 30,
+      "y": 4,
+      "sorted position": 499,
+      "difference": 15.033945689115296
+    },
+    "INTJ": {
+      "x": 30,
+      "y": 5,
+      "sorted position": 514,
+      "difference": 16.095991588214744
+    },
+    "NUM": {
+      "x": 30,
+      "y": 6,
+      "sorted position": 526,
+      "difference": 17.17770921655797
+    },
+    "SCONJ": {
+      "x": 30,
+      "y": 7,
+      "sorted position": 538,
+      "difference": 18.275879515357058
+    },
+    "PROPN": {
+      "x": 30,
+      "y": 8,
+      "sorted position": 550,
+      "difference": 19.386445602829447
+    },
+    "CCONJ": {
+      "x": 30,
+      "y": 9,
+      "sorted position": 562,
+      "difference": 20.50426570033968
+    },
+    "NOUN": {
+      "x": 30,
+      "y": 10,
+      "sorted position": 573,
+      "difference": 21.622776601683793
+    },
+    "ADJ": {
+      "x": 30,
+      "y": 11,
+      "sorted position": 582,
+      "difference": 22.73354616004803
+    },
+    "SYM": {
+      "x": 30,
+      "y": 12,
+      "sorted position": 591,
+      "difference": 23.825707468568453
+    },
+    "PUNCT": {
+      "x": 30,
+      "y": 13,
+      "sorted position": 600,
+      "difference": 24.88531577263698
+    },
+    "PRON": {
+      "x": 30,
+      "y": 14,
+      "sorted position": 606,
+      "difference": 25.894788163565718
+    },
+    "PART": {
+      "x": 30,
+      "y": 15,
+      "sorted position": 611,
+      "difference": 26.832815729997474
+    },
+    "ADV": {
+      "x": 30,
+      "y": 16,
+      "sorted position": 617,
+      "difference": 27.67544467966324
+    },
+    "SPACE": {
+      "x": 30,
+      "y": 17,
+      "sorted position": 620,
+      "difference": 28.399116768835114
+    }
+  },
+  "obl": {
+    "ADP": {
+      "x": 31,
+      "y": 0,
+      "sorted position": 469,
+      "difference": 12.318458307730594
+    },
+    "VERB": {
+      "x": 31,
+      "y": 1,
+      "sorted position": 479,
+      "difference": 13.296079691872297
+    },
+    "AUX": {
+      "x": 31,
+      "y": 2,
+      "sorted position": 493,
+      "difference": 14.301394519777922
+    },
+    "DET": {
+      "x": 31,
+      "y": 3,
+      "sorted position": 504,
+      "difference": 15.333434703952976
+    },
+    "X": {
+      "x": 31,
+      "y": 4,
+      "sorted position": 516,
+      "difference": 16.390930468857064
+    },
+    "INTJ": {
+      "x": 31,
+      "y": 5,
+      "sorted position": 529,
+      "difference": 17.472248659031045
+    },
+    "NUM": {
+      "x": 31,
+      "y": 6,
+      "sorted position": 541,
+      "difference": 18.575306807693888
+    },
+    "SCONJ": {
+      "x": 31,
+      "y": 7,
+      "sorted position": 554,
+      "difference": 19.697451190546836
+    },
+    "PROPN": {
+      "x": 31,
+      "y": 8,
+      "sorted position": 564,
+      "difference": 20.835281299665294
+    },
+    "CCONJ": {
+      "x": 31,
+      "y": 9,
+      "sorted position": 574,
+      "difference": 21.984394642150946
+    },
+    "NOUN": {
+      "x": 31,
+      "y": 10,
+      "sorted position": 584,
+      "difference": 23.139013817748058
+    },
+    "ADJ": {
+      "x": 31,
+      "y": 11,
+      "sorted position": 594,
+      "difference": 24.291443139754424
+    },
+    "SYM": {
+      "x": 31,
+      "y": 12,
+      "sorted position": 602,
+      "difference": 25.43129060128267
+    },
+    "PUNCT": {
+      "x": 31,
+      "y": 13,
+      "sorted position": 609,
+      "difference": 26.544404816077744
+    },
+    "PRON": {
+      "x": 31,
+      "y": 14,
+      "sorted position": 616,
+      "difference": 27.611578465957052
+    },
+    "PART": {
+      "x": 31,
+      "y": 15,
+      "sorted position": 623,
+      "difference": 28.607398820599826
+    },
+    "ADV": {
+      "x": 31,
+      "y": 16,
+      "sorted position": 625,
+      "difference": 29.500362277890314
+    },
+    "SPACE": {
+      "x": 31,
+      "y": 17,
+      "sorted position": 629,
+      "difference": 30.25631954573459
+    }
+  },
+  "obl:agent": {
+    "ADP": {
+      "x": 32,
+      "y": 0,
+      "sorted position": 483,
+      "difference": 13.560911085414226
+    },
+    "VERB": {
+      "x": 32,
+      "y": 1,
+      "sorted position": 494,
+      "difference": 14.551371990591264
+    },
+    "AUX": {
+      "x": 32,
+      "y": 2,
+      "sorted position": 506,
+      "difference": 15.570016581292155
+    },
+    "DET": {
+      "x": 32,
+      "y": 3,
+      "sorted position": 517,
+      "difference": 16.616142663716367
+    },
+    "X": {
+      "x": 32,
+      "y": 4,
+      "sorted position": 530,
+      "difference": 17.688811214633162
+    },
+    "INTJ": {
+      "x": 32,
+      "y": 5,
+      "sorted position": 544,
+      "difference": 18.786798972667846
+    },
+    "NUM": {
+      "x": 32,
+      "y": 6,
+      "sorted position": 555,
+      "difference": 19.908530551525892
+    },
+    "SCONJ": {
+      "x": 32,
+      "y": 7,
+      "sorted position": 566,
+      "difference": 21.05197879759877
+    },
+    "PROPN": {
+      "x": 32,
+      "y": 8,
+      "sorted position": 577,
+      "difference": 22.214515390672275
+    },
+    "CCONJ": {
+      "x": 32,
+      "y": 9,
+      "sorted position": 587,
+      "difference": 23.39268247539322
+    },
+    "NOUN": {
+      "x": 32,
+      "y": 10,
+      "sorted position": 595,
+      "difference": 24.581837318481263
+    },
+    "ADJ": {
+      "x": 32,
+      "y": 11,
+      "sorted position": 603,
+      "difference": 25.775590883078713
+    },
+    "SYM": {
+      "x": 32,
+      "y": 12,
+      "sorted position": 612,
+      "difference": 26.964912430342142
+    },
+    "PUNCT": {
+      "x": 32,
+      "y": 13,
+      "sorted position": 618,
+      "difference": 28.136707840908237
+    },
+    "PRON": {
+      "x": 32,
+      "y": 14,
+      "sorted position": 624,
+      "difference": 29.271644143653578
+    },
+    "PART": {
+      "x": 32,
+      "y": 15,
+      "sorted position": 630,
+      "difference": 30.341194094144583
+    },
+    "ADV": {
+      "x": 32,
+      "y": 16,
+      "sorted position": 634,
+      "difference": 31.304951684997057
+    },
+    "SPACE": {
+      "x": 32,
+      "y": 17,
+      "sorted position": 636,
+      "difference": 32.11223623836921
+    }
+  },
+  "parataxis": {
+    "ADP": {
+      "x": 33,
+      "y": 0,
+      "sorted position": 497,
+      "difference": 14.751712409105341
+    },
+    "VERB": {
+      "x": 33,
+      "y": 1,
+      "sorted position": 509,
+      "difference": 15.752471536806286
+    },
+    "AUX": {
+      "x": 33,
+      "y": 2,
+      "sorted position": 520,
+      "difference": 16.781729913533376
+    },
+    "DET": {
+      "x": 33,
+      "y": 3,
+      "sorted position": 533,
+      "difference": 17.839024510783428
+    },
+    "X": {
+      "x": 33,
+      "y": 4,
+      "sorted position": 545,
+      "difference": 18.923719213912968
+    },
+    "INTJ": {
+      "x": 33,
+      "y": 5,
+      "sorted position": 556,
+      "difference": 20.03497447243094
+    },
+    "NUM": {
+      "x": 33,
+      "y": 6,
+      "sorted position": 568,
+      "difference": 21.171702785643863
+    },
+    "SCONJ": {
+      "x": 33,
+      "y": 7,
+      "sorted position": 579,
+      "difference": 22.332501335874618
+    },
+    "PROPN": {
+      "x": 33,
+      "y": 8,
+      "sorted position": 589,
+      "difference": 23.51554718378874
+    },
+    "CCONJ": {
+      "x": 33,
+      "y": 9,
+      "sorted position": 598,
+      "difference": 24.718429772469005
+    },
+    "NOUN": {
+      "x": 33,
+      "y": 10,
+      "sorted position": 607,
+      "difference": 25.9378755538158
+    },
+    "ADJ": {
+      "x": 33,
+      "y": 11,
+      "sorted position": 614,
+      "difference": 27.169281155988266
+    },
+    "SYM": {
+      "x": 33,
+      "y": 12,
+      "sorted position": 621,
+      "difference": 28.405895799659508
+    },
+    "PUNCT": {
+      "x": 33,
+      "y": 13,
+      "sorted position": 627,
+      "difference": 29.6373438070911
+    },
+    "PRON": {
+      "x": 33,
+      "y": 14,
+      "sorted position": 631,
+      "difference": 30.84689665786984
+    },
+    "PART": {
+      "x": 33,
+      "y": 15,
+      "sorted position": 635,
+      "difference": 32.00649723366443
+    },
+    "ADV": {
+      "x": 33,
+      "y": 16,
+      "sorted position": 639,
+      "difference": 33.06869036632051
+    },
+    "SPACE": {
+      "x": 33,
+      "y": 17,
+      "sorted position": 642,
+      "difference": 33.95914472637279
+    }
+  },
+  "punct": {
+    "ADP": {
+      "x": 34,
+      "y": 0,
+      "sorted position": 510,
+      "difference": 15.889229723725165
+    },
+    "VERB": {
+      "x": 34,
+      "y": 1,
+      "sorted position": 522,
+      "difference": 16.89745993476621
+    },
+    "AUX": {
+      "x": 34,
+      "y": 2,
+      "sorted position": 536,
+      "difference": 17.934257235255707
+    },
+    "DET": {
+      "x": 34,
+      "y": 3,
+      "sorted position": 547,
+      "difference": 18.999350381330466
+    },
+    "X": {
+      "x": 34,
+      "y": 4,
+      "sorted position": 558,
+      "difference": 20.09234991351643
+    },
+    "INTJ": {
+      "x": 34,
+      "y": 5,
+      "sorted position": 570,
+      "difference": 21.212734116913257
+    },
+    "NUM": {
+      "x": 34,
+      "y": 6,
+      "sorted position": 580,
+      "difference": 22.3598279426677
+    },
+    "SCONJ": {
+      "x": 34,
+      "y": 7,
+      "sorted position": 590,
+      "difference": 23.532770027920616
+    },
+    "PROPN": {
+      "x": 34,
+      "y": 8,
+      "sorted position": 599,
+      "difference": 24.73045936596039
+    },
+    "CCONJ": {
+      "x": 34,
+      "y": 9,
+      "sorted position": 608,
+      "difference": 25.95146633284506
+    },
+    "NOUN": {
+      "x": 34,
+      "y": 10,
+      "sorted position": 615,
+      "difference": 27.193879042103376
+    },
+    "ADJ": {
+      "x": 34,
+      "y": 11,
+      "sorted position": 622,
+      "difference": 28.455026881130756
+    },
+    "SYM": {
+      "x": 34,
+      "y": 12,
+      "sorted position": 628,
+      "difference": 29.730957434303132
+    },
+    "PUNCT": {
+      "x": 34,
+      "y": 13,
+      "sorted position": 633,
+      "difference": 31.01538463926809
+    },
+    "PRON": {
+      "x": 34,
+      "y": 14,
+      "sorted position": 638,
+      "difference": 32.29741666670089
+    },
+    "PART": {
+      "x": 34,
+      "y": 15,
+      "sorted position": 640,
+      "difference": 33.5562570766601
+    },
+    "ADV": {
+      "x": 34,
+      "y": 16,
+      "sorted position": 643,
+      "difference": 34.74816133136568
+    },
+    "SPACE": {
+      "x": 34,
+      "y": 17,
+      "sorted position": 645,
+      "difference": 35.77708763999664
+    }
+  },
+  "xcomp": {
+    "ADP": {
+      "x": 35,
+      "y": 0,
+      "sorted position": 524,
+      "difference": 16.972243622680054
+    },
+    "VERB": {
+      "x": 35,
+      "y": 1,
+      "sorted position": 537,
+      "difference": 17.984896434096793
+    },
+    "AUX": {
+      "x": 35,
+      "y": 2,
+      "sorted position": 548,
+      "difference": 19.02587674403481
+    },
+    "DET": {
+      "x": 35,
+      "y": 3,
+      "sorted position": 559,
+      "difference": 20.095039762127684
+    },
+    "X": {
+      "x": 35,
+      "y": 4,
+      "sorted position": 569,
+      "difference": 21.192161059998874
+    },
+    "INTJ": {
+      "x": 35,
+      "y": 5,
+      "sorted position": 578,
+      "difference": 22.31693424892208
+    },
+    "NUM": {
+      "x": 35,
+      "y": 6,
+      "sorted position": 588,
+      "difference": 23.46896723033711
+    },
+    "SCONJ": {
+      "x": 35,
+      "y": 7,
+      "sorted position": 596,
+      "difference": 24.647775577962236
+    },
+    "PROPN": {
+      "x": 35,
+      "y": 8,
+      "sorted position": 605,
+      "difference": 25.85277052091159
+    },
+    "CCONJ": {
+      "x": 35,
+      "y": 9,
+      "sorted position": 613,
+      "difference": 27.083236861047887
+    },
+    "NOUN": {
+      "x": 35,
+      "y": 10,
+      "sorted position": 619,
+      "difference": 28.338291698104044
+    },
+    "ADJ": {
+      "x": 35,
+      "y": 11,
+      "sorted position": 626,
+      "difference": 29.616804843822806
+    },
+    "SYM": {
+      "x": 35,
+      "y": 12,
+      "sorted position": 632,
+      "difference": 30.91723746970178
+    },
+    "PUNCT": {
+      "x": 35,
+      "y": 13,
+      "sorted position": 637,
+      "difference": 32.237289891596156
+    },
+    "PRON": {
+      "x": 35,
+      "y": 14,
+      "sorted position": 641,
+      "difference": 33.57304802432387
+    },
+    "PART": {
+      "x": 35,
+      "y": 15,
+      "sorted position": 644,
+      "difference": 34.916587869151165
+    },
+    "ADV": {
+      "x": 35,
+      "y": 16,
+      "sorted position": 646,
+      "difference": 36.24769483228792
+    },
+    "SPACE": {
+      "x": 35,
+      "y": 17,
+      "sorted position": 647,
+      "difference": 37.495939354314345
+    }
+  }
+}

@@ -1,10 +1,12 @@
+from LinearAlgebra import LinearAlgebra
+from Tags import Tags
+from GraphRepresentation import GraphRepresentation
 import glob
 import multiprocessing as mp
 import pandas as pd
 import os
 import random
 from datetime import datetime
-import math
 
 import fasttext
 import fasttext.util
@@ -23,16 +25,42 @@ class DatasetGenerator():
         self.graph_mode = options.graph_mode
         self.tag_mode = options.tag_mode
 
+        self.la = LinearAlgebra()
+        
         # TAG SECTION
         #  PT MODEL = No component 'tagger' found in pipeline. Available names: ['tok2vec', 'morphologizer', 'parser', 'senter', 'attribute_ruler', 'lemmatizer', 'ner']
         if options.language == "en":
             self.pos_types = list(nlp.get_pipe("tagger").labels)
+            self.pos_types.append('_SP')
         if options.language == "de":
             self.pos_types = list(nlp.get_pipe("tagger").labels)
+            self.pos_types.append('_SP')
         elif options.language == "pt":
             self.pos_types = ['ADP', 'VERB', 'AUX', 'DET', 'X', 'INTJ', 'NUM', 'SCONJ', 'PROPN', 'CCONJ', 'NOUN', 'ADJ', 'SYM', 'PUNCT', 'PRON', 'PART', 'ADV']
+            self.pos_types.append('SPACE')
             
         self.dep_types = list(nlp.get_pipe("parser").labels)       
+
+        # Deal with shuffling dep and pos
+        if options.shuffle_seed != "off":
+            seed = int(options.shuffle_seed)
+            self.pos_types = self.shuffle_array(self.pos_types, seed)
+            self.dep_types = self.shuffle_array(self.dep_types, seed)
+            print("Seed:", seed, "generated \n >> POS:", self.pos_types, "\n >> DEP:", self.dep_types)
+            # Save info about shuffle
+            with open(self.output + "Info.txt", 'w') as f:
+                f.write("Shuffle seed: " + str(seed) + "\n")
+                f.write("POS: [" + ', '.join(self.pos_types) + "]\n")
+                f.write("DEP: [" + ', '.join(self.dep_types) + "]\n")
+        else:
+            with open(self.output + "Info.txt", 'w') as f:
+                f.write("POS: [" + ', '.join(self.pos_types) + "]\n")
+                f.write("DEP: [" + ', '.join(self.dep_types) + "]\n")
+
+        # Initialize other classes
+        self.la.initialize(list(range(0,len(self.dep_types))),list(range(0,len(self.pos_types))))
+        self.graphs = GraphRepresentation(self.graph_mode, [self.dep_types, self.pos_types], self.la)
+        self.tags = Tags(self.tag_mode, self.la, self.pos_types, self.dep_types)
 
         # States
         self.all_graphs = None
@@ -69,6 +97,13 @@ class DatasetGenerator():
   
 ###############################################################################
     # Useful methods
+    def shuffle_array(self, array, seed):
+        new_array = array.copy()
+        random.seed()
+        random.seed(seed)
+        random.shuffle(new_array)
+        random.seed()
+        return new_array
 
     def timestamp(self):
         now = datetime.now()
@@ -102,122 +137,12 @@ class DatasetGenerator():
         sentences = []
         for token in doc:
             aux.append(token)
-            # if token.text in [".", "!", "?"] :
-            #     sentences.append(aux)
-            #     aux = []
-
+           
         # If the last sentece does not finish with punctuation    
         if len(aux) > 0:
             sentences.append(aux)
 
         return sentences
-
-    def list_neighbors(self, sentence,current_token, num_tokens, neighbors):
-        if current_token+1 != num_tokens:
-            linear_neighbor = sentence[current_token+1]
-        else:
-            return list(neighbors)
-        return list(set(list(neighbors) + [linear_neighbor]))
-
-    def list_neighbors_multi_graph(self, sentence,current_token, num_tokens, neighbors):
-        if current_token+1 != num_tokens:
-            linear_neighbor = sentence[current_token+1]
-        else:
-            return list(neighbors)
-        return list(list(neighbors) + [linear_neighbor])
-
-    def handle_neighbors_tree_and_order_multi_graph(self, sentence):
-        token_number = 0
-        num_tokens = len(sentence)
-        result = []
-        for token in sentence:            
-            token_children = self.list_neighbors_multi_graph(sentence, token_number, num_tokens, token.children)           
-            number_neighbors = len(list(token_children))
-            i = 0
-            NEIGHBORS = ""           
-            for child in token_children:
-                if i + 1 == number_neighbors:
-                    NEIGHBORS = NEIGHBORS + str(child.i)
-                else:
-                    NEIGHBORS = NEIGHBORS + str(child.i) + " "
-                i += 1
-            token_number +=1
-            result.append(NEIGHBORS)
-        return result
-
-
-    def handle_neighbors_tree_and_order(self, sentence):
-        # This Funciont parses the text using the sPacy and build the neighbors from it. Additionaly, it 
-        # inserts reading notation (not multigraph) - This means that if there is an edge to a node that
-        # occurs natually from the parsing, a new edge will not be added.
-        token_number = 0
-        num_tokens = len(sentence)
-        result = []
-        
-        for token in sentence:            
-            token_children = self.list_neighbors(sentence, token_number, num_tokens, token.children)           
-            number_neighbors = len(list(token_children))
-            i = 0
-            NEIGHBORS = ""           
-            for child in token_children:
-                if i + 1 == number_neighbors:
-                    NEIGHBORS = NEIGHBORS + str(child.i)
-                else:
-                    NEIGHBORS = NEIGHBORS + str(child.i) + " "
-                i += 1
-            token_number +=1
-            result.append(NEIGHBORS)
-        return result
-
-    def handle_neighbors_tree_only(self, sentence):
-        # This Funciont parses the text using the sPacy and build the neighbors from it
-        token_number = 0
-        num_tokens = len(sentence)
-        result = []
-
-        for token in sentence:            
-            token_children = list(token.children)
-            number_neighbors = len(list(token_children))
-            i = 0
-            NEIGHBORS = ""           
-            for child in token_children:
-                if i + 1 == number_neighbors:
-                    NEIGHBORS = NEIGHBORS + str(child.i)
-                else:
-                    NEIGHBORS = NEIGHBORS + str(child.i) + " "
-                i += 1
-            token_number +=1
-            result.append(NEIGHBORS)
-        return result
-
-    def POS_as_tag(self, token):
-        index = self.pos_types.index(token.tag_) if token.tag_ in self.pos_types else 99
-        return index
-
-    def DEP_as_tag(self, token):
-        index = self.dep_types.index(token.dep_) if token.dep_ in self.dep_types else 99
-        return index
-
-    def composition_as_tag(self, token):
-        dep = self.dep_types.index(token.dep_) if token.dep_ in self.dep_types else 99
-        pos = self.pos_types.index(token.tag_) if token.tag_ in self.pos_types else 99
-        
-        composition = (dep * 100) + pos
-        return composition
-
-    def composition_as_tag_inverted(self, token):
-        dep = self.dep_types.index(token.dep_) if token.dep_ in self.dep_types else 99
-        pos = self.pos_types.index(token.tag_) if token.tag_ in self.pos_types else 99
-        
-        composition = (pos * 100) + dep
-        return composition
-
-    def sqrt_of_product_node_tag(self, token):
-        dep = self.dep_types.index(token.dep_) if token.dep_ in self.dep_types else 99
-        pos = self.pos_types.index(token.tag_) if token.tag_ in self.pos_types else 99
-        
-        composition = math.ceil((dep*pos)**1/2)
-        return composition
 
     def build_nodes(self, sentences):
         # This method must generate the following line:
@@ -226,32 +151,18 @@ class DatasetGenerator():
         sentence_parsed = []
         root_children = []
         for sentence in sentences:
-            if self.graph_mode == "tree_only":
-                parcial_neighbor = self.handle_neighbors_tree_only(sentence)
-            elif self.graph_mode == "tree_and_order":
-                parcial_neighbor = self.handle_neighbors_tree_and_order(sentence)
-            elif self.graph_mode == "tree_and_order_multi_graph":
-                parcial_neighbor = self.handle_neighbors_tree_and_order_multi_graph(sentence)
+            # Build Sentence using the GraphRepresentation class
+            parcial_neighbor = self.graphs.build_graph(sentence)
             i = 0
-            for token in sentence:
-                number_neighbors = len(list(token.children))
 
+            # TODO: Validar se o word embedding está certo, parece-me que estou atribuindo se considerar a palavra da árvore
+
+            for token in sentence:
                 if token.dep_ == "ROOT":
                     # Save the root children to create the root node at the end of the process
                     root_children.append(token.i)
-
-                if self.tag_mode == "none":
-                    TAG = "0"
-                elif self.tag_mode == "dep":
-                    TAG = str(self.DEP_as_tag(token))
-                elif self.tag_mode == "pos":
-                    TAG = str(self.POS_as_tag(token))
-                elif self.tag_mode == "dep-pos":
-                    TAG = str(self.composition_as_tag(token))
-                elif self.tag_mode == "pos-dep":
-                    TAG = str(self.composition_as_tag_inverted(token))
-                elif self.tag_mode == "sqrt_product":
-                    TAG = str(self.sqrt_of_product_node_tag(token))
+                # Build tag using the Tags class.
+                TAG = self.tags.build_tag(token)
 
                 NEIGHBORS = parcial_neighbor[i]
                 NUMBER_NEIGHBORS = str(len(NEIGHBORS.split(" "))) if NEIGHBORS != '' else '0'
