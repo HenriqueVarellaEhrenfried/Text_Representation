@@ -30,6 +30,8 @@ class GraphRepresentation():
         # Totally different idea
         elif self.graph_mode == "binary_tree":
             parcial_neighbor = self.generate_binary_tree(sentence)
+        elif self.graph_mode == "avl_tree":
+            parcial_neighbor = self.generate_avl_tree(sentence)
         
         else:
             print("!!! ATTENTION !!! >>> Graph mode unavailable")
@@ -236,8 +238,8 @@ class GraphRepresentation():
                     function_result.append('')
             return function_result
 
-
-        tree = Tree()
+        root = None
+        tree = Tree("Binary")
         elements = []
         for token in sentence:
             temp = {}
@@ -247,19 +249,54 @@ class GraphRepresentation():
             pos = self.pos_types.index(token.tag_)
             temp["value"] = self.la.distances_sorted.index(self.la.distance_difference(dep,pos,[len(self.dep_types)-1,len(self.pos_types)-1]))
 
-            tree.insert(temp)
+            root = tree.insert(root, temp)
+
             temp["token"] = token.text
             elements.append(temp)
 
-        # print("~~~~~~~~~~~~~~~~~~~~~")
+        tree.root = root
         results = tree.defineNeighborsByID(tree.root, {})
         return  return_strings(results)
-        # print("-----ELEMENTS-----")
-        # print(elements)
-        # print("-----TREE-------")
-        # print(results)
-        # print("--------------------")
+  
+    def generate_avl_tree(self,sentence):
+        ## This method creates a graph of word from the sentence
+        def return_strings(tree):
+            """Receives the result of Tree.defineNeighborsByID"""
+            function_result = []
+            for key in sorted(tree):
+                data = tree[key]
+                neighbor_left = str(data[0]["id"]) if data[0]["id"] != None else data[0]["id"]
+                neighbor_right =str(data[1]["id"]) if data[1]["id"] != None else data[1]["id"]
+                if neighbor_left and neighbor_right:
+                    function_result.append(neighbor_left + " " + neighbor_right)
+                elif neighbor_left and not neighbor_right:
+                    function_result.append(neighbor_left)
+                elif not neighbor_left and neighbor_right:
+                    function_result.append(neighbor_right)
+                else:
+                    function_result.append('')
+            return function_result
 
+        root = None
+        tree = Tree("AVL")
+        elements = []
+        for token in sentence:
+            temp = {}
+            temp["id"] = token.i
+            # Using Distance first
+            dep = self.dep_types.index(token.dep_)
+            pos = self.pos_types.index(token.tag_)
+            temp["value"] = self.la.distances_sorted.index(self.la.distance_difference(dep,pos,[len(self.dep_types)-1,len(self.pos_types)-1]))
+
+            root = tree.insert(root, temp)
+
+            temp["token"] = token.text
+            elements.append(temp)
+
+        tree.root = root
+        results = tree.defineNeighborsByID(tree.root, {})
+        return  return_strings(results)
+  
 
 #  """
 #       IDEAS:

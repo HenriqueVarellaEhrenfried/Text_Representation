@@ -138,63 +138,64 @@ class Tree():
         return neighbors
 
 
+if __name__=='__main__':
+        
+    tree = Tree("Binary")
+    # elements = [5,2,6,1,10,8,7]
 
-tree = Tree("Binary")
-# elements = [5,2,6,1,10,8,7]
+    elements = [
+        {"id":1, "value": 5},
+        {"id":2, "value": 2},
+        {"id":3, "value": 6},
+        {"id":4, "value": 1},
+        {"id":5, "value": 10},
+        {"id":6, "value": 8},
+        {"id":7, "value": 7},
+    ]
 
-elements = [
-    {"id":1, "value": 5},
-    {"id":2, "value": 2},
-    {"id":3, "value": 6},
-    {"id":4, "value": 1},
-    {"id":5, "value": 10},
-    {"id":6, "value": 8},
-    {"id":7, "value": 7},
-]
+    root = None
 
-root = None
+    for element in elements:
+        print(">> Inserting element:", element)
+        root = tree.insert(root, element)
 
-for element in elements:
-    print(">> Inserting element:", element)
-    root = tree.insert(root, element)
+    tree.root = root
 
-tree.root = root
+    other_rep2 = tree.defineNeighborsByValue(tree.root, {})
+    print("\n\n_____________________________________\n\n")
+    print(other_rep2)
+    #########################
+    tree = Tree("AVL")
 
-other_rep2 = tree.defineNeighborsByValue(tree.root, {})
-print("\n\n_____________________________________\n\n")
-print(other_rep2)
-#########################
-tree = Tree("AVL")
+    # elements = [
+    #     {"id":1, "value": 7},
+    #     {"id":2, "value": 6},
+    #     {"id":3, "value": 5},
+    #     {"id":4, "value": 4},
+    #     {"id":5, "value": 3},
+    #     {"id":6, "value": 2},
+    #     {"id":7, "value": 1},
+    # ]
 
-# elements = [
-#     {"id":1, "value": 7},
-#     {"id":2, "value": 6},
-#     {"id":3, "value": 5},
-#     {"id":4, "value": 4},
-#     {"id":5, "value": 3},
-#     {"id":6, "value": 2},
-#     {"id":7, "value": 1},
-# ]
-
-elements = [
-    {"id":1, "value": 5},
-    {"id":2, "value": 2},
-    {"id":3, "value": 6},
-    {"id":4, "value": 1},
-    {"id":5, "value": 10},
-    {"id":6, "value": 8},
-    {"id":7, "value": 7},
-]
+    elements = [
+        {"id":1, "value": 5},
+        {"id":2, "value": 2},
+        {"id":3, "value": 6},
+        {"id":4, "value": 1},
+        {"id":5, "value": 10},
+        {"id":6, "value": 8},
+        {"id":7, "value": 7},
+    ]
 
 
-root = None
+    root = None
 
-for element in elements:
-    print(">> Inserting element:", element)
-    root = tree.insert(root, element)
+    for element in elements:
+        print(">> Inserting element:", element)
+        root = tree.insert(root, element)
 
-tree.root = root
+    tree.root = root
 
-other_rep2 = tree.defineNeighborsByValue(tree.root, {})
-print("\n\n_____________________________________\n\n")
-print(other_rep2)
+    other_rep2 = tree.defineNeighborsByValue(tree.root, {})
+    print("\n\n_____________________________________\n\n")
+    print(other_rep2)
