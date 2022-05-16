@@ -11,16 +11,17 @@ class BinaryNode:
 
 class AVLNode:
     def __init__(self, value, id):
-        self.left: any = None
-        self.right: any = None
-        self.height: any = 0
-        self.value: any = value
-        self.id: any = id
+        self.left = None
+        self.right = None
+        self.height = 0
+        self.value = value
+        self.id = id
 
 
 class Tree():
     def __init__(self, type):
         self.type = type
+        self.root = None
 
     def insert(self, root, data):
         # print("Inserting: ", data)
@@ -34,24 +35,28 @@ class Tree():
         if not node:
             # print("Node inserted !",node)   
             return BinaryNode(data["value"], data["id"])     
+        if data["value"] < node.value:
+            node.left = self.insertBinaryTree(node.left, data)
         else:
-            if data["value"] < node.value:
-                node.left = self.insertBinaryTree(node.left, data)
-            else:
-                node.right = self.insertBinaryTree(node.right, data)
+            node.right = self.insertBinaryTree(node.right, data)
         return node
 
 #################################    
 
     def rightRotate(self, node):
         y = node.left
+        # if(y == None): 
+        #     T3 = None
+        #     y = AVLNode(-1, -1)
+        # else:
+        #     T3 = y.right
         T3 = y.right
 
         y.right = node
         node.left = T3
 
-        node.height = self.nodeHeight(node)
-        y.height = self.nodeHeight(y)
+        node.height = 1+max(self.nodeHeight(node.right), self.nodeHeight(node.left))
+        y.height = 1+max(self.nodeHeight(y.right), self.nodeHeight(y.left))
 
         return y
         
@@ -62,45 +67,47 @@ class Tree():
         y.left = node
         node.right = T2
 
-        node.height = self.nodeHeight(node)
-        y.height = self.nodeHeight(y)
+        node.height = 1+max(self.nodeHeight(node.right), self.nodeHeight(node.left))
+        y.height = 1+max(self.nodeHeight(y.right), self.nodeHeight(y.left))
 
         return y
         
     def nodeHeight(self, node):
         if(node == None):
             return 0
-        return 1+max(self.nodeHeight(node.right), self.nodeHeight(node.left))
+        return 1+max(self.nodeHeight(node.left), self.nodeHeight(node.right))
+
+    def balanceFactor(self, node):
+        if(not node):
+            return 0
+        return self.nodeHeight(node.left) - self.nodeHeight(node.right)
 
     def insertAVLTree(self, node, data):
         if not node:
+            #print("inserted node with value: ", data["value"], "; id: ", data["id"])
             return AVLNode(data["value"], data["id"])      
+
+        if data["value"] < node.value:
+            node.left = self.insertAVLTree(node.left, data)
         else:
-            if data["value"] < node.value:
-                node.left = self.insertAVLTree(node.left, data)
-            else:
-                node.right = self.insertAVLTree(node.right, data)
+            node.right = self.insertAVLTree(node.right, data)
 
-            node.height = self.nodeHeight(node)
+        node.height = 1+max(self.nodeHeight(node.right), self.nodeHeight(node.left))
 
-            balance = self.nodeHeight(node.left) - self.nodeHeight(node.right)
-            if(balance > 1):
-                # Left Left
-                if(data["value"] < node.left.value):
-                    return self.rightRotate(node)
-                # Left Right
-                else:
-                    node.left = self.leftRotate(node.left)
-                    return self.rightRotate(node)
-            elif (balance < -1):
-                # Right Right
-                if(data["value"] > node.right.value):
-                    return self.leftRotate(node)
-                # Right Left
-                else:
-                    node.right = self.rightRotate(node.right)
-                    return self.leftRotate(node)
-            return node
+        balance = self.balanceFactor(node)
+        if(balance > 1 and data["value"] < node.left.value):
+            return self.rightRotate(node)
+        if(balance > 1 and data["value"] >= node.left.value):
+            node.left = self.leftRotate(node.left)
+            return self.rightRotate(node)
+        if (balance < -1 and data["value"] >= node.right.value):
+            return self.leftRotate(node)
+        if (balance < -1 and data["value"] < node.right.value):
+           # print("----------------", data)
+            
+            node.right = self.rightRotate(node.right)
+            return self.leftRotate(node)
+        return node
 
     def defineNeighborsByValue(self, node, neighbors={}):
         """
@@ -140,30 +147,27 @@ class Tree():
 
 if __name__=='__main__':
         
-    tree = Tree("Binary")
-    # elements = [5,2,6,1,10,8,7]
+    # tree = Tree("Binary")
+    # # elements = [5,2,6,1,10,8,7]
 
-    elements = [
-        {"id":1, "value": 5},
-        {"id":2, "value": 2},
-        {"id":3, "value": 6},
-        {"id":4, "value": 1},
-        {"id":5, "value": 10},
-        {"id":6, "value": 8},
-        {"id":7, "value": 7},
-    ]
+    # elements = [
+    #     {"id":1, "value": 1},
+    #     {"id":2, "value": 1},
+    #     {"id":3, "value": 1},
+    #     {"id":4, "value": 1}
+    # ]
 
-    root = None
+    # root = None
 
-    for element in elements:
-        print(">> Inserting element:", element)
-        root = tree.insert(root, element)
+    # for element in elements:
+    #     print(">> Inserting element:", element)
+    #     root = tree.insert(root, element)
 
-    tree.root = root
+    # tree.root = root
 
-    other_rep2 = tree.defineNeighborsByValue(tree.root, {})
-    print("\n\n_____________________________________\n\n")
-    print(other_rep2)
+    # other_rep2 = tree.defineNeighborsByID(tree.root, {})
+    # print("\n\n_____________________________________\n\n")
+    # print(other_rep2)
     #########################
     tree = Tree("AVL")
 
@@ -177,25 +181,44 @@ if __name__=='__main__':
     #     {"id":7, "value": 1},
     # ]
 
-    elements = [
-        {"id":1, "value": 5},
-        {"id":2, "value": 2},
-        {"id":3, "value": 6},
-        {"id":4, "value": 1},
-        {"id":5, "value": 10},
-        {"id":6, "value": 8},
-        {"id":7, "value": 7},
-    ]
+    # elements = [
+    #     {"id":1, "value": 5},
+    #     {"id":2, "value": 2},
+    #     {"id":3, "value": 6},
+    #     {"id":4, "value": 1},
+    #     {"id":5, "value": 10},
+    #     {"id":6, "value": 8},
+    #     {"id":7, "value": 7},
+    # ]
 
+    # elements = [
+    #     {'id': 0, 'value': 1},
+    #     {'id': 1, 'value': 2},
+    #     {'id': 2, 'value': 3},
+    #     {'id': 3, 'value': 4},
+    #     {'id': 4, 'value': 5},
+    # ]
+
+    elements = [
+        {'id': 0, 'value': 1},
+        {'id': 1, 'value': 1},
+        {'id': 2, 'value': 1},
+        {'id': 3, 'value': 1},
+        {'id': 4, 'value': 1},
+    ]
 
     root = None
 
     for element in elements:
         print(">> Inserting element:", element)
         root = tree.insert(root, element)
+        other_rep2 = tree.defineNeighborsByID(root, {})
+        print("\n\n_____________________________________\n\n")
+        print(other_rep2)
+        print("\n\n_____________________________________\n\n")
 
     tree.root = root
 
-    other_rep2 = tree.defineNeighborsByValue(tree.root, {})
+    other_rep2 = tree.defineNeighborsByID(tree.root, {})
     print("\n\n_____________________________________\n\n")
     print(other_rep2)
