@@ -5,6 +5,7 @@ import json
   
 POINT_O = [0, 0]
 POINT_R = [44, 49]  
+TEXT = "Could you please help me with my homework ?"
 # Opening JSON file
 f = open('Info.json')
   
@@ -41,7 +42,7 @@ ax.scatter(x_values, y_values, color ='#ff9861')
 
 ax.set_xlabel('DEP',fontsize=17)
 ax.set_ylabel('POS', fontsize=17)
-ax.set_title('Example of plotting',fontsize=22)
+ax.set_title('Plotting: ' + TEXT,fontsize=22)
 
 ax.grid(True)
 fig.tight_layout()
@@ -53,10 +54,10 @@ plt.plot(d1_x, d1_y, color = 'red', linestyle = 'solid')
 plt.plot(d2_x, d2_y, color = 'blue', linestyle = 'dashed')
 ax.scatter([POINT_O[0],POINT_R[0]], [POINT_O[1], POINT_R[1]], marker='s', color = 'black')
 
-plt.xticks(range(POINT_O[0], POINT_R[0]+1))
-plt.yticks(range(POINT_O[1], POINT_R[1]+1))
+plt.xticks(range(POINT_O[0], POINT_R[0]+1), fontsize=15)
+plt.yticks(range(POINT_O[1], POINT_R[1]+1), fontsize=15)
 
 # figure(figsize=(3, 2), dpi=80)
-plt.gcf().set_size_inches(16, 13)
+plt.gcf().set_size_inches(18, 16)
 
 plt.savefig('./Exemplo.png')
