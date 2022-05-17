@@ -1,3 +1,4 @@
+import json
 import sys
 sys.path.insert(0, '../Dep-Generator')
 
@@ -23,12 +24,12 @@ class Test():
 
         self.dep_types = list(self.nlp.get_pipe("parser").labels)   
 
-        self.seeds = [10, 20, 30, 40]
-        self.shuffled_pos_types = self.shuffles_array(self.pos_types, self.seeds)
-        self.shuffled_dep_types = self.shuffles_array(self.dep_types, self.seeds)
+        # self.seeds = [10, 20, 30, 40]
+        # self.shuffled_pos_types = self.shuffles_array(self.pos_types, self.seeds)
+        # self.shuffled_dep_types = self.shuffles_array(self.dep_types, self.seeds)
 
-        self.print_shuffled(self.shuffled_pos_types)
-        self.print_shuffled(self.shuffled_dep_types)
+        # self.print_shuffled(self.shuffled_pos_types)
+        # self.print_shuffled(self.shuffled_dep_types)
 
         self.la = LinearAlgebra()
         self.la.initialize(list(range(0,len(self.dep_types))),list(range(0,len(self.pos_types))))
@@ -58,8 +59,40 @@ class Test():
         print("========================================")
 
         print(self.build_nodes(sentences))
+        self.print_linguistics(sentences)
 
-    
+    def print_linguistics(self, sentences):
+        point_a = [len(self.dep_types)-1,len(self.pos_types)-1]
+        point_b=[0,0]
+        result = []
+        for sentence in sentences:
+            for token in sentence:
+                print(token)
+                dep = self.dep_types.index(token.dep_)
+                pos = self.pos_types.index(token.tag_)
+
+                d1 = self.la.distance(point_b[0],dep,point_b[1],pos)
+                # Calculate distance to the point above (max(X)+1, max(Y)+1)
+                d2 = self.la.distance(point_a[0]+1,dep,point_a[1]+1,pos)
+                # Calculate difference between the distances
+                d = d1 - d2
+
+                t = {
+                    "token": token.text,
+                    "dep name": token.dep_,
+                    "pos name": token.tag_,
+                    "dep": dep,
+                    "pos": pos,
+                    "d1": d1,
+                    "d2":d2,
+                    "d": d,
+                    "hash": self.la.distances_sorted.index(d)
+                }
+                result.append(t)
+
+        print(point_a, point_b)
+        return(json.dumps(result, indent = 4))
+
     def print_shuffled(self, array):
         for a in array:
             print(a)
