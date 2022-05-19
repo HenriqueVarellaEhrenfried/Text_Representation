@@ -1,7 +1,11 @@
 from dataclasses import dataclass
-import sys
+from enum import Enum
 
-@dataclass
+
+class Color(Enum):
+    BLACK = 1
+    RED = 2
+
 class BinaryNode:
     def __init__ (self, value, id):
         self.left: any = None
@@ -17,6 +21,14 @@ class AVLNode:
         self.value = value
         self.id = id
 
+class RedBlackNode:
+    def __init__(self, value, id):
+        self.left: any = None
+        self.right: any = None
+        self.parent: any = None
+        self.value: any = value
+        self.id: any = id
+        self.color: any = Color.RED
 
 class Tree():
     def __init__(self, type):
@@ -29,6 +41,8 @@ class Tree():
             return self.insertBinaryTree(root, data)
         if self.type == "AVL":
             return self.insertAVLTree(root, data)
+        if self.type == "RedBlack":
+            return self.insertRedBlackTree(data)
         
     def insertBinaryTree(self, node, data):
         # print(">> Debugging (node, data): ",  node, " |", data )
@@ -108,6 +122,91 @@ class Tree():
             node.right = self.rightRotate(node.right)
             return self.leftRotate(node)
         return node
+####################
+    def insertRedBlackTree(self, data):
+        def leftRotate(node):
+            y = node.right
+            node.right = y.left
+            if(y.left != None):
+                y.left.parent = node
+            y.parent = node.parent
+            if(node.parent == None):
+                self.root = y
+            elif(node == node.parent.left):
+                node.parent.left = y
+            else:
+                node.parent.right = y
+            y.left = node
+            node.parent = y
+
+        def rightRotate(node):
+            x = node.left
+            node.left = x.right
+            if(x.right != None):
+                x.right.parent = node
+            x.parent = node.parent
+            if(node.parent == None):
+                self.root = x
+            elif(node == node.parent.right):
+                node.parent.right = x
+            else:
+                node.parent.left = x
+            x.right = node
+            node.parent = x
+
+        def FixUpInsert(node):
+            while(node.parent != None and node.parent.color == Color.RED):
+                if(node.parent == node.parent.parent.left):
+                    y = node.parent.parent.right
+                    if(y != None and y.color == Color.RED):
+                        node.parent.color = Color.BLACK
+                        y.color = Color.BLACK
+                        node.parent.parent.color = Color.RED
+                        node = node.parent.parent
+                    else:
+                        if(node == node.parent.right):
+                            node = node.parent
+                            leftRotate(node)
+                        node.parent.color = Color.BLACK
+                        node.parent.parent.color = Color.RED
+                        rightRotate(node.parent.parent)
+                elif(node.parent == node.parent.parent.right):
+                    y = node.parent.parent.left
+                    if(y != None and y.color == Color.RED):
+                        node.parent.color = Color.BLACK
+                        y.color = Color.BLACK
+                        node.parent.parent.color = Color.RED
+                        node = node.parent.parent
+                    else:
+                        if(node == node.parent.left):
+                            node = node.parent
+                            rightRotate(node)
+                        node.parent.color = Color.BLACK
+                        node.parent.parent.color = Color.RED
+                        leftRotate(node.parent.parent)
+            self.root.color = Color.BLACK
+        
+        z = RedBlackNode(data["value"], data["id"])
+        y = None
+        x = self.root
+        while(x != None):
+            y = x
+            if(z.value < x.value):
+                x = x.left
+            else: 
+                x = x.right
+
+        z.parent = y
+        if(y == None):
+            self.root = z
+        elif(z.value < y.value):
+            y.left = z
+        else:
+            y.right = z
+        FixUpInsert(z)
+        return self.root
+
+#####################
 
     def defineNeighborsByValue(self, node, neighbors={}):
         """
@@ -169,7 +268,7 @@ if __name__=='__main__':
     # print("\n\n_____________________________________\n\n")
     # print(other_rep2)
     #########################
-    tree = Tree("AVL")
+    # tree = Tree("AVL")
 
     # elements = [
     #     {"id":1, "value": 7},
@@ -199,23 +298,67 @@ if __name__=='__main__':
     #     {'id': 4, 'value': 5},
     # ]
 
+    # elements = [
+    #     {'id': 0, 'value': 1},
+    #     {'id': 1, 'value': 1},
+    #     {'id': 2, 'value': 1},
+    #     {'id': 3, 'value': 1},
+    #     {'id': 4, 'value': 1},
+    # ]
+
+    # root = None
+
+    # for element in elements:
+    #     print(">> Inserting element:", element)
+    #     root = tree.insert(root, element)
+    
+    # tree.root = root
+
+    # other_rep2 = tree.defineNeighborsByID(tree.root, {})
+    # print("\n\n_____________________________________\n\n")
+    # print(other_rep2)
+
+    tree = Tree("RedBlack")
+
+    # elements = [
+    #     {"id":1, "value": 1},
+    #     {"id":2, "value": 1},
+    #     {"id":3, "value": 1},
+    #     {"id":4, "value": 1},
+    #     {"id":5, "value": 1},
+    #     {"id":6, "value": 1},
+    #     {"id":7, "value": 1},
+    #     {"id":8, "value": 1},
+    # ]
+
     elements = [
-        {'id': 0, 'value': 1},
-        {'id': 1, 'value': 1},
-        {'id': 2, 'value': 1},
-        {'id': 3, 'value': 1},
-        {'id': 4, 'value': 1},
+        {"id":1, "value": 1},
+        {"id":2, "value": 2},
+        {"id":3, "value": 3},
+        {"id":4, "value": 4},
+        {"id":5, "value": 5},
+        {"id":6, "value": 6},
+        {"id":7, "value": 7},
+        {"id":8, "value": 8},
     ]
+
+
+    # elements = [
+    #     {"id":1, "value": 5},
+    #     {"id":2, "value": 2},
+    #     {"id":3, "value": 6},
+    #     {"id":4, "value": 1},
+    #     {"id":5, "value": 10},
+    #     {"id":6, "value": 8},
+    #     {"id":7, "value": 7},
+    # ]
+
 
     root = None
 
     for element in elements:
         print(">> Inserting element:", element)
         root = tree.insert(root, element)
-        other_rep2 = tree.defineNeighborsByID(root, {})
-        print("\n\n_____________________________________\n\n")
-        print(other_rep2)
-        print("\n\n_____________________________________\n\n")
 
     tree.root = root
 
