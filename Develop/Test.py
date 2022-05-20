@@ -14,7 +14,7 @@ class Test():
         self.nlp = spacy.load(SPACY_MODEL)
 
         self.tag_mode = "none"
-        self.graph_mode = "binary_tree"
+        self.graph_mode = "red_black_tree"
 
         self.pos_types = list(self.nlp.get_pipe("tagger").labels)
         self.pos_types.append('_SP')
@@ -67,7 +67,6 @@ class Test():
         result = []
         for sentence in sentences:
             for token in sentence:
-                print(token)
                 dep = self.dep_types.index(token.dep_)
                 pos = self.pos_types.index(token.tag_)
 
@@ -90,7 +89,6 @@ class Test():
                 }
                 result.append(t)
 
-        print(point_a, point_b)
         return(json.dumps(result, indent = 4))
 
     def print_shuffled(self, array):
