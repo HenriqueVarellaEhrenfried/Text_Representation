@@ -7,6 +7,7 @@ class GraphRepresentation():
         self.dep_types = dep_pos_types[0]
         self.pos_types = dep_pos_types[1]
         self.la = la
+        print("SELECTED GRAPH MODE: ", self.graph_mode)
     
     def build_graph(self, sentence):
         if self.graph_mode == "tree_only":
@@ -34,7 +35,10 @@ class GraphRepresentation():
             parcial_neighbor = self.generate_avl_tree(sentence)
         elif self.graph_mode == "red_black_tree":
             parcial_neighbor = self.generate_red_black_tree(sentence)
-        
+        # Add Graph of Words (GoW)
+        elif self.graph_mode == "gow":
+            parcial_neighbor = self.generate_graph_of_words(sentence)
+
         else:
             print("!!! ATTENTION !!! >>> Graph mode unavailable")
 
@@ -54,6 +58,15 @@ class GraphRepresentation():
         else:
             return list(neighbors)
         return list(list(neighbors) + [linear_neighbor])
+
+    def get_all_indexes(self, array, value):
+        new_array = []
+        if str(type(array[0])) == "<class 'spacy.tokens.token.Token'>":
+            for a in array:
+                new_array.append(str(a))
+            return [i for i,val in enumerate(new_array) if val==str(value)]
+        else:
+            return [i for i,val in enumerate(array) if val==value]
 
     def handle_neighbors_tree_and_order_multi_graph(self, sentence):
         token_number = 0
@@ -119,6 +132,8 @@ class GraphRepresentation():
             token_number +=1
             
             result.append(NEIGHBORS)
+        print(sentence)
+        print(result)
         return result
 
     def handle_neighbors_tree_and_self(self, sentence):
@@ -337,7 +352,52 @@ class GraphRepresentation():
         tree.root = root
         results = tree.defineNeighborsByID(tree.root, {})
         return  return_strings(results)
-  
+
+    def generate_graph_of_words(self, sentence):
+        '''
+        Implementation of Graph of Word from:
+        François Rousseau and Michalis Vazirgiannis. 2013. Graph-of-word and tw-idf: New approach to ad hoc ir. 
+        In Proceedings of the 22nd ACM International Conference on Information; Knowledge Management, CIKM ’13, 
+        page 59–68, New York, NY, USA. Association for Computing Machinery.
+
+        This code follows some assumptions:
+        1) The graph is directed   (See Secetion 4.2 of the cited paper above)
+        2) The graph is unweighted (See Secetion 4.3 of the cited paper above)
+        3) The sliding windows has size 4 (See Secetion 4.4 of the cited paper above)
+        4) If the words are written different, they are different words: [Sand, sand, SAnd] are three different words
+        5) If the sliding window is bigger than the remaining sentence, reduce the sliding window
+        '''
+        
+        
+        SLIDING_WINDOW = 3
+        result = []
+        s_window = SLIDING_WINDOW
+
+        # Build index equevalence
+        sentence_indexes = []
+        for s in sentence:
+            sentence_indexes.append(self.get_all_indexes(sentence, s))
+        
+
+        i = 0
+        for _ in sentence:
+            working_words = []
+            NEIGHBORS = ""  
+            if i + s_window - 1 >= len(sentence):
+                s_window -= 1
+
+            if i + s_window - 1 < len(sentence):
+                for j in range(0, s_window):
+                    working_words.append(sentence[i+j])
+                    if j > 0:
+                        NEIGHBORS = NEIGHBORS + str(sentence_indexes[i+j][0]) + " "
+            result.append(NEIGHBORS.rstrip())  
+            # print(working_words)      
+            i += 1
+        return(result)
+        
+        
+
 
 #  """
 #       IDEAS:

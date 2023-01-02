@@ -12,9 +12,9 @@ class Test():
     def __init__(self):
         SPACY_MODEL = "en_core_web_lg"
         self.nlp = spacy.load(SPACY_MODEL)
-
         self.tag_mode = "none"
-        self.graph_mode = "red_black_tree"
+        self.graph_mode = "gow"
+        # self.graph_mode = "tree_only"
 
         self.pos_types = list(self.nlp.get_pipe("tagger").labels)
         self.pos_types.append('_SP')
@@ -39,7 +39,8 @@ class Test():
         self.graphs = GraphRepresentation(self.graph_mode, [self.dep_types, self.pos_types], self.la)
 
         # file_content = "I would like to present now"
-        file_content = "Could you please help me with my homework ?"
+        # file_content = "Could you please help me with my homework ?"
+        file_content = "information retrieval is the activity of obtaining information resources relevant to an information need from a collection of information resources"
         # file_content = "Você pode me ajudar a programar ?"
         # file_content = """
         # Characteristics of cholinergic neuroeffector transmission of ganglionic and aganglionic colon in Hirschsprung's disease.
