@@ -137,10 +137,7 @@ class DatasetGenerator():
         sentences = []
         for token in doc:
             aux.append(token)
-            # if token.text in [".", "!", "?"] :
-            #     sentences.append(aux)
-            #     aux = []
-
+           
         # If the last sentece does not finish with punctuation    
         if len(aux) > 0:
             sentences.append(aux)
