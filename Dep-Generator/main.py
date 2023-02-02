@@ -10,7 +10,7 @@ from DatasetGenerator import DatasetGenerator
 
 SET_OPTIONS = ['Both', 'Test', 'Train']
 LANGUAGES = ['en', 'pt', 'de']
-GRAPH_MODE = ['tree_only', 'tree_and_order', 'tree_and_order_multi_graph', 'tree_and_self', 'tree_order_and_self', 'tree_order_multigraph_and_self', 'only_order', 'order_circular','binary_tree']
+GRAPH_MODE = ['tree_only', 'tree_and_order', 'tree_and_order_multi_graph', 'tree_and_self', 'tree_order_and_self', 'tree_order_multigraph_and_self', 'only_order', 'order_circular','binary_tree', 'avl_tree', 'red_black_tree', 'gow']
 TAG_MODE = ['none', 'dep', 'pos', 'dep-pos', 'pos-dep', 'sqrt_product', 'distance']
 
 parser = OptionParser()

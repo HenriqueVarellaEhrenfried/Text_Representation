@@ -26,6 +26,7 @@ Datasets/Ohsumed/Output-dataset
 
 Datasets/B2W/
 Datasets/Ohsumed/*
+Datasets/10kGNAD-DE/*
 
 Develop/cc*
 
