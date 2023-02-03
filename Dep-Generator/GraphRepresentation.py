@@ -358,7 +358,7 @@ class GraphRepresentation():
         '''
         
         
-        SLIDING_WINDOW = 3
+        SLIDING_WINDOW = 4
         result = []
         s_window = SLIDING_WINDOW
 

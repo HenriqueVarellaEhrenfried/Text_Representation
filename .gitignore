@@ -31,3 +31,6 @@ Datasets/10kGNAD-DE/*
 Develop/cc*
 
 Develop/__pycache__/
+Datasets/Ohsumed/ohsumed_single_23/
+
+GOW_datasets/
