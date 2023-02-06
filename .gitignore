@@ -21,6 +21,7 @@ Datasets/MR/MR-*
 Datasets/MR/U2GNN-*
 Datasets/MR/U2GNN-*/Train_MR.txt
 Datasets/MR/Parsed/*
+Datasets/GermEval2018
 
 Datasets/Ohsumed/Output-dataset
 
