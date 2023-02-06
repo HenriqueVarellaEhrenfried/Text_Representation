@@ -128,8 +128,8 @@ class GraphRepresentation():
             token_number +=1
             
             result.append(NEIGHBORS)
-        print(sentence)
-        print(result)
+        # print(sentence)
+        # print(result)
         return result
 
     def handle_neighbors_tree_and_self(self, sentence):

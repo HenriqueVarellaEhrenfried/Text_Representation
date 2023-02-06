@@ -57,6 +57,10 @@ class DatasetGenerator():
                 f.write("POS: [" + ', '.join(self.pos_types) + "]\n")
                 f.write("DEP: [" + ', '.join(self.dep_types) + "]\n")
 
+        if options.shuffle_dataset == "True":
+             self.shuffle_dataset = True
+        else:
+             self.shuffle_dataset = False
         # Initialize other classes
         self.la.initialize(list(range(0,len(self.dep_types))),list(range(0,len(self.pos_types))))
         self.graphs = GraphRepresentation(self.graph_mode, [self.dep_types, self.pos_types], self.la)
@@ -258,26 +262,27 @@ class DatasetGenerator():
             for rd in return_dict[i]:
                 self.final_dataset.append(rd)
 
+        if self.shuffle_dataset == True:
         # ------ Save the position of the shuffled dataset ----
-        x = list(enumerate(self.final_dataset))
-        random.shuffle(x)
-        indices, self.final_dataset = zip(*x)
+            x = list(enumerate(self.final_dataset))
+            random.shuffle(x)
+            indices, self.final_dataset = zip(*x)
 
-        
-        len_indices = len(indices)
-        len_array = len(array)
-        index_csv = []
-        if len_array != len_indices:
-            print("Error: Lists with different sizes")
-            exit(1)
-        else:
-            for i in range(0, len_array):
-                index_csv.append([array[i],indices[i]])
             
-            df = pd.DataFrame(index_csv, columns=["file","new_index"])
-        
-        # The above line saves a CSV containing the file and its position in the shuffled dataset
-        df.to_csv(self.output + self.set + "_" + self.name + '.csv', sep=";")
+            len_indices = len(indices)
+            len_array = len(array)
+            index_csv = []
+            if len_array != len_indices:
+                print("Error: Lists with different sizes")
+                exit(1)
+            else:
+                for i in range(0, len_array):
+                    index_csv.append([array[i],indices[i]])
+                
+                df = pd.DataFrame(index_csv, columns=["file","new_index"])
+            
+            # The above line saves a CSV containing the file and its position in the shuffled dataset
+            df.to_csv(self.output + self.set + "_" + self.name + '.csv', sep=";")
         # -----------------------------------------------------
 
         # Save the dataset

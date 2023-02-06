@@ -24,6 +24,7 @@ parser.add_option("-l", "--language", dest="language", default="en", help="Langu
 parser.add_option("-g", "--graph_mode", dest="graph_mode", default="tree_only", help="Type of graph to build")
 parser.add_option("-t", "--tag_mode", dest="tag_mode", default="none", help="Type of tag for nodes")
 parser.add_option("-S", "--shuffle_seed", dest="shuffle_seed", default="off", help="Shuffle POS and TAG nodes with seed provided")
+parser.add_option("-D", "--shuffle_dataset", dest="shuffle_dataset", default="False", help="Shuffle dataset")
 
 (options, args) = parser.parse_args()
 
