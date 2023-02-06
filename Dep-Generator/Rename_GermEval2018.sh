@@ -1,0 +1,25 @@
+mv ../Datasets/GermEval2018/GermEval2018-Coarse-AT-TAG-None/Train_GermEval2018-Coarse.txt ../Datasets/GermEval2018/GermEval2018-Coarse-AT-TAG-None/GermEval2018-Coarse-AT-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Coarse-BT-TAG-None/Train_GermEval2018-Coarse.txt ../Datasets/GermEval2018/GermEval2018-Coarse-BT-TAG-None/GermEval2018-Coarse-BT-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Coarse-DTOR-TAG-None/Train_GermEval2018-Coarse.txt ../Datasets/GermEval2018/GermEval2018-Coarse-DTOR-TAG-None/GermEval2018-Coarse-DTOR-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Coarse-DTORM-TAG-None/Train_GermEval2018-Coarse.txt ../Datasets/GermEval2018/GermEval2018-Coarse-DTORM-TAG-None/GermEval2018-Coarse-DTORM-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Coarse-DTORMS-TAG-None/Train_GermEval2018-Coarse.txt ../Datasets/GermEval2018/GermEval2018-Coarse-DTORMS-TAG-None/GermEval2018-Coarse-DTORMS-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Coarse-DTORS-TAG-None/Train_GermEval2018-Coarse.txt ../Datasets/GermEval2018/GermEval2018-Coarse-DTORS-TAG-None/GermEval2018-Coarse-DTORS-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Coarse-DTOY-TAG-None/Train_GermEval2018-Coarse.txt ../Datasets/GermEval2018/GermEval2018-Coarse-DTOY-TAG-None/GermEval2018-Coarse-DTOY-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Coarse-DTOYS-TAG-None/Train_GermEval2018-Coarse.txt ../Datasets/GermEval2018/GermEval2018-Coarse-DTOYS-TAG-None/GermEval2018-Coarse-DTOYS-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Coarse-GOW-TAG-None/Train_GermEval2018-Coarse.txt ../Datasets/GermEval2018/GermEval2018-Coarse-GOW-TAG-None/GermEval2018-Coarse-GOW-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Coarse-RBT-TAG-None/Train_GermEval2018-Coarse.txt ../Datasets/GermEval2018/GermEval2018-Coarse-RBT-TAG-None/GermEval2018-Coarse-RBT-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Coarse-ROC-TAG-None/Train_GermEval2018-Coarse.txt ../Datasets/GermEval2018/GermEval2018-Coarse-ROC-TAG-None/GermEval2018-Coarse-ROC-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Coarse-ROO-TAG-None/Train_GermEval2018-Coarse.txt ../Datasets/GermEval2018/GermEval2018-Coarse-ROO-TAG-None/GermEval2018-Coarse-ROO-TAG-None.txt 
+
+mv ../Datasets/GermEval2018/GermEval2018-Fine-AT-TAG-None/Train_GermEval2018-Fine.txt ../Datasets/GermEval2018/GermEval2018-Fine-AT-TAG-None/GermEval2018-Fine-AT-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Fine-BT-TAG-None/Train_GermEval2018-Fine.txt ../Datasets/GermEval2018/GermEval2018-Fine-BT-TAG-None/GermEval2018-Fine-BT-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Fine-DTOR-TAG-None/Train_GermEval2018-Fine.txt ../Datasets/GermEval2018/GermEval2018-Fine-DTOR-TAG-None/GermEval2018-Fine-DTOR-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Fine-DTORM-TAG-None/Train_GermEval2018-Fine.txt ../Datasets/GermEval2018/GermEval2018-Fine-DTORM-TAG-None/GermEval2018-Fine-DTORM-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Fine-DTORMS-TAG-None/Train_GermEval2018-Fine.txt ../Datasets/GermEval2018/GermEval2018-Fine-DTORMS-TAG-None/GermEval2018-Fine-DTORMS-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Fine-DTORS-TAG-None/Train_GermEval2018-Fine.txt ../Datasets/GermEval2018/GermEval2018-Fine-DTORS-TAG-None/GermEval2018-Fine-DTORS-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Fine-DTOY-TAG-None/Train_GermEval2018-Fine.txt ../Datasets/GermEval2018/GermEval2018-Fine-DTOY-TAG-None/GermEval2018-Fine-DTOY-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Fine-DTOYS-TAG-None/Train_GermEval2018-Fine.txt ../Datasets/GermEval2018/GermEval2018-Fine-DTOYS-TAG-None/GermEval2018-Fine-DTOYS-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Fine-GOW-TAG-None/Train_GermEval2018-Fine.txt ../Datasets/GermEval2018/GermEval2018-Fine-GOW-TAG-None/GermEval2018-Fine-GOW-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Fine-RBT-TAG-None/Train_GermEval2018-Fine.txt ../Datasets/GermEval2018/GermEval2018-Fine-RBT-TAG-None/GermEval2018-Fine-RBT-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Fine-ROC-TAG-None/Train_GermEval2018-Fine.txt ../Datasets/GermEval2018/GermEval2018-Fine-ROC-TAG-None/GermEval2018-Fine-ROC-TAG-None.txt 
+mv ../Datasets/GermEval2018/GermEval2018-Fine-ROO-TAG-None/Train_GermEval2018-Fine.txt ../Datasets/GermEval2018/GermEval2018-Fine-ROO-TAG-None/GermEval2018-Fine-ROO-TAG-None.txt 

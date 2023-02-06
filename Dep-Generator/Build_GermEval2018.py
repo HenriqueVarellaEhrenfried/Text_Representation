@@ -45,7 +45,8 @@ for repr in REPRESENTATION.keys():
         print(">> [%s] Dataset [%s-%s : %s] Created" %  (str(datetime.now()), BASE_NAME, task, mode))
 
 print(">> [%s] Finished building all %s datasets" %  (str(datetime.now()), BASE_NAME))
-
+print(">> Renaming Them")
+os.system("bash Rename_GermEval2018.sh")
 
 
 # mkdir -p ../Datasets/MR/MR-GOW-TAG-None
