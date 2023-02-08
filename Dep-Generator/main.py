@@ -25,6 +25,8 @@ parser.add_option("-g", "--graph_mode", dest="graph_mode", default="tree_only", 
 parser.add_option("-t", "--tag_mode", dest="tag_mode", default="none", help="Type of tag for nodes")
 parser.add_option("-S", "--shuffle_seed", dest="shuffle_seed", default="off", help="Shuffle POS and TAG nodes with seed provided")
 parser.add_option("-D", "--shuffle_dataset", dest="shuffle_dataset", default="False", help="Shuffle dataset")
+parser.add_option("-I", "--inverted_name", dest="inverted_name", default="False", help="Change the pattern of naming - If False: CLASS_ID.txt, if True :ID_CLASS.txt")
+
 
 (options, args) = parser.parse_args()
 

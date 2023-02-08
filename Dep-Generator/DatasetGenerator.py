@@ -25,6 +25,8 @@ class DatasetGenerator():
         self.graph_mode = options.graph_mode
         self.tag_mode = options.tag_mode
 
+        self.inverted_name = options.inverted_name
+
         self.la = LinearAlgebra()
         
         # TAG SECTION
@@ -225,8 +227,12 @@ class DatasetGenerator():
             nodes = self.build_nodes(sentences)
 
             # Get the number of nodes
+            if self.inverted_name == "False":
+                CLASS = file_in.split("/")[-1].split("_")[0]
+            else:
+                CLASS = file_in.split("/")[-1].split("_")[1]
+                
             NUMBER_OF_NODES = str(len(nodes))
-            CLASS = file_in.split("/")[-1].split("_")[0]
             GRAPH = [NUMBER_OF_NODES + " " + CLASS]
             for n in nodes:
                 GRAPH.append(n)
