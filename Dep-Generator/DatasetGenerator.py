@@ -230,7 +230,7 @@ class DatasetGenerator():
             if self.inverted_name == "False":
                 CLASS = file_in.split("/")[-1].split("_")[0]
             else:
-                CLASS = file_in.split("/")[-1].split("_")[1]
+                CLASS = file_in.split("/")[-1].split("_")[1].split(".")[0]
                 
             NUMBER_OF_NODES = str(len(nodes))
             GRAPH = [NUMBER_OF_NODES + " " + CLASS]
