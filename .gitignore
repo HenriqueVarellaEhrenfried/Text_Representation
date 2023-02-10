@@ -22,6 +22,7 @@ Datasets/MR/U2GNN-*
 Datasets/MR/U2GNN-*/Train_MR.txt
 Datasets/MR/Parsed/*
 Datasets/MR/ParsedV2/*
+Datasets/MR/TextGCN_Setup/
 Datasets/GermEval2018
 
 Datasets/Ohsumed/Output-dataset
@@ -36,3 +37,5 @@ Develop/__pycache__/
 Datasets/Ohsumed/ohsumed_single_23/
 
 GOW_datasets/
+Datasets/GermEval2021/
+

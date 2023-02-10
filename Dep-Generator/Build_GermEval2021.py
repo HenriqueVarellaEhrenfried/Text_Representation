@@ -2,10 +2,12 @@ import os
 from datetime import datetime
 
 DATASET_ORIGIN = [
-    "../Datasets/MR/ParsedV2/"
+    "../Datasets/GermEval2021/Parsed/Engaging/",
+    "../Datasets/GermEval2021/Parsed/FactClamming/",
+    "../Datasets/GermEval2021/Parsed/Toxic/"
 ]
 
-DATASET_OUTPUT_DEFAULT = "../Datasets/MR/TextGCN_Setup/"
+DATASET_OUTPUT_DEFAULT = "../Datasets/GermEval2021/"
 
 REPRESENTATION = {
     "ROO": "only_order",
@@ -22,8 +24,8 @@ REPRESENTATION = {
     "GOW": "gow"
 }
 
-BASE_NAME = "MR_TextGCN_Setup"
-BASE_COMMAND = "python main.py -i"
+BASE_NAME = "GermEval2021"
+BASE_COMMAND = "python main.py "
 
 init_time = datetime.now()
 
@@ -38,15 +40,24 @@ for repr in REPRESENTATION.keys():
         os.system("mkdir -p %s%s-%s-%s-TAG-None" % (DATASET_OUTPUT_DEFAULT, BASE_NAME, task, repr) )
 
         # Build the command to create the dataset
-        command += " %s -o %s%s-%s-%s-TAG-None -n %s-%s -s Train -d 300 -c 8 -l en -I True -g %s -t none;" % (dat_origin, DATASET_OUTPUT_DEFAULT, BASE_NAME, task, repr, BASE_NAME, task, mode)
+        command += "-i %s -o %s%s-%s-%s-TAG-None -n %s-%s -s Train -d 300 -c 20 -l de -I True -g %s -t none;" % (dat_origin, DATASET_OUTPUT_DEFAULT, BASE_NAME, task, repr, BASE_NAME, task, mode)
         
         # Execute this command
         os.system(command)
         print(">> [%s] Dataset [%s-%s : %s] Created" %  (str(datetime.now()), BASE_NAME, task, mode))
 
+print(">> [%s] Finished building all %s datasets" %  (str(datetime.now()), BASE_NAME))
+print(">> Renaming Them")
+os.system("bash Rename_GermEval2021.sh")
+
 print(">> [%s] Finished building all %s datasets after time %s " %  (str(datetime.now()), BASE_NAME, str(datetime.now()-init_time)))
-# print(">> Renaming Them")
-# os.system("bash Rename_GermEval2018.sh")
+
+# mkdir -p ../Datasets/MR/MR-GOW-TAG-None
+# mkdir -p ../Datasets/Ohsumed/Ohsumed-GOW-TAG-None
+
+# mkdir -p ../Datasets/B2W/B2W_COMPLETE-Rating-GOW-TAG-None
+# mkdir -p ../Datasets/10kGNAD-DE/10kGNAD-GOW-TAG-None
+# python main.py -i ../Datasets/GermEval2018/Parsed_ALL/Fine/ -o ../Datasets/GermEval2018/GermEval2018-Fine-DTORMS-TAG-None -n GermEval2018-Fine -s Train -d 300 -c 20 -l de -g tree_order_multigraph_and_self -t none;
 
 
 #---------------------------------------------------------#
